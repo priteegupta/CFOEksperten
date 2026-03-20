@@ -1,0 +1,227 @@
+{
+  "navbar": {
+    "logo": "LOGO",
+    "services": "SERVICES",
+    "about_us": "ABOUT US",
+    "customers": "CUSTOMERS",
+    "our_packages": "OUR PACKAGES",
+    "faq": "FAQ",
+    "book_a_meeting": "Book a Meeting"
+  },
+  "hero": {
+    "badge": "Premium CFO Services",
+    "title_main": "CFO Eksperten helps startups",
+    "title_highlight": "build solid financial models",
+    "title_sub_highlight": "at fixed prices",
+    "subtitle": "We help your company deliver budgets and financial forecasts that investors trust!",
+    "cta": "Explore Services",
+    "cta_secondary": "Select Package"
+  },
+  "about": {
+    "title": "A team you can trust",
+    "subtitle": "We are a team of experienced entrepreneurs, CFOs and accountants with extensive international experience and broad expertise who specialize in helping startups.",
+    "description": "We combine international experience from leading financial and technology companies with a deep understanding of the Norwegian startup ecosystem. Our team has taken companies from idea to IPO and is passionate about making startups succeed.",
+    "team": [
+      {
+        "name": "Adiam Negassie",
+        "role": "Partner",
+        "years": "18",
+        "bio": "Adiam has held several leadership positions in the Oil & Gas, IT, and Waste Management sectors. She has founded companies in tech and energy and served on boards of listed companies. She is a Computer Engineer."
+      },
+      {
+        "name": "Raman",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Raman is a state-authorized accountant with over 15 years of experience in Finance and Strategy, specializing in M&A and group strategy. He has previously worked for Deloitte and Ernst & Young."
+      },
+      {
+        "name": "Amit",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Amit specializes in growth strategy and structuring and has over 15 years of experience as a strategy consultant."
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "budget": {
+      "title": "OPERATING BUDGET",
+      "description": "A comprehensive operating budget that gives you full control of revenues, costs and strategic milestones.",
+      "points": [
+        "Revenue models",
+        "Cost structure",
+        "Hiring plans",
+        "Unit economics (CAC/LTV, LTV:CAC Ratio)"
+      ]
+    },
+    "liquidity": {
+      "title": "LIQUIDITY & BALANCE",
+      "description": "Monthly liquidity budget that shows you the runway, burn rate and when you need to finance the next phase.",
+      "points": [
+        "Monthly cash flow forecasts",
+        "Burn rate and runway-analysis",
+        "Funding date",
+        "Scenario analysis",
+        "Balance"
+      ]
+    },
+    "forecast": {
+      "title": "ECONOMIC FORECASTS",
+      "description": "Investor-ready 3-5 year forecasts with detailed revenue models and documented assumptions that strengthen trust in the investor dialogue.",
+      "points": [
+        "3-5 year financial forecasts",
+        "Income statement (P&L)",
+        "Growth scenarios and sensitivity analyses",
+        "Documented prerequisites and drivers"
+      ]
+    },
+    "virtual_cfo": {
+      "title": "VIRTUAL CFO",
+      "description": "The 'Hero' Service offering complete financial leadership and strategic oversight for your premium needs.",
+      "points": [
+        "Ongoing strategic guidance",
+        "Executive-level financial reporting",
+        "Board meeting preparation",
+        "Investor relation support"
+      ]
+    }
+  },
+  "stats": {
+    "startups": "Startups helped",
+    "countries": "Land",
+    "capital": "Capital raised"
+  },
+  "challenge": {
+    "title": "The Challenge",
+    "description": "Many startups struggle with financial control",
+    "context": "For early-phase companies, it is often cost control and realistic forecasts – not profitability – that determine survival.",
+    "points": [
+      "Weak or inadequate budgets for further growth",
+      "Budget that doesn't reflect actual cash movements",
+      "Financial forecasts that lack structure and credibility",
+      "No clear ownership of financial management before and after investment",
+      "Weak company structure that is not suitable for growth",
+      "Lack of CFO competence in critical growth phases"
+    ],
+    "stat_number": "67%",
+    "stat_text": "of Norwegian startups lack good enough budgets that investors trust."
+  },
+  "audience": {
+    "title": "For Whom",
+    "subtitle": "We help startups in all phases",
+    "groups": [
+      "Startups that want to launch a new concept",
+      "Companies Preparing Investment Rounds",
+      "Companies seeking public support",
+      "Entrepreneurs scaling from the startup phase",
+      "Companies without internal CFO resources"
+    ],
+    "bottom_text": "We specialize in what startups need to lift the company further."
+  },
+  "booking": {
+    "title": "Ready to scale your business?",
+    "subtitle": "Book a 30-minute discovery call to discuss your financial strategy and how we can help you reach your goals.",
+    "cta": "Schedule a Meeting",
+    "notice": "Free 30-min consultation — No obligation"
+  },
+  "faq": {
+    "notice": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Can't find the answer you're looking for? Feel free to contact us for a non-binding chat about your needs.",
+    "q1": {
+      "question": "What do your services cost?",
+      "answer": "We offer fixed pricing on all our services, so you know exactly what you are paying for. Prices vary depending on complexity and scope – please check our pricing section or contact us for a non-binding quote."
+    },
+    "q2": {
+      "question": "How long does it take to deliver the startup package?",
+      "answer": "We typically deliver within 14 business days after receiving the necessary information. For urgent requests, we can offer faster delivery at an additional cost."
+    },
+    "q3": {
+      "question": "What information do you need from us?",
+      "answer": "We map your needs in an initial meeting. Typically, we require a business plan, historical financial statements, cost structure, and revenue assumptions. We provide templates and build on the information you already have."
+    },
+    "q4": {
+      "question": "Why should I use CFO Eksperten?",
+      "answer": "Our services are ideal if you do not need a full-time CFO but require assistance with financial strategy, budgets, and forecasts. We also offer ongoing support through our Virtual CFO service."
+    },
+    "q5": {
+      "question": "Can you help with investor presentations?",
+      "answer": "Yes – CFO Eksperten can assist with analysis, financial modeling, forecasting, due diligence, and investor communication."
+    }
+  },
+  "footer": {
+    "links": {
+      "about": "About Us",
+      "customers": "Customers",
+      "faq": "FAQ"
+    },
+    "description": "Premium financial management and CFO services for startups and growth companies.",
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "office": "Oslo, Norway",
+    "phone": "+47 98 16 40 37",
+    "email": "hei@cfoeksperten.no",
+    "address_label": "Office",
+    "address_value": "Toppåsveien 22c, 1262 Oslo, Norway"
+  },
+  "packages": {
+    "title_badge": "Flexible Pricing",
+    "title": "Select your phase",
+    "subtitle": "All packages include professional financial modeling and full documentation.",
+    "delivery_notice": "7–14 day delivery",
+    "trust_badge": "Investor Ready",
+    "investor": {
+      "title": "Startup Package",
+      "price_label": "One-time payment",
+      "cta": "Book Startup Package",
+      "features": [
+        "Operating budget (12 months)",
+        "Cash flow budget (18 months)",
+        "3-year financial projections",
+        "Documented assumptions",
+        "60-minute review",
+        "Excel + PDF report"
+      ],
+      "footer": "Ideal for: Max 5 employees, <$200k revenue."
+    },
+    "support": {
+      "badge": "Recommended",
+      "title": "CFO Support",
+      "price_label": "Monthly (Min. 3 months)",
+      "cta": "Start CFO Support",
+      "features": [
+        "Monthly budget updates",
+        "Runway monitoring & alerts",
+        "Monthly board reports",
+        "Quarterly investor reports",
+        "Funding round assistance",
+        "Biweekly strategy meetings"
+      ]
+    },
+    "scaling": {
+      "title": "Scaling Package",
+      "price_label": "One-time payment",
+      "cta": "Contact for Scaling",
+      "features": [
+        "Includes: Complete Package 1",
+        "Active pitch & DD support",
+        "Financial due diligence",
+        "Cap table modeling",
+        "SAFE/Convertible note structure",
+        "Data room setup"
+      ],
+      "footer": "For companies in the scaling phase needing continuous oversight."
+    },
+    "post_click": {
+      "title": "What happens next?",
+      "step1_title": "1. Confirmation",
+      "step1_desc": "Select a time in the calendar that works for a 15-minute introduction.",
+      "step2_title": "2. Data Collection",
+      "step2_desc": "We will provide a secure folder for sharing your financial data.",
+      "step3_title": "3. Delivery",
+      "step3_desc": "Your investor-ready model is finalized and presented within 14 days."
+    }
+  }
+}

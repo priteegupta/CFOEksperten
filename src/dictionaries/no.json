@@ -1,0 +1,227 @@
+{
+  "navbar": {
+    "logo": "LOGO",
+    "services": "TJENESTER",
+    "about_us": "OM OSS",
+    "customers": "KUNDER",
+    "our_packages": "VÅRE PAKKER",
+    "faq": "FAQ",
+    "book_a_meeting": "Bestill møte"
+  },
+  "hero": {
+    "badge": "Premium CFO-tjenester",
+    "title_main": "CFO Eksperten hjelper startups",
+    "title_highlight": "bygge solide finansielle modeller",
+    "title_sub_highlight": "til faste priser",
+    "subtitle": "Vi hjelper din bedrift med å levere budsjetter og økonomiske prognoser som investorer stoler på!",
+    "cta": "Utforsk Tjenester",
+    "cta_secondary": "Velg pakke"
+  },
+  "about": {
+    "title": "Et team du kan stole på",
+    "subtitle": "Vi er et team av erfarne gründere, CFOer og revisorer med omfattende internasjonal erfaring og bred kompetanse som spesialiserer seg på å hjelpe oppstartsselskaper.",
+    "description": "Vi kombinerer internasjonal erfaring fra ledende finans- og teknologiselskaper med en dyp forståelse av det norske oppstartsmiljøet. Teamet har tatt selskaper fra idé til børsnotering.",
+    "team": [
+      {
+        "name": "Adiam Negassie",
+        "role": "Partner",
+        "years": "18",
+        "bio": "Adiam har hatt flere ledende stillinger i Olje og Gass, IT og Avfallsektoren. Hun har startet selskaper innen tech og energi selskaper og sittet i styret i børsnoterte selskaper. Hun er utdannet dataingeniør."
+      },
+      {
+        "name": "Raman",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Raman er statsautorisert regnskapsfører og har over 15 års erfaring innen Finans og Strategi, spesialisert i M&A og konsernstrategi. Han har tidligere jobbet for Deloitte og EY."
+      },
+      {
+        "name": "Amit",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Amit har spesialisert seg innen vekststrategi og strukturering, han har over 15 års erfaring som strategikonsulent."
+      }
+    ]
+  },
+  "services": {
+    "title": "Våre Tjenester",
+    "budget": {
+      "title": "DRIFTSBUDSJETT",
+      "description": "Et omfattende driftsbudsjett som gir deg full kontroll over inntekter, kostnader og strategiske milepæler.",
+      "points": [
+        "Inntektsmodeller",
+        "Kostnadsstruktur",
+        "Ansettelsesplaner",
+        "Enhetsøkonomi (CAC/LTV, LTV:CAC-forhold)"
+      ]
+    },
+    "liquidity": {
+      "title": "LIKVIDITETSBUDSJETT OG BALANSE",
+      "description": "Månedlig likviditetsbudsjett som viser deg runway, burn rate og når du må finansiere neste fase.",
+      "points": [
+        "Månedlige kontantstrømprognoser",
+        "Burn rate og runway-analyse",
+        "Finansieringsdato",
+        "Scenarioanalyser",
+        "Balanse"
+      ]
+    },
+    "forecast": {
+      "title": "ØKONOMISKE PROGNOSER",
+      "description": "Investorklare 3-5 års prognoser med detaljerte inntektsmodeller og dokumenterte forutsetninger som styrker tilliten i investordialogen.",
+      "points": [
+        "3-5 års finansielle prognoser",
+        "Resultatregnskap (P&L)",
+        "Vekstscenarioer og sensitivitetsanalyser",
+        "Dokumenterte forutsetninger og drivere"
+      ]
+    },
+    "virtual_cfo": {
+      "title": "VIRTUELL CFO-TJENESTE",
+      "description": "Den ultimate løsningen som gir deg komplett økonomisk ledelse og strategisk oversikt for dine premium behov.",
+      "points": [
+        "Løpende strategisk veiledning",
+        "Finansiell rapportering på ledernivå",
+        "Forberedelse til styremøter",
+        "Støtte til investorrelasjoner"
+      ]
+    }
+  },
+  "stats": {
+    "startups": "Startups hjulpet",
+    "countries": "Land",
+    "capital": "Kapital hentet inn"
+  },
+  "challenge": {
+    "title": "Utfordringen",
+    "description": "Mange startups sliter med økonomisk kontroll",
+    "context": "For selskaper i en tidlig fase er det ofte kostnadskontroll og realistiske prognoser – ikke lønnsomhet – som avgjør overlevelse.",
+    "points": [
+      "Svake eller mangelfulle budsjetter for videre vekst",
+      "Budsjett som ikke gjenspeiler faktiske kontantbevegelser",
+      "Økonomiske prognoser som mangler struktur og troverdighet",
+      "Ingen tydelig eierskap til økonomistyring før og etter investering",
+      "Svak selskapsstruktur som ikke er egnet for vekst",
+      "Mangel på CFO-kompetanse i kritiske vekstfaser"
+    ],
+    "stat_number": "67%",
+    "stat_text": "av norske startups mangler gode nok budsjetter som investorer stoler på."
+  },
+  "audience": {
+    "title": "For hvem",
+    "subtitle": "Vi hjelper startups i alle faser",
+    "groups": [
+      "Startups som vil lansere et nytt konsept",
+      "Selskaper som forbereder investeringsrunder",
+      "Selskaper som søker offentlig støtte",
+      "Gründere som skalerer fra oppstartsfasen",
+      "Selskaper uten interne CFO-ressurser"
+    ],
+    "bottom_text": "Vi spesialiserer oss på hva startups trenger for å løfte selskapet videre."
+  },
+  "booking": {
+    "title": "Klar for å skalere din bedrift?",
+    "subtitle": "Bestill en 30-minutters uforpliktende samtale for å diskutere din finansielle strategi og hvordan vi kan hjelpe deg.",
+    "cta": "Book et møte",
+    "notice": "Gratis 30-min konsultasjon — Helt uforpliktende"
+  },
+  "faq": {
+    "notice": "FAQ",
+    "title": "Ofte stilte spørsmål",
+    "subtitle": "Finner du ikke svaret du leter etter? Ta gjerne kontakt for en uforpliktende prat om dine behov.",
+    "q1": {
+      "question": "Hva koster tjenestene deres?",
+      "answer": "Vi tilbyr faste priser på alle våre tjenester, slik at du vet nøyaktig hva du betaler. Prisene varierer avhengig av kompleksitet og omfang – sjekk vår prisseksjon eller ta kontakt for et uforpliktende tilbud."
+    },
+    "q2": {
+      "question": "Hvor lang tid tar det å levere startup-pakken?",
+      "answer": "Vanligvis leverer vi dette innen 14 virkedager etter at vi har mottatt nødvendig informasjon. For hasteoppdrag kan vi tilby raskere leveranse mot et tillegg."
+    },
+    "q3": {
+      "question": "Hva trenger dere av informasjon fra oss?",
+      "answer": "Vi kartlegger behovene deres i et oppstartsmøte. Typisk trenger vi forretningsplan, historiske regnskapstall (hvis tilgjengelig), kostnadsstruktur og inntektsforutsetninger. Vi guider dere gjennom hele prosessen – vi har maler dere fyller ut og vi tar utgangspunkt i informasjon dere allerede har."
+    },
+    "q4": {
+      "question": "Hvorfor skal jeg bruke CFO Eksperten?",
+      "answer": "Våre tjenester passer utmerket hvis du ikke har behov for en fulltids CFO og trenger bistand til å utarbeide finansiell strategi, budsjetter og prognoser. Vi tilbyr løpende CFO-støtte via vår virtuelle CFO-tjeneste."
+    },
+    "q5": {
+      "question": "Kan CFO Eksperten hjelpe til med investorpresentasjoner?",
+      "answer": "Ja – CFO Eksperten kan hjelpe til med analyser, modellering, prognoser, due diligence og investorkommunikasjon i forbindelse med kapitalinnhenting."
+    }
+  },
+  "footer": {
+    "links": {
+      "about": "Om oss",
+      "customers": "Kunder",
+      "faq": "FAQ"
+    },
+    "description": "Førsteklasses økonomistyring og CFO-tjenester for oppstartsselskaper og vekstbedrifter.",
+    "quick_links": "Hurtiglenker",
+    "services": "Tjenester",
+    "contact": "Kontakt",
+    "rights": "Alle rettigheter forbeholdt.",
+    "office": "Oslo, Norge",
+    "phone": "+47 98 16 40 37",
+    "email": "hei@cfoeksperten.no",
+    "address_label": "Kontor",
+    "address_value": "Toppåsveien 22c, 1262 Oslo, Norge"
+  },
+  "packages": {
+    "title_badge": "Gjennomsiktig og forutsigbart",
+    "title": "Investering i din vekst",
+    "subtitle": "Profesjonell finansiell styring skreddersydd for din startups nåværende fase.",
+    "delivery_notice": "Levering: 7–14 dager",
+    "trust_badge": "Investorklar Standard",
+    "investor": {
+      "title": "Startup-pakken",
+      "price_label": "Engangshonorar",
+      "cta": "Bestill Startup-pakken",
+      "features": [
+        "Driftsbudsjett (12 måneder)",
+        "Likviditetsprognose (18 måneder)",
+        "3-års finansielle modeller",
+        "Dokumenterte forutsetninger",
+        "60-minutters gjennomgang",
+        "Excel + PDF rapport"
+      ],
+      "footer": "Passer for: Maks 5 ansatte, 2 inntektsstrømmer, pre-revenue eller <2M omsetning."
+    },
+    "support": {
+      "badge": "Anbefalt",
+      "title": "CFO-støtte",
+      "price_label": "Månedsabonnement (Min. 3 mnd)",
+      "cta": "Start CFO-støtte",
+      "features": [
+        "Månedlig budsjettoppdatering",
+        "Runway-monitorering & varsler",
+        "Månedsrapport til styre/eiere",
+        "Kvartalsvise investor-rapporter",
+        "Funding-bistand",
+        "Biweekly strategimøter"
+      ]
+    },
+    "scaling": {
+      "title": "Skaleringspakken",
+      "price_label": "Engangshonorar",
+      "cta": "Kontakt for Skalering",
+      "features": [
+        "Inkluderer komplett Pakke 1",
+        "Aktiv investor-pitch support",
+        "Finansiell due diligence støtte",
+        "Cap table modeling",
+        "SAFE/Convertible note struktur",
+        "Data room setup"
+      ],
+      "footer": "For selskaper i skaleringsfasen som trenger kontinuerlig oppfølging."
+    },
+    "post_click": {
+      "title": "Hva skjer nå?",
+      "step1_title": "1. Bekreftelse",
+      "step1_desc": "Velg en tid i kalenderen som passer for en introduksjon.",
+      "step2_title": "2. Data-innsamling",
+      "step2_desc": "Vi sender over en sikker mappe for deling av dine data.",
+      "step3_title": "3. Strategisk leveranse",
+      "step3_desc": "Din investorklare modell ferdigstilles innen 14 dager."
+    }
+  }
+}

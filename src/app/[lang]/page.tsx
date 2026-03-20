@@ -1,0 +1,49 @@
+import { getDictionary } from '@/get-dictionary';
+import { Locale } from '@/i18n-config';
+import Image from 'next/image';
+import { HeroSlider } from '@/components/hero-slider';
+import PartnerStats from '@/components/partner-stats';
+import ChallengeSection from '@/components/challenge-section';
+import AudienceSection from '@/components/audience-section';
+import AboutSection from "@/components/about-section";
+import ServicesSection from '@/components/services-section';
+import BookingSection from "@/components/booking-section";
+import FAQSection from "@/components/FAQSection";
+// import PackagesSection from "@/components/packages-section";
+
+import { HeroContent } from '@/components/hero-content';
+
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+    const resolvedParams = await params;
+    const dictionary = await getDictionary(resolvedParams.lang as Locale);
+
+    return (
+      <div className="flex flex-col bg-brand-light">
+        <HeroContent dictionary={dictionary} lang={resolvedParams.lang} />
+
+        {/* Partner Logos & Stats */}
+        <PartnerStats dictionary={dictionary} />
+
+        {/* The Challenge Section */}
+        <ChallengeSection dictionary={dictionary} />
+
+        {/* For Whom / Audience Section */}
+        <AudienceSection dictionary={dictionary} />
+
+        {/* About Section  */}
+        <AboutSection dictionary={dictionary} />
+
+        {/* Services Section */}
+        <ServicesSection dictionary={dictionary} />
+
+        {/* PACKAGES SECTION  */}
+        {/* <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} /> */}
+
+        {/* Booking Section */}
+        <BookingSection dictionary={dictionary} />
+
+        {/* ADD THE FAQ HERE */}
+        <FAQSection dictionary={dictionary} lang={resolvedParams.lang} />
+      </div>
+    );
+}
