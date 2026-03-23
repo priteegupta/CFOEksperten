@@ -9,7 +9,8 @@ import AboutSection from "@/components/about-section";
 import ServicesSection from '@/components/services-section';
 import BookingSection from "@/components/booking-section";
 import FAQSection from "@/components/FAQSection";
-// import PackagesSection from "@/components/packages-section";
+import PackagesSection from "@/components/packages-section";
+// import { CustomerStories } from "@/components/customer-stories";
 
 import { HeroContent } from '@/components/hero-content';
 
@@ -30,14 +31,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {/* For Whom / Audience Section */}
         <AudienceSection dictionary={dictionary} />
 
+        {/* Services Section (Moved Above Team per request) */}
+        <ServicesSection dictionary={dictionary} />
+
         {/* About Section  */}
         <AboutSection dictionary={dictionary} />
 
-        {/* Services Section */}
-        <ServicesSection dictionary={dictionary} />
+        {/* Customer Stories Section */}
+        {/* <CustomerStories /> */}
 
         {/* PACKAGES SECTION  */}
-        {/* <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} /> */}
+        <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} />
 
         {/* Booking Section */}
         <BookingSection dictionary={dictionary} />

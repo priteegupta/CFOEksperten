@@ -1,123 +1,129 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { type Dictionary } from "@/get-dictionary";
 
 export default function AudienceSection({
   dictionary,
 }: {
-  dictionary: {
-    audience: {
-      title: string;
-      subtitle: string;
-      groups: string[] | readonly string[];
-      bottom_text: string;
-    };
-  };
+  dictionary: Dictionary;
 }) {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
+  const { title, subtitle, groups, bottom_text } = dictionary.audience;
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.1 }
-        );
+  // Professional SVG Icon Set
+  const getIcon = (index: number) => (
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      {index === 0 && <circle cx="12" cy="12" r="9" strokeDasharray="4 4" />}
+      {index === 1 && <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />}
+      {index === 2 && (
+        <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745" />
+      )}
+      {index === 3 && <path d="M18 20V10M12 20V4M6 20v-6" />}
+      {index === 4 && <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0z" />}
+    </svg>
+  );
 
-        const currentRef = sectionRef.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) observer.unobserve(currentRef);
-        };
-    }, []);
-
-    // Distinct icons mapped to the target groups for a premium feel
-    const getIcon = (index: number) => {
-        const svgProps = { className: "w-6 h-6", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5 };
-        switch (index) {
-            case 0: // Concept (Target)
-                return (
-                    <svg {...svgProps}>
-                        <circle cx="12" cy="12" r="9" />
-                        <circle cx="12" cy="12" r="5" />
-                        <circle cx="12" cy="12" r="1.5" />
-                    </svg>
-                );
-            case 1: // Investment Rounds (Trending Up Arrow)
-                return <svg {...svgProps}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>;
-            case 2: // Public support (Briefcase)
-                return <svg {...svgProps}><path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
-            case 3: // Scaling (Bar Chart)
-                return (
-                    <svg {...svgProps}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 20V10M12 20V4M6 20v-6" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 20h18" />
-                    </svg>
-                );
-            case 4: // Without CFO (User/Account)
-                return <svg {...svgProps}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>;
-            default:
-                return <svg {...svgProps}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>;
-        }
-    };
-
-    return (
-      <section
-        id="audience"
-        ref={sectionRef}
-        className="w-full bg-brand-dark py-16 md:py-24"
-      >
-        <div className="container mx-auto px-6 lg:px-12 max-w-7xl flex flex-col items-center">
-          {/* Header Section */}
-          <div className="text-center mb-12 lg:mb-16">
-            <h2
-              className={`text-4xl md:text-5xl font-serif font-bold text-white mb-4 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              {dictionary.audience.title}
-            </h2>
-            <p
-              className={`text-lg md:text-xl text-slate-400 font-sans transition-all duration-1000 delay-200 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              {dictionary.audience.subtitle}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 w-full mb-16 justify-center">
-            {dictionary.audience.groups.map((group, index) => (
-              <div
-                key={index}
-                className={`group bg-white/5 border-2 border-white/5 hover:bg-[#EBEBEB] hover:border-brand-accent rounded-xl p-6 md:p-8 flex flex-col items-center text-center transition-all duration-500 ease-out hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}
-                style={{ transitionDelay: `${400 + index * 100}ms` }}
-              >
-                {/* Icon: Turns Navy on hover */}
-                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white mb-4 md:mb-6 group-hover:text-[#10367D] group-hover:scale-110 transition-all duration-500">
-                  {getIcon(index)}
-                </div>
-
-                {/* Text: Turns Navy on hover */}
-                <h3 className="text-sm md:text-base font-semibold text-white group-hover:text-[#10367D] leading-snug transition-colors duration-500">
-                  {group}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-          {/* Footer Section */}
-          <div
-            className={`text-center max-w-3xl mx-auto transition-all duration-1000 delay-[900ms] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+  return (
+    <section
+      id="about"
+      className="w-full bg-white py-24 md:py-48 overflow-hidden"
+    >
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          {/* LEFT: FINANCIAL DASHBOARD IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 relative"
           >
-            <p className="text-2xl md:text-3xl text-white font-serif italic font-medium tracking-wide">
-              {dictionary.audience.bottom_text}
-            </p>
+            <div className="relative aspect-[4/5] rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.15)] border border-slate-100 bg-slate-50">
+              <Image
+                src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2070&auto=format&fit=crop"
+                alt="Financial Analysis Dashboard"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark/20 to-transparent pointer-events-none" />
+            </div>
+
+            {/* FLOATING QUOTE CARD */}
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-10 -right-6 md:-right-10 bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-[32px] shadow-2xl hidden sm:block border border-white/40 max-w-[320px]"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+                <span className="text-[10px] font-black text-brand-dark/40 uppercase tracking-[0.3em]">
+                  Strategy First
+                </span>
+              </div>
+              <p className="text-brand-dark font-serif italic text-xl md:text-2xl leading-tight">
+                {bottom_text}
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT: ADJUSTED FONT HIERARCHY */}
+          <div className="lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <span className="w-12 h-[2px] bg-brand-accent"></span>
+                <span className="text-brand-accent text-[13px] md:text-[14px] font-black uppercase tracking-[0.6em] leading-none">
+                  {title}
+                </span>
+              </div>
+
+              {/* INCREASED SIZE: Main Heading (For Whom) */}
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-brand-dark leading-[0.95] tracking-tighter mb-8">
+                {subtitle}
+              </h2>
+
+              {/* DECREASED SIZE: Subtitle (Startups in all phases) */}
+              <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-16 max-w-lg italic">
+                {subtitle}
+              </p>
+
+              {/* AUDIENCE GROUPS LIST */}
+              <div className="grid grid-cols-1 gap-5">
+                {groups.map((group, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ x: 12 }}
+                    className="group flex items-center gap-6 p-7 rounded-3xl border border-slate-50 bg-slate-50/40 hover:bg-white hover:border-brand-accent/20 hover:shadow-xl transition-all duration-500"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shrink-0">
+                      {getIcon(index)}
+                    </div>
+                    <span className="text-xl font-bold text-brand-dark transition-colors duration-500">
+                      {group}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

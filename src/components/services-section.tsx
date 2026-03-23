@@ -1,32 +1,24 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
-export default function ServicesSection({ dictionary }: { dictionary: Dictionary }) {
+export default function ServicesSection({
+  dictionary,
+}: {
+  dictionary: Dictionary;
+}) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, []);
-
-  const serviceKeys = ["budget", "liquidity", "forecast", "virtual_cfo"] as const;
+  const serviceKeys = [
+    "budget",
+    "liquidity",
+    "forecast",
+    "virtual_cfo",
+  ] as const;
 
   const serviceImages: { [key: string]: string } = {
     budget:
@@ -43,61 +35,74 @@ export default function ServicesSection({ dictionary }: { dictionary: Dictionary
     <section
       ref={sectionRef}
       id="services"
-      className="py-24 bg-[#EBEBEB] overflow-hidden"
+      className="py-24 md:py-40 bg-brand-light overflow-hidden" // Updated to Nordic Light theme color
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
         {/* Section Header */}
-        <div
-          className={`max-w-3xl mb-16 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif text-[#10367D] mb-6">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-10 h-[2px] bg-brand-accent"></span>
+            <span className="text-brand-accent text-[12px] font-black uppercase tracking-[0.5em]">
+              Expertise
+            </span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-serif font-bold text-brand-dark tracking-tighter leading-none">
             {dictionary.services.title}
           </h2>
-          <div className="w-20 h-1 bg-brand-accent"></div>
-        </div>
+        </motion.div>
 
         {/* Dynamic Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {serviceKeys.map((key, index) => {
             const service = dictionary.services[key];
             return (
-              <div
+              <motion.div
                 key={key}
-                style={{ transitionDelay: `${index * 150}ms` }}
-                className={`group relative bg-white overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-all duration-1000 ease-out border border-slate-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.15,
+                  ease: [0.21, 1, 0.36, 1],
+                }}
+                className="group relative bg-white overflow-hidden rounded-3xl shadow-[0_10px_40px_-15px_rgba(15,23,42,0.08)] hover:shadow-[0_20px_60px_-15px_rgba(96,165,250,0.15)] transition-all duration-500 border border-slate-100"
               >
                 <div className="flex flex-col lg:flex-row h-full">
-                  {/* Service Image - Now in Color */}
-                  <div className="relative w-full lg:w-2/5 h-48 lg:h-auto overflow-hidden">
+                  {/* Service Image Container */}
+                  <div className="relative w-full lg:w-2/5 h-64 lg:h-auto overflow-hidden">
                     <Image
                       src={serviceImages[key]}
                       alt={service.title}
                       fill
-                      /* REMOVED grayscale, KEPT transition and scale */
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
-                    {/* OPTIONAL: Subtle dark gradient instead of blue overlay for a premium look */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Subtle Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark/20 to-transparent opacity-60"></div>
                   </div>
 
                   {/* Service Content */}
-                  <div className="w-full lg:w-3/5 p-8 flex flex-col justify-between">
+                  <div className="w-full lg:w-3/5 p-8 lg:p-10 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-[#10367D] uppercase tracking-wider mb-4">
+                      <h3 className="text-xl font-bold text-brand-dark uppercase tracking-widest mb-4 group-hover:text-brand-accent transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-slate-500 text-sm leading-relaxed mb-6 font-light">
+                      <p className="text-slate-500 text-[15px] leading-relaxed mb-8 font-light">
                         {service.description}
                       </p>
 
                       {/* Feature Points */}
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {service.points.map((point: string, idx: number) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-[13px] text-slate-600"
+                            className="flex items-center gap-3 text-[13px] text-slate-600 font-medium"
                           >
-                            <span className="text-brand-accent mt-1">/</span>
+                            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
                             {point}
                           </li>
                         ))}
@@ -105,7 +110,7 @@ export default function ServicesSection({ dictionary }: { dictionary: Dictionary
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

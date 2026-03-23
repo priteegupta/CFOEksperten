@@ -2,20 +2,75 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useInView, animate, motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
-export default function PartnerStats({ dictionary }: { dictionary: Dictionary }) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+function AnimatedCounter({
+  to,
+  suffix,
+  prefix = "",
+  delay,
+}: {
+  to: number;
+  suffix: string;
+  prefix?: string;
+  delay: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const [isDone, setIsDone] = useState(false);
 
-  // ✅ Updated scalable structure
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(0, to, {
+        duration: 2.5,
+        delay: delay / 1000,
+        ease: [0.16, 1, 0.3, 1],
+        onUpdate(value) {
+          if (ref.current) {
+            ref.current.textContent =
+              prefix + Math.floor(value).toLocaleString() + suffix;
+          }
+        },
+        onComplete: () => setIsDone(true),
+      });
+      return controls.stop;
+    }
+  }, [inView, to, delay, suffix, prefix]);
+
+  return (
+    <motion.span
+      ref={ref}
+      animate={
+        isDone
+          ? {
+              scale: [1, 1.1, 1],
+              textShadow: "0px 0px 25px rgba(96, 165, 250, 0.4)",
+              color: "#60A5FA",
+            }
+          : {}
+      }
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="inline-block font-serif tracking-tighter text-brand-dark transition-colors duration-700"
+    >
+      0{suffix}
+    </motion.span>
+  );
+}
+
+export default function PartnerStats({
+  dictionary,
+}: {
+  dictionary: Dictionary;
+}) {
+  // ✅ ALL 22 IMAGES - ORIGINAL COLOR & PREVIOUS SIZES
   const partnerLogos = [
     { src: "/company1.jpeg" },
     { src: "/company2.jpeg" },
     { src: "/company3.jpeg" },
     { src: "/company4.jpeg" },
     { src: "/company5.jpeg" },
-    { src: "/company6.png", size: "large" }, // 👈 special logo
+    { src: "/company6.png", size: "large" },
     { src: "/company7.jpeg" },
     { src: "/company8.jpeg" },
     { src: "/company9.jpeg" },
@@ -32,36 +87,24 @@ export default function PartnerStats({ dictionary }: { dictionary: Dictionary })
     { src: "/company20.png" },
     { src: "/company21.png" },
     { src: "/company22.png" },
-    { src: "/company23.png" },
-    { src: "/company24.png" },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, []);
+  const stats = [
+    { to: 120, suffix: "+", label: dictionary.stats.startups, delay: 100 },
+    { to: 3, suffix: "", label: dictionary.stats.countries, delay: 300 },
+    {
+      to: 350,
+      suffix: "M",
+      prefix: "$",
+      label: dictionary.stats.capital,
+      delay: 500,
+    },
+  ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-white py-12 border-b border-slate-100 overflow-hidden"
-    >
-      {/* 1. Scrolling Marquee Section */}
-      <div className="relative w-full mb-16 overflow-hidden">
+    <section className="w-full bg-white py-20 border-b border-slate-50 overflow-hidden">
+      {/* 1. SCROLLING MARQUEE - MATCHING YOUR SPEED CODE */}
+      <div className="relative w-full mb-24 overflow-hidden">
         <style jsx>{`
           @keyframes marquee {
             0% {
@@ -81,60 +124,64 @@ export default function PartnerStats({ dictionary }: { dictionary: Dictionary })
           }
         `}</style>
 
-        {/* Gradient edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+        {/* Gradient edges for that "faded" look */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
         <div className="custom-marquee items-center py-4">
-          {[...partnerLogos, ...partnerLogos, ...partnerLogos].map(
-            (logo, index) => {
-              const isLarge = logo.size === "large";
-
-              return (
-                <div
-                  key={index}
-                  className={`flex-shrink-0 mx-10 relative transition-all duration-500 hover:scale-110 cursor-pointer 
-                  ${isLarge ? "w-56 h-24" : "w-48 h-20"}`}
-                >
-                  <Image
-                    src={logo.src}
-                    alt={`Partner ${index}`}
-                    fill
-                    className={`object-contain p-2 ${
-                      logo.size === "large" ? "scale-150" : ""
-                    }`}
-                    unoptimized
-                  />
-                </div>
-              );
-            },
-          )}
+          {[...partnerLogos, ...partnerLogos].map((logo, index) => {
+            const isLarge = logo.size === "large";
+            return (
+              <div
+                key={index}
+                className={`flex-shrink-0 mx-10 relative transition-all duration-500 hover:scale-110 cursor-pointer ${
+                  isLarge ? "w-56 h-24" : "w-48 h-20"
+                }`}
+              >
+                <Image
+                  src={logo.src}
+                  alt={`Partner ${index}`}
+                  fill
+                  className={`object-contain p-2 grayscale-0 opacity-100 ${isLarge ? "scale-125" : ""}`}
+                  unoptimized
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* 2. Compact Statistics Grid */}
+      {/* 2. NUMERICAL STATS - REFINED DESKTOP SIZE & BLUE POP */}
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { val: "120+", label: dictionary.stats.startups, delay: "100ms" },
-            { val: "3", label: dictionary.stats.countries, delay: "250ms" },
-            { val: "$350M", label: dictionary.stats.capital, delay: "400ms" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className={`group text-center p-4 md:p-6 rounded-xl transition-all duration-1000 hover:bg-slate-50 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: stat.delay }}
-            >
-              <div className="text-4xl md:text-5xl font-serif text-[#10367D] mb-1 md:mb-2 group-hover:text-brand-accent transition-colors duration-300">
-                {stat.val}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          {stats.map((stat, i) => (
+            <div key={i} className="flex flex-col items-center">
+              {/* Reduced size for desktop elegance */}
+              <div className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-2">
+                <AnimatedCounter
+                  to={stat.to}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
+                  delay={stat.delay}
+                />
               </div>
-              <div className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] md:tracking-[0.25em] text-slate-400 uppercase group-hover:text-[#10367D] transition-colors duration-300">
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: stat.delay / 1000 + 0.5 }}
+                className="text-[11px] md:text-[12px] font-black text-slate-400 uppercase tracking-[0.3em] text-center"
+              >
                 {stat.label}
-              </div>
+              </motion.div>
+
+              {/* Light Blue Accent Line */}
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "32px" }}
+                transition={{ duration: 0.8, delay: stat.delay / 1000 + 0.8 }}
+                className="h-[2px] bg-brand-accent mt-6 rounded-full"
+              />
             </div>
           ))}
         </div>

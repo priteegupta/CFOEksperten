@@ -20,32 +20,23 @@ export default function BookingSection({
   const isClient = useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false
+    () => false,
   );
 
   const CALENDLY_URL = "https://calendly.com/adiam-negassie/30min";
 
   const openCalendly = () => {
-   
     if (window.Calendly) {
-      
       window.Calendly.initPopupWidget({ url: CALENDLY_URL });
     } else {
-      // Direct fallback if script is blocked or slow
       window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
     }
   };
 
-
-  // Prevent hydration mismatch the professional way
   if (!isClient) return null;
 
   return (
     <section id="book-meeting" className="py-16 md:py-24 bg-white scroll-mt-20">
-      {/* PROFESSIONAL SCRIPT LOADING 
-        - Loads after the page is interactive
-        - Automatically handles the 'removeChild' issue by staying in the <head>
-      */}
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
@@ -56,17 +47,19 @@ export default function BookingSection({
       />
 
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden flex flex-col md:flex-row bg-white shadow-[0_40px_100px_rgba(16,54,125,0.12)] border border-slate-100">
+        {/* Shadow and border updated for the Blue Theme */}
+        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden flex flex-col md:flex-row bg-white shadow-[0_40px_100px_rgba(15,23,42,0.1)] border border-slate-100">
           {/* Left Content */}
           <div className="p-8 md:p-20 flex-1 bg-white relative z-10 order-2 md:order-1">
             <div className="flex items-center gap-4 mb-8 md:mb-12">
-              <span className="w-8 md:w-12 h-[1px] bg-[#A5CE00]"></span>
-              <span className="text-[#10367D] text-[10px] font-black uppercase tracking-[0.4em]">
+              {/* ADIAM: Blue Accent Line */}
+              <span className="w-8 md:w-12 h-[1px] bg-brand-accent"></span>
+              <span className="text-brand-dark text-[10px] font-black uppercase tracking-[0.4em]">
                 {dictionary.booking.notice}
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-6xl font-serif font-bold text-[#10367D] mb-6 md:mb-10 leading-[1.2] md:leading-[1.1] tracking-tight">
+            <h2 className="text-3xl md:text-6xl font-serif font-bold text-brand-dark mb-6 md:mb-10 leading-[1.2] md:leading-[1.1] tracking-tight">
               {dictionary.booking.title}
             </h2>
 
@@ -74,18 +67,20 @@ export default function BookingSection({
               {dictionary.booking.subtitle}
             </p>
 
+            {/* CTA BUTTON: Blue Theme with Hover Transition */}
             <button
               onClick={openCalendly}
               type="button"
-              className="w-full md:w-auto group relative overflow-hidden bg-[#A5CE00] text-[#10367D] px-10 md:px-14 py-5 md:py-6 rounded-sm font-black uppercase text-[11px] tracking-[0.3em] transition-all duration-500 hover:text-white shadow-lg shadow-[#A5CE00]/20 cursor-pointer active:scale-95"
+              className="w-full md:w-auto group relative overflow-hidden bg-brand-accent text-white px-10 md:px-14 py-5 md:py-6 rounded-sm font-black uppercase text-[11px] tracking-[0.3em] transition-all duration-500 hover:text-white shadow-lg shadow-brand-accent/20 cursor-pointer active:scale-95"
             >
               <span className="relative z-10">{dictionary.booking.cta}</span>
-              <div className="absolute inset-0 bg-[#10367D] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              {/* Slide up effect remains, now Dark Blue */}
+              <div className="absolute inset-0 bg-brand-dark translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </button>
           </div>
 
-          {/* Right Panel: Constellations */}
-          <div className="h-[300px] md:h-auto md:w-[42%] bg-[#10367D] relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2">
+          {/* Right Panel: Blue Constellations */}
+          <div className="h-[300px] md:h-auto md:w-[42%] bg-brand-dark relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2">
             <div className="absolute inset-0 opacity-80 pointer-events-none">
               <svg
                 className="w-full h-full"
@@ -111,7 +106,7 @@ export default function BookingSection({
                 </defs>
                 <path
                   d="M100 150L250 100L350 250L200 400L50 350L100 150"
-                  stroke="#A5CE00"
+                  stroke="#60A5FA" // ADIAM: Light Blue Path
                   strokeWidth="1.5"
                   strokeDasharray="1000"
                   strokeDashoffset="1000"
@@ -137,7 +132,7 @@ export default function BookingSection({
                     cx={point.x}
                     cy={point.y}
                     r="4"
-                    fill="#A5CE00"
+                    fill="#60A5FA" // ADIAM: Light Blue Nodes
                   >
                     <animate
                       attributeName="opacity"
@@ -152,9 +147,10 @@ export default function BookingSection({
 
             <div className="relative z-20 text-center">
               <div className="relative mb-6 md:mb-10">
-                <div className="absolute inset-0 bg-[#A5CE00]/10 blur-[60px] rounded-full scale-150"></div>
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full flex flex-col items-center justify-center bg-transparent border border-[#A5CE00]/40 relative z-10 backdrop-blur-md">
-                  <span className="text-4xl md:text-5xl font-serif font-bold text-[#A5CE00] mb-1">
+                {/* Glow updated to Blue */}
+                <div className="absolute inset-0 bg-brand-accent/10 blur-[60px] rounded-full scale-150"></div>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full flex flex-col items-center justify-center bg-transparent border border-brand-accent/40 relative z-10 backdrop-blur-md">
+                  <span className="text-4xl md:text-5xl font-serif font-bold text-brand-accent mb-1">
                     30
                   </span>
                   <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/60">
@@ -166,7 +162,7 @@ export default function BookingSection({
                 <p className="text-white text-[11px] md:text-[12px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em]">
                   Discovery Call
                 </p>
-                <p className="text-[#A5CE00]/60 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] italic">
+                <p className="text-brand-accent/60 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] italic">
                   Strategic Structure
                 </p>
               </div>
