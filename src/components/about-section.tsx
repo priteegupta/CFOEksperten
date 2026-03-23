@@ -49,7 +49,7 @@ export default function AboutSection({
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 md:py-44 bg-white overflow-hidden"
+      className="pt-24 md:pt-48 pb-12 bg-white overflow-hidden"
     >
       <div className="container mx-auto px-6 max-w-7xl">
         {/* 1. SECTION HEADER */}
