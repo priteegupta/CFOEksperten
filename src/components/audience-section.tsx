@@ -32,7 +32,7 @@ export default function AudienceSection({
 
   return (
     <section
-      id="about"
+      id="audience"
       className="w-full bg-white py-24 md:py-48 overflow-hidden"
     >
       <div className="container mx-auto px-6 max-w-7xl">

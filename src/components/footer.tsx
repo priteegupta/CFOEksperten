@@ -29,7 +29,7 @@ export default function Footer({
     <footer className="bg-brand-dark text-white pt-16 pb-10 md:pt-24 md:pb-12 border-t border-white/5">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
-          {/* Column 1: Brand Identity */}
+          {/* Column 1 */}
           <div className="flex flex-col space-y-6 md:space-y-8">
             <div className="relative h-16 w-44 sm:h-20 sm:w-56 md:h-28 md:w-72 lg:h-18 lg:w-45">
               <Image
@@ -46,7 +46,7 @@ export default function Footer({
             </p>
           </div>
 
-          {/* Column 2: Navigation - INCREASED SIZE */}
+          {/* Column 2 */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
               {dictionary.footer.quick_links}
@@ -79,30 +79,33 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Column 3: Services Links - INCREASED SIZE */}
+          {/* Column 3 (FIXED HERE) */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
               {dictionary.footer.services}
             </h4>
             <ul className="space-y-3 md:space-y-5 text-[13px] lg:text-[15px] text-slate-300 tracking-wide uppercase font-medium">
-              {["budget", "liquidity", "forecast", "virtual_cfo"].map((key) => (
-                <li key={key}>
-                  <button
-                    onClick={(e) => scrollToSection(e, "services")}
-                    className="hover:text-brand-accent transition-all duration-300 text-left"
-                  >
-                    {
-                      dictionary.services[
-                        key as keyof typeof dictionary.services
-                      ].title
-                    }
-                  </button>
-                </li>
-              ))}
+              {["budget", "liquidity", "forecast", "virtual_cfo"].map((key) => {
+                const service =
+                  dictionary.services[key as keyof typeof dictionary.services];
+
+                return (
+                  <li key={key}>
+                    <button
+                      onClick={(e) => scrollToSection(e, "services")}
+                      className="hover:text-brand-accent transition-all duration-300 text-left"
+                    >
+                      {typeof service === "object" && service !== null
+                        ? service.title
+                        : service}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
-          {/* Column 4: Contact Details - INCREASED SIZE */}
+          {/* Column 4 */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
               {dictionary.footer.contact}
@@ -118,6 +121,7 @@ export default function Footer({
                   1262 Oslo, {lang === "no" ? "Norge" : "Norway"}
                 </p>
               </div>
+
               <div className="space-y-3 pt-2">
                 <a
                   href="tel:+4798164037"
@@ -125,7 +129,7 @@ export default function Footer({
                 >
                   <span className="text-brand-accent group-hover:translate-x-1 transition-transform">
                     →
-                  </span>{" "}
+                  </span>
                   Tlf: +47 98 16 40 37
                 </a>
                 <a
@@ -134,7 +138,7 @@ export default function Footer({
                 >
                   <span className="text-brand-accent group-hover:translate-x-1 transition-transform">
                     →
-                  </span>{" "}
+                  </span>
                   hei@cfoeksperten.no
                 </a>
               </div>
@@ -142,7 +146,7 @@ export default function Footer({
           </div>
         </div>
 
-        {/* Bottom Bar - RESTORED CLOUD369 LOGO APPEARANCE */}
+        {/* Bottom */}
         <div className="mt-16 md:mt-20 pt-10 border-t border-white/5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
             <div className="order-1 md:order-2 flex-1 flex justify-center gap-6 sm:gap-10">
@@ -168,7 +172,6 @@ export default function Footer({
               </p>
             </div>
 
-            {/* DESIGN CREDIT: RESTORED ORIGINAL LOGO STYLE */}
             <div className="order-3 flex-1 flex flex-col sm:flex-row justify-center md:justify-end items-center gap-2 sm:gap-4">
               <span className="text-[9px] text-slate-600 uppercase tracking-[0.3em] font-medium whitespace-nowrap">
                 Designed & Managed by
@@ -178,7 +181,7 @@ export default function Footer({
                   src="/cloud369logo.png"
                   alt="Cloud369"
                   fill
-                  className="object-contain brightness-110 contrast-125 saturate-100" // Restored original pop
+                  className="object-contain brightness-110 contrast-125 saturate-100"
                 />
               </div>
             </div>

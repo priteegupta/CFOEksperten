@@ -12,6 +12,7 @@ export default function AboutSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
+  // These icons match the 3 partners in your JSON: Adiam, Raman, and Amit
   const icons = [
     <svg
       key="1"
@@ -41,7 +42,7 @@ export default function AboutSection({
       stroke="currentColor"
       strokeWidth={1.5}
     >
-      <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>,
   ];
 
@@ -49,10 +50,10 @@ export default function AboutSection({
     <section
       ref={sectionRef}
       id="about"
-      className="pt-24 md:pt-48 pb-12 bg-white overflow-hidden"
+      className="pt-24 md:pt-40 pb-12 bg-white overflow-hidden"
     >
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* 1. SECTION HEADER */}
+        {/* 1. HEADER - Pulls "A team you can trust" and Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +64,7 @@ export default function AboutSection({
             <div className="flex items-center gap-4 mb-8">
               <span className="w-12 h-[2px] bg-brand-accent"></span>
               <span className="text-brand-accent text-[13px] font-black uppercase tracking-[0.5em]">
-                {dictionary.about.title}
+                {dictionary.navbar.about_us}
               </span>
             </div>
             <h2 className="text-6xl md:text-8xl font-serif font-bold text-brand-dark leading-[0.9] tracking-tighter">
@@ -83,7 +84,7 @@ export default function AboutSection({
           </motion.div>
         </div>
 
-        {/* 2. CORE PILLARS */}
+        {/* 2. TEAM PILLARS - Pulls from "team" array in JSON */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {dictionary.about.team.map((member, index) => (
             <motion.div
@@ -94,24 +95,23 @@ export default function AboutSection({
               className="group relative h-full"
             >
               <div className="h-full bg-slate-50 rounded-[40px] p-10 md:p-12 overflow-hidden transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.1)] border border-transparent hover:border-brand-accent/20">
-                {/* LARGE WATERMARK (Adiam's Seniority Highlight) */}
+                {/* LARGE WATERMARK (Years of Experience) */}
                 <div className="absolute -top-6 -right-6 text-[160px] font-serif font-bold text-slate-200/20 pointer-events-none group-hover:text-brand-accent/5 transition-all duration-700">
                   {member.years}
                 </div>
 
-                {/* ICON & PILL TAG (NEW LIGHT BLUE THEME) */}
+                {/* ICON & EXPERIENCE PILL */}
                 <div className="flex justify-between items-start mb-12 relative z-10">
                   <div className="text-brand-accent group-hover:scale-110 transition-transform duration-500">
                     {icons[index % icons.length]}
                   </div>
 
-                  {/* THE PILL: Blue text, soft blue background, rounded */}
                   <span className="text-[11px] font-black text-brand-accent uppercase tracking-widest bg-brand-accent/10 px-5 py-2.5 rounded-full border border-brand-accent/10 shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-all duration-500">
                     {member.years}+ YRS
                   </span>
                 </div>
 
-                {/* MEMBER CONTENT */}
+                {/* PARTNER CONTENT */}
                 <div className="relative z-10">
                   <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-2">
                     {member.name}
