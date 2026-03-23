@@ -14,11 +14,12 @@ export async function generateStaticParams() {
 }
 
 export const metadata = {
-    title: 'CFO Eksperten',
-    description: 'Expert CFO services tailored to scale your modern enterprise. Offering operating budgets, liquidity management, and virtual CFO solutions.',
-    icons: {
-        icon: '/logo_.png',
-    },
+  title: "CFO Eksperten",
+  description:
+    "Expert CFO services tailored to scale your modern enterprise. Offering operating budgets, liquidity management, and virtual CFO solutions.",
+  icons: {
+    icon: "/logo_provided.png",
+  },
 };
 
 export default async function RootLayout({
