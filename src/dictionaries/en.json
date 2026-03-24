@@ -29,13 +29,13 @@
         "bio": "Adiam has held several leadership positions in the Oil & Gas, IT, and Waste Management sectors. She has founded companies in tech and energy and served on boards of listed companies. She is a Computer Engineer."
       },
       {
-        "name": "Raman",
+        "name": "Raman Parwal",
         "role": "Partner",
         "years": "16",
         "bio": "Raman is a state-authorized accountant with over 15 years of experience in Finance and Strategy, specializing in M&A and group strategy. He has previously worked for Deloitte and Ernst & Young."
       },
       {
-        "name": "Amit",
+        "name": "Amit Mantri",
         "role": "Partner",
         "years": "16",
         "bio": "Amit specializes in growth strategy and structuring and has over 15 years of experience as a strategy consultant."
@@ -106,6 +106,25 @@
     "stat_number": "67%",
     "stat_text": "of Norwegian startups lack good enough budgets that investors trust."
   },
+ "customer_stories": {
+  "title_badge": "Success Stories",
+  "title": "Trusted by visionary founders",
+  "subtitle": "How we've helped Norwegian and international startups secure funding and scale.",
+  "stories": [
+    {
+      "text": "CFO Eksperten transformed our messy spreadsheets into an investor-ready model that helped us close our Series A.",
+      "company": "TechScale AS"
+    },
+    {
+      "text": "The strategic foresight Raman provided was instrumental in our expansion. More than just accountants, they are partners.",
+      "company": "Nordic Green Energy"
+    },
+    {
+      "text": "Fixed pricing and fast delivery. They understood exactly what our board needed to see.",
+      "company": "Oslo Fintech Lab"
+    }
+  ]
+},
   "audience": {
     "title": "For Whom",
     "subtitle": "We help startups in all phases",

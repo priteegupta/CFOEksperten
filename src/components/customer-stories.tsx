@@ -1,60 +1,101 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { type Dictionary } from "@/get-dictionary";
 
-export function CustomerStories() {
-  const stories = [
-    {
-      name: "John Doe",
-      role: "CEO, TechFlow Solutions",
-      quote: "Partnering with CFO Eksperten was the best financial decision we made. They restructured our capital model and extended our runway by 18 months.",
-      image: "/team1.jpeg" // using placeholder image until client updates
-    },
-    {
-      name: "Jane Smith",
-      role: "Founder, GreenEnergy Nordic",
-      quote: "Their financial dashboards gave us complete clarity. We went from cash flow panic to confident, strategic growth within a single quarter.",
-      image: "/team3.jpeg"
-    },
-    {
-      name: "Erik Johansen",
-      role: "Managing Director, OsloRetail",
-      quote: "Before them, our bookkeeping was a mess. Now, we have a clear, automated pipeline and expert strategy meetings every month.",
-      image: "/team1.jpeg" // using placeholder image until client updates
-    }
-  ];
+interface Story {
+  text: string;
+  company: string;
+}
+
+export default function CustomerStories({
+  dictionary,
+}: {
+  dictionary: Dictionary;
+}) {
+  const stories = (dictionary.customer_stories?.stories as Story[]) || [];
+  const { title, subtitle, title_badge } = dictionary.customer_stories || {};
 
   return (
-    <section className="py-24 bg-[#0F172A] text-white">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="mb-16 text-center">
-          <span className="text-[#3B82F6] text-[10px] font-black uppercase tracking-[0.3em] block mb-4">
-            Testimonials
-          </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">
-            Customer Stories
-          </h2>
-          <p className="text-lg text-slate-400 font-sans max-w-2xl mx-auto">
-            See how our tailored financial strategies have transformed businesses across the Nordics.
-          </p>
+    <section
+      id="customers"
+      className="relative py-28 md:py-40 bg-brand-gradient-dark text-white overflow-hidden"
+    >
+      {/* AMBIENT OVERLAY: Adds depth to the gradient */}
+      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none"></div>
+
+      <div className="relative container mx-auto px-6 max-w-7xl">
+        {/* HEADER: (Split Grid) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-end">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-12 h-[2px] bg-brand-accent"></span>
+              <span className="text-brand-accent text-[12px] font-black uppercase tracking-[0.5em]">
+                {title_badge || "CASE STUDIES"}
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold tracking-tighter leading-[0.95]">
+              {title}
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 lg:pb-2"
+          >
+            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed italic border-l-2 border-white/10 pl-8">
+              {subtitle}
+            </p>
+          </motion.div>
         </div>
 
+        {/* CASE STUDY CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stories.map((story, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-slate-800">
-                  <Image src={story.image} alt={story.name} fill className="object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white tracking-wide">{story.name}</h4>
-                  <p className="text-[#3B82F6] text-[10px] uppercase tracking-wider">{story.role}</p>
+          {stories.map((story: Story, i: number) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.2 }}
+              whileHover={{ y: -12 }}
+              className="group relative flex flex-col h-full bg-white/[0.04] border border-white/10 rounded-[40px] p-10 backdrop-blur-md transition-all duration-700 hover:bg-white/[0.08] hover:border-brand-accent/40"
+            >
+              {/* INTERACTIVE GLOW: Card emits a gradient glow on hover */}
+              <div className="absolute inset-0 rounded-[40px] bg-brand-gradient blur-2xl opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"></div>
+
+              {/* QUOTE ICON */}
+              <div className="text-5xl font-serif mb-8 text-brand-accent transition-transform duration-500 group-hover:translate-x-2">
+                “
+              </div>
+
+              {/* TESTIMONIAL TEXT */}
+              <p className="text-lg md:text-xl text-slate-200 font-light leading-relaxed mb-12 italic opacity-80 group-hover:opacity-100 transition-opacity">
+                {story.text}
+              </p>
+
+              {/* FOOTER */}
+              <div className="mt-auto border-t border-white/10 pt-8">
+                <h4 className="text-white font-bold tracking-widest text-[12px] uppercase mb-3">
+                  {story.company}
+                </h4>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-[1px] bg-brand-gradient group-hover:w-20 transition-all duration-700"></div>
+                  <span className="text-[9px] font-black text-brand-accent uppercase tracking-widest opacity-60">
+                    Verified
+                  </span>
                 </div>
               </div>
-              <p className="text-slate-300 italic font-light leading-relaxed">
-                "{story.quote}"
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

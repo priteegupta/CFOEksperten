@@ -1,7 +1,6 @@
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 import Image from 'next/image';
-import { HeroSlider } from '@/components/hero-slider';
 import PartnerStats from '@/components/partner-stats';
 import ChallengeSection from '@/components/challenge-section';
 import AudienceSection from '@/components/audience-section';
@@ -10,8 +9,7 @@ import ServicesSection from '@/components/services-section';
 import BookingSection from "@/components/booking-section";
 import FAQSection from "@/components/FAQSection";
 import PackagesSection from "@/components/packages-section";
-// import { CustomerStories } from "@/components/customer-stories";
-
+import CustomerStories from "@/components/customer-stories";
 import { HeroContent } from '@/components/hero-content';
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
@@ -38,7 +36,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <AboutSection dictionary={dictionary} />
 
         {/* Customer Stories Section */}
-        {/* <CustomerStories /> */}
+        <CustomerStories dictionary={dictionary} />
 
         {/* PACKAGES SECTION  */}
         <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} />

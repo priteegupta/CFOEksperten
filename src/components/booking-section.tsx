@@ -20,7 +20,7 @@ export default function BookingSection({
   const isClient = useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false,
+    () => false
   );
 
   const CALENDLY_URL = "https://calendly.com/adiam-negassie/30min";
@@ -36,7 +36,7 @@ export default function BookingSection({
   if (!isClient) return null;
 
   return (
-    <section id="book-meeting" className="py-16 md:py-24 bg-white scroll-mt-20">
+    <section id="book-meeting" className="py-8 md:py-16 bg-white scroll-mt-20">
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
@@ -52,7 +52,7 @@ export default function BookingSection({
           {/* Left Content */}
           <div className="p-8 md:p-20 flex-1 bg-white relative z-10 order-2 md:order-1">
             <div className="flex items-center gap-4 mb-8 md:mb-12">
-              {/* ADIAM: Blue Accent Line */}
+              {/*  Blue Accent Line */}
               <span className="w-8 md:w-12 h-[1px] bg-brand-accent"></span>
               <span className="text-brand-dark text-[10px] font-black uppercase tracking-[0.4em]">
                 {dictionary.booking.notice}
@@ -80,7 +80,7 @@ export default function BookingSection({
           </div>
 
           {/* Right Panel: Blue Constellations */}
-          <div className="h-[300px] md:h-auto md:w-[42%] bg-brand-dark relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2">
+          <div className="h-[300px] md:h-auto md:w-[42%] bg-brand-gradient-dark relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2 border-l border-white/5">
             <div className="absolute inset-0 opacity-80 pointer-events-none">
               <svg
                 className="w-full h-full"
@@ -106,7 +106,7 @@ export default function BookingSection({
                 </defs>
                 <path
                   d="M100 150L250 100L350 250L200 400L50 350L100 150"
-                  stroke="#60A5FA" // ADIAM: Light Blue Path
+                  stroke="#60A5FA"
                   strokeWidth="1.5"
                   strokeDasharray="1000"
                   strokeDashoffset="1000"
@@ -132,7 +132,7 @@ export default function BookingSection({
                     cx={point.x}
                     cy={point.y}
                     r="4"
-                    fill="#60A5FA" // ADIAM: Light Blue Nodes
+                    fill="#60A5FA"
                   >
                     <animate
                       attributeName="opacity"

@@ -95,6 +95,7 @@ export function Navbar({
     { id: "customers", label: dictionary.customers, isAnchor: true },
     { id: "packages", label: dictionary.our_packages, isAnchor: true },
     { id: "faq", label: dictionary.faq, isAnchor: true },
+    
   ];
 
   const isLinkActive = (item: NavLink) => {
@@ -129,10 +130,14 @@ export function Navbar({
               setIsMobileMenuOpen(false);
             }
           }}
-          className="flex flex-shrink-0 items-center group -ml-4"
+          className="flex flex-shrink-0 items-center group"
         >
           <div
-            className={`relative transition-all duration-300 group-hover:scale-105 h-24 w-64 sm:h-20 sm:w-56 md:h-32 md:w-72`}
+            className={`relative transition-all duration-300 group-hover:scale-105 
+  h-30 w-72 
+  sm:h-26 sm:w-68 
+  md:h-32 md:w-80 
+  lg:h-40 lg:w-98 lg:max-w-[260px]`}
           >
             <Image
               src="/logo_provided.png"
@@ -142,7 +147,6 @@ export function Navbar({
                 isOverHero ? "brightness-0 invert" : "brightness-100"
               }`}
               priority
-              unoptimized
             />
           </div>
         </Link>
@@ -200,13 +204,25 @@ export function Navbar({
 
           <button
             onClick={(e) => scrollToSection(e, "book-meeting")}
-            className={`hidden sm:block px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-500 ${
+            /* Added group/nav and overflow-hidden to contain the inner fade layer */
+            className={`group/nav relative hidden sm:block px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-700 cursor-pointer overflow-hidden shadow-lg ${
               isOverHero
                 ? "bg-white/10 text-white border border-white/30 hover:bg-white hover:text-brand-dark"
-                : "bg-brand-dark text-white hover:bg-brand-accent shadow-lg shadow-brand-accent/20"
+                : "bg-brand-gradient text-white shadow-brand-accent/20"
             }`}
           >
-            {dictionary.book_a_meeting}
+            {/* THE HOVER LAYER: This creates the smooth, slow transition to #60A5FA */}
+            {!isOverHero && (
+              <div className="absolute inset-0 bg-brand-accent opacity-0 group-hover/nav:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            )}
+
+            {/* THE CONTENT: Wrapped in z-10 to stay visible above the fading layer */}
+            <div className="relative z-10 flex items-center gap-2">
+              {!isOverHero && (
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse group-hover/nav:bg-brand-dark transition-colors duration-700" />
+              )}
+              <span>{dictionary.book_a_meeting}</span>
+            </div>
           </button>
 
           {/* MOBILE HAMBURGER BUTTON */}

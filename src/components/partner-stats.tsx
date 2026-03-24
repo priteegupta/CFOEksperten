@@ -41,17 +41,22 @@ function AnimatedCounter({
   return (
     <motion.span
       ref={ref}
+      //  "Pop" logic 
       animate={
         isDone
           ? {
-              scale: [1, 1.1, 1],
-              textShadow: "0px 0px 25px rgba(96, 165, 250, 0.4)",
-              color: "#60A5FA",
+              scale: [1, 1.15, 1], // The physical pop
+              textShadow: "0px 0px 30px rgba(96, 165, 250, 0.5)", // The glow
             }
           : {}
       }
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="inline-block font-serif tracking-tighter text-brand-dark transition-colors duration-700"
+      transition={{
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1], // Snappier "Senior Dev" easing
+      }}
+      className={`inline-block font-serif tracking-tighter transition-colors duration-1000 ${
+        isDone ? "text-brand-gradient" : "text-brand-dark"
+      }`}
     >
       0{suffix}
     </motion.span>
@@ -63,26 +68,25 @@ export default function PartnerStats({
 }: {
   dictionary: Dictionary;
 }) {
-  // ✅ ALL 22 IMAGES - ORIGINAL COLOR & PREVIOUS SIZES
   const partnerLogos = [
     { src: "/company1.jpeg" },
-    { src: "/company2.jpeg" },
-    { src: "/company3.jpeg" },
-    { src: "/company4.jpeg" },
+    { src: "/company2.jpeg", size: "large" },
+    { src: "/company3.jpeg", size: "large" },
+    { src: "/company4.png", size: "xl" },
     { src: "/company5.jpeg" },
-    { src: "/company6.png", size: "large" },
-    { src: "/company7.jpeg" },
-    { src: "/company8.jpeg" },
-    { src: "/company9.jpeg" },
+    { src: "/company6.png", size: "xl" },
+    { src: "/company7.png", size: "xl" },
+    { src: "/company8.png", size: "xl" },
+    { src: "/company9.jpeg", size: "xl" },
     { src: "/company10.jpeg" },
     { src: "/company11.jpeg" },
-    { src: "/company12.png" },
-    { src: "/company13.png" },
-    { src: "/company14.png" },
-    { src: "/company15.png" },
-    { src: "/company16.png" },
+    { src: "/company12.png", size: "large" },
+    { src: "/company13.png", size: "xl" },
+    { src: "/company14.png", size: "xl" },
+    { src: "/company15.jpeg", size: "large" },
+    { src: "/company16.png", size: "xl" },
     { src: "/company17.png" },
-    { src: "/company18.png" },
+    { src: "/company18.png", size:"large" },
     { src: "/company19.png" },
     { src: "/company20.png" },
     { src: "/company21.png" },
@@ -103,7 +107,6 @@ export default function PartnerStats({
 
   return (
     <section className="w-full bg-white py-20 border-b border-slate-50 overflow-hidden">
-      {/* 1. SCROLLING MARQUEE - MATCHING YOUR SPEED CODE */}
       <div className="relative w-full mb-24 overflow-hidden">
         <style jsx>{`
           @keyframes marquee {
@@ -124,26 +127,32 @@ export default function PartnerStats({
           }
         `}</style>
 
-        {/* Gradient edges for that "faded" look */}
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
-        <div className="custom-marquee items-center py-4">
+        <div className="custom-marquee flex items-center gap-12 py-4">
           {[...partnerLogos, ...partnerLogos].map((logo, index) => {
             const isLarge = logo.size === "large";
+            const isXL = logo.size === "xl";
+
             return (
               <div
                 key={index}
-                className={`flex-shrink-0 mx-10 relative transition-all duration-500 hover:scale-110 cursor-pointer ${
-                  isLarge ? "w-56 h-24" : "w-48 h-20"
-                }`}
+                className={`flex-shrink-0 relative flex items-center justify-center transition-all duration-500 hover:scale-105 cursor-pointer 
+        ${isXL ? "w-96 h-36" : isLarge ? "w-64 h-28" : "w-56 h-24"}`}
               >
                 <Image
                   src={logo.src}
                   alt={`Partner ${index}`}
                   fill
-                  className={`object-contain p-2 grayscale-0 opacity-100 ${isLarge ? "scale-125" : ""}`}
-                  unoptimized
+                  className={`object-contain object-center ${
+                    isXL ? "p-1" : isLarge ? "p-2" : "p-4"
+                  }`}
+                  // ADIAM: This prop tells the browser the maximum width these images
+                  // will actually take up, preventing the download of huge files.
+                  sizes={isXL ? "384px" : isLarge ? "256px" : "224px"}
+                  // Performance tip: only prioritize the first few visible logos
+                  priority={index < 6}
                 />
               </div>
             );
@@ -151,12 +160,10 @@ export default function PartnerStats({
         </div>
       </div>
 
-      {/* 2. NUMERICAL STATS - REFINED DESKTOP SIZE & BLUE POP */}
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
-              {/* Reduced size for desktop elegance */}
               <div className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-2">
                 <AnimatedCounter
                   to={stat.to}
@@ -175,12 +182,12 @@ export default function PartnerStats({
                 {stat.label}
               </motion.div>
 
-              {/* Light Blue Accent Line */}
+              {/*  'bg-brand-gradient' and made it slightly taller */}
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: "32px" }}
+                whileInView={{ width: "40px" }}
                 transition={{ duration: 0.8, delay: stat.delay / 1000 + 0.8 }}
-                className="h-[2px] bg-brand-accent mt-6 rounded-full"
+                className="h-[3px] bg-brand-gradient mt-6 rounded-full"
               />
             </div>
           ))}

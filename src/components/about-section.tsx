@@ -12,7 +12,7 @@ export default function AboutSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  // These icons match the 3 partners in your JSON: Adiam, Raman, and Amit
+  // These icons match the 3 partners in  JSON: Adiam, Raman, and Amit
   const icons = [
     <svg
       key="1"

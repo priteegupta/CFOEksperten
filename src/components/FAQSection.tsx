@@ -60,9 +60,9 @@ export default function FAQSection({
           <div className="lg:w-1/3">
             <div className="sticky top-32">
               <div className="flex items-center gap-3 mb-8">
-                {/* ADIAM: Light Blue Accent Line */}
+                {/* Light Blue Accent Line */}
                 <span className="w-12 h-[2px] bg-brand-accent rounded-full"></span>
-                <span className="text-brand-dark/60 text-[10px] font-black uppercase tracking-[0.6em]">
+                <span className="text-brand-dark/60 text-[14px] font-black uppercase tracking-[0.6em]">
                   {faqData.notice || "FAQ"}
                 </span>
               </div>
@@ -143,7 +143,7 @@ export default function FAQSection({
                   <div
                     className={`mt-2 relative w-6 h-6 flex-shrink-0 transition-transform duration-500 ${activeId === faq.id ? "rotate-180" : ""}`}
                   >
-                    {/* ADIAM: Toggle bars now Blue */}
+                    {/*  Toggle bars now Blue */}
                     <span className="absolute inset-0 m-auto h-[2px] w-5 bg-brand-accent rounded-full"></span>
                     <span
                       className={`absolute inset-0 m-auto h-5 w-[2px] bg-brand-accent rounded-full transition-all duration-500 ${activeId === faq.id ? "rotate-90 opacity-0" : ""}`}

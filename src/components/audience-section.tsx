@@ -11,7 +11,7 @@ export default function AudienceSection({
 }) {
   const { title, subtitle, groups, bottom_text } = dictionary.audience;
 
-  // Professional SVG Icon Set
+  //  SVG Icon Set
   const getIcon = (index: number) => (
     <svg
       className="w-6 h-6"
@@ -37,7 +37,7 @@ export default function AudienceSection({
     >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          {/* LEFT: FINANCIAL DASHBOARD IMAGE */}
+          {/*  FINANCIAL DASHBOARD IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

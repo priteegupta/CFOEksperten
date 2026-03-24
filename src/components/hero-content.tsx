@@ -26,7 +26,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
       {/* BACKGROUND CONTAINER - REDUCED DARKNESS FOR VISIBILITY */}
       <div className="absolute inset-0 z-0 bg-[#0F172A]">
         <Image
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
+          src="https://brightadvisers.com/wp-content/uploads/2025/06/mastering-cfo-family-office-jobs-essential-steps-for-success.png"
           alt="CFO Eksperten Strategic Team"
           fill
           className="object-cover opacity-80 transition-transform duration-1000 scale-105"

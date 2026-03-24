@@ -7,8 +7,8 @@
     /* The "Aker Brygge" Deep Blue - Primary background for footers */
     --brand-dark: #0F172A; 
     
-    /* NEW: Lighter, Sophisticated Blue Accent (Adiam's Request) */
-    /* This replaces the vibrant blue in your screenshot with a softer Sky Blue */
+    /* NEW: Lighter, Sophisticated Blue Accent */
+  
     --brand-accent: #60A5FA; 
     
     /* Professional Surface - Soft Ice Blue background */
@@ -39,6 +39,8 @@
   --animate-marquee: marquee 30s linear infinite;
   --animate-fade-up: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
+  
+
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
@@ -52,6 +54,39 @@
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  
+  .bg-brand-gradient {
+    background: linear-gradient(
+      135deg,
+      #0A1F3D 0%,
+      #1F3F6E 33%,
+      #3E6FA5 66%,
+      #7FA6D9 100%
+    );
+  }
+
+ 
+  .bg-brand-gradient-dark {
+    background: linear-gradient(
+      155deg,
+      #0F172A 0%,    /* Deep Navy */
+      #162641 35%,   /* Mid Navy */
+      #1F3F6E 65%,   /* Business Blue */
+      #0F172A 100%   /* Return to Deep Navy */
+    );
+  }
+
+  
+  .text-brand-gradient {
+    background: linear-gradient(135deg, #0A1F3D 0%, #1F3F6E 33%, #3E6FA5 66%, #7FA6D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
   }
 }
 

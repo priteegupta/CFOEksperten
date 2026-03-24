@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
@@ -11,7 +12,11 @@ export default function Footer({
   dictionary: Dictionary;
   lang: string;
 }) {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
@@ -26,17 +31,19 @@ export default function Footer({
   };
 
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-10 md:pt-24 md:pb-12 border-t border-white/5">
+    <footer className="bg-brand-gradient-dark text-white pt-16 pb-10 md:pt-24 md:pb-12 border-t border-white/5">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
           {/* Column 1 */}
           <div className="flex flex-col space-y-6 md:space-y-8">
-            <div className="relative h-16 w-44 sm:h-20 sm:w-56 md:h-28 md:w-72 lg:h-18 lg:w-45">
+            <div className="flex items-start justify-start">
               <Image
-                src="/footerlogo.png"
+                src="/CFOFooter.png"
                 alt="CFO Eksperten"
-                fill
-                className="object-contain object-left brightness-0 invert opacity-100"
+                width={400} 
+                height={90}
+               
+                className="h-[90px] w-auto object-contain object-left transition-transform duration-500 hover:scale-105"
                 priority
               />
             </div>
@@ -51,7 +58,7 @@ export default function Footer({
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
               {dictionary.footer.quick_links}
             </h4>
-            <ul className="space-y-3 md:space-y-5 text-[13px] lg:text-[15px] text-slate-300 tracking-wide uppercase font-medium">
+            <ul className="space-y-3 md:space-y-5 text-[14px] lg:text-[16px] text-slate-300 font-medium">
               <li>
                 <button
                   onClick={(e) => scrollToSection(e, "about")}
@@ -84,7 +91,7 @@ export default function Footer({
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
               {dictionary.footer.services}
             </h4>
-            <ul className="space-y-3 md:space-y-5 text-[13px] lg:text-[15px] text-slate-300 tracking-wide uppercase font-medium">
+            <ul className="space-y-3 md:space-y-5 text-[14px] lg:text-[16px] text-slate-300 font-medium">
               {["budget", "liquidity", "forecast", "virtual_cfo"].map((key) => {
                 const service =
                   dictionary.services[key as keyof typeof dictionary.services];
@@ -95,9 +102,12 @@ export default function Footer({
                       onClick={(e) => scrollToSection(e, "services")}
                       className="hover:text-brand-accent transition-all duration-300 text-left"
                     >
-                      {typeof service === "object" && service !== null
-                        ? service.title
-                        : service}
+                      <span className="capitalize">
+                        {(typeof service === "object" && service !== null
+                          ? service.title
+                          : service
+                        ).toLowerCase()}
+                      </span>
                     </button>
                   </li>
                 );
@@ -142,40 +152,60 @@ export default function Footer({
                   hei@cfoeksperten.no
                 </a>
               </div>
+              {/* LINKEDIN LINK */}
+              <div className="pt-4">
+                <a
+                  href="https://www.linkedin.com/in/adiamnegassie/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-10 h-10 border border-white/10 hover:border-brand-accent hover:bg-brand-accent hover:text-brand-dark transition-all duration-500 rounded-sm"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom */}
+        {/* Bottom Copyright Section */}
         <div className="mt-16 md:mt-20 pt-10 border-t border-white/5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
+            {/* Middle Links: Changed to slate-300 for better visibility */}
             <div className="order-1 md:order-2 flex-1 flex justify-center gap-6 sm:gap-10">
               <Link
                 href="#"
-                className="text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-brand-accent transition-colors whitespace-nowrap"
+                className="text-[10px] text-slate-300 uppercase tracking-[0.2em] hover:text-brand-accent transition-colors whitespace-nowrap"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="#"
-                className="text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-brand-accent transition-colors whitespace-nowrap"
+                className="text-[10px] text-slate-300 uppercase tracking-[0.2em] hover:text-brand-accent transition-colors whitespace-nowrap"
               >
                 Terms of Service
               </Link>
             </div>
 
+            {/* Left Side: Copyright (Lighter and clearer) */}
             <div className="order-2 md:order-1 flex-1">
-              <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] text-center md:text-left">
+              <p className="text-[10px] text-slate-300 uppercase tracking-[0.2em] text-center md:text-left">
                 © {currentYear}{" "}
-                <span className="text-white/60">CFO EKSPERTEN</span>.{" "}
+                <span className="text-white font-bold">CFO EKSPERTEN</span>.{" "}
                 {dictionary.footer.rights}
               </p>
             </div>
 
+            {/* Right Side: Designed By (Visible but subtle) */}
             <div className="order-3 flex-1 flex flex-col sm:flex-row justify-center md:justify-end items-center gap-2 sm:gap-4">
-              <span className="text-[9px] text-slate-600 uppercase tracking-[0.3em] font-medium whitespace-nowrap">
+              <span className="text-[9px] text-slate-300 uppercase tracking-[0.3em] font-medium whitespace-nowrap">
                 Designed & Managed by
               </span>
+              {/* NO LOGO CHANGES HERE - Original visibility kept */}
               <div className="relative h-10 w-24 md:h-12 md:w-28 group cursor-pointer">
                 <Image
                   src="/cloud369logo.png"

@@ -32,7 +32,7 @@ export default function PackagesSection({
       className="pt-12 pb-24 md:pt-20 md:pb-40 bg-white overflow-hidden scroll-mt-20"
     >
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* HEADER AREA: Authoritative Executive Style */}
+        {/* HEADER AREA */}
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -54,16 +54,10 @@ export default function PackagesSection({
               <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed italic border-l-2 border-slate-100 pl-8">
                 {dictionary.packages.subtitle}
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed tracking-wide">
-                Our packages are designed to scale with your business. Whether
-                you are a fast-growing startup seeking investment, or an
-                established company needing rigorous financial oversight, we
-                provide predictable, high-quality CFO services.
-              </p>
             </div>
           </motion.div>
 
-          {/* CURRENCY SWITCHER: Glassmorphism Style */}
+          {/* CURRENCY SWITCHER */}
           {lang === "en" && (
             <div className="flex bg-slate-50 p-1.5 rounded-full border border-slate-100 backdrop-blur-sm shadow-inner">
               {(["USD", "EUR", "GBP"] as Currency[]).map((c) => (
@@ -106,12 +100,12 @@ export default function PackagesSection({
           />
         </div>
 
-        {/* PROCESS SECTION: High-End Nordic Dark Card */}
+        {/* PROCESS SECTION: Now using 'bg-brand-gradient-dark' */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-brand-dark rounded-[48px] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-brand-dark/20"
+          className="bg-brand-gradient-dark rounded-[48px] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-brand-dark/20"
         >
           {/* Subtle background glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 blur-[120px] rounded-full -mr-48 -mt-48" />
@@ -152,6 +146,20 @@ export default function PackagesSection({
   );
 }
 
+interface PricingCardProps {
+  data: {
+    title: string;
+    price_label: string;
+    cta: string;
+    features: string[];
+  };
+  price: string;
+  highlight?: boolean;
+  footerText?: string;
+  deliveryText?: string;
+  delay: number;
+}
+
 function PricingCard({
   data,
   price,
@@ -159,7 +167,7 @@ function PricingCard({
   footerText,
   deliveryText,
   delay,
-}: any) {
+}: PricingCardProps) {
   const handleClick = () => {
     window.open(
       "https://docs.google.com/forms/d/e/1FAIpQLSdviHbCMWRelhxvjSRKcICDO2fruDWXQ03R2ChPqvB1rjbu4Q/viewform",
@@ -180,7 +188,6 @@ function PricingCard({
           : "bg-white border border-slate-100 hover:shadow-2xl hover:shadow-brand-dark/5"
       }`}
     >
-      {/* Increased size to 15px and set color to #0F172A */}
       <h3 className="text-[15px] font-black uppercase tracking-[0.35em] text-slate-400 mb-10">
         {data.title}
       </h3>
@@ -223,25 +230,44 @@ function PricingCard({
         </div>
       )}
 
+      {/* BUTTON LOGIC: Universal Pointer + Gradient Hover for Middle Card */}
       <button
         onClick={handleClick}
-        className={`w-full py-6 rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-500 ${
-          highlight
-            ? "bg-brand-dark text-white hover:bg-brand-accent shadow-xl shadow-brand-dark/10"
-            : "border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white"
-        }`}
+        className={`
+    group/btn relative w-full py-6 rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] 
+    cursor-pointer overflow-hidden transition-all duration-700 shadow-xl
+    ${
+      highlight
+        ? "bg-brand-gradient text-white shadow-brand-dark/10"
+        : "border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white"
+    }
+  `}
       >
-        {data.cta}
+        {/* THE HOVER LAYER: This is the secret to the smooth color swap */}
+        {highlight && (
+          <div className="absolute inset-0 bg-brand-accent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700 pointer-events-none" />
+        )}
+
+        {/* THE TEXT: Needs to stay on top of the hover layer */}
+        <span className="relative z-10">{data.cta}</span>
       </button>
     </motion.div>
   );
 }
 
-function ProcessStep({ number, title, desc, primary }: any) {
+interface ProcessStepProps {
+  number: string;
+  title: string;
+  desc: string;
+  primary?: boolean;
+}
+
+function ProcessStep({ number, title, desc, primary }: ProcessStepProps) {
   return (
     <div className="flex gap-10 group">
+      {/* ADIAM: Big numbers now use opacity for depth */}
       <span
-        className={`text-4xl font-serif font-bold italic leading-none ${primary ? "text-brand-accent" : "text-white/10"}`}
+        className={`text-4xl font-serif font-bold italic leading-none ${primary ? "text-brand-accent" : "text-white/20"}`}
       >
         {number}
       </span>
@@ -251,7 +277,7 @@ function ProcessStep({ number, title, desc, primary }: any) {
         >
           {title}
         </h4>
-        <p className="text-white/40 text-sm leading-relaxed max-w-sm italic font-light tracking-wide">
+        <p className="text-white/60 text-sm leading-relaxed max-w-sm italic font-light tracking-wide">
           {desc}
         </p>
       </div>

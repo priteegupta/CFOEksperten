@@ -29,13 +29,13 @@
         "bio": "Adiam har hatt flere ledende stillinger i Olje og Gass, IT og Avfallsektoren. Hun har startet selskaper innen tech og energi selskaper og sittet i styret i børsnoterte selskaper. Hun er utdannet dataingeniør."
       },
       {
-        "name": "Raman",
+        "name": "Raman Parwal",
         "role": "Partner",
         "years": "16",
         "bio": "Raman er statsautorisert regnskapsfører og har over 15 års erfaring innen Finans og Strategi, spesialisert i M&A og konsernstrategi. Han har tidligere jobbet for Deloitte og EY."
       },
       {
-        "name": "Amit",
+        "name": "Amit Mantri",
         "role": "Partner",
         "years": "16",
         "bio": "Amit har spesialisert seg innen vekststrategi og strukturering, han har over 15 års erfaring som strategikonsulent."
@@ -105,6 +105,26 @@
     ],
     "stat_number": "67%",
     "stat_text": "av norske startups mangler gode nok budsjetter som investorer stoler på."
+  },
+   
+  "customer_stories": {
+    "title_badge": "Suksesshistorier",
+    "title": "Betrodd av visjonære gründere",
+    "subtitle": "Hvordan vi har hjulpet norske og internasjonale startups med å sikre finansiering og skalere.",
+    "stories": [
+      {
+        "text": "CFO Eksperten forvandlet våre uoversiktlige regneark til en investor-klar modell som hjalp oss med å lande vår Series A.",
+        "company": "TechScale AS"
+      },
+      {
+        "text": "Den strategiske forutsigbarheten Raman ga oss var avgjørende for vår ekspansjon. De er mer enn bare regnskapsførere – de er partnere.",
+        "company": "Nordic Green Energy"
+      },
+      {
+        "text": "Fast pris og rask levering. De forsto nøyaktig hva styret vårt trengte å se.",
+        "company": "Oslo Fintech Lab"
+      }
+    ]
   },
   "audience": {
     "title": "For hvem",
