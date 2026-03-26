@@ -35,13 +35,13 @@ export default function AudienceSection({
       id="audience"
       className="w-full bg-white py-24 md:py-48 overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           {/*  FINANCIAL DASHBOARD IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative"
           >
@@ -79,7 +79,7 @@ export default function AudienceSection({
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-4 mb-8">
@@ -106,7 +106,7 @@ export default function AudienceSection({
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ x: 12 }}
                     className="group flex items-center gap-6 p-7 rounded-3xl border border-slate-50 bg-slate-50/40 hover:bg-white hover:border-brand-accent/20 hover:shadow-xl transition-all duration-500"

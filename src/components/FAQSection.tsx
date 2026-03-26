@@ -51,7 +51,7 @@ export default function FAQSection({
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: false, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="container mx-auto px-6 max-w-7xl"
       >
@@ -118,11 +118,10 @@ export default function FAQSection({
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className={`group transition-all duration-700 ease-in-out border-b border-slate-100 ${
-                  activeId === faq.id
+                className={`group transition-all duration-700 ease-in-out border-b border-slate-100 ${activeId === faq.id
                     ? "bg-brand-light/50 p-8 md:p-10 rounded-[32px] border-transparent shadow-[0_30px_60px_-12px_rgba(15,23,42,0.05)]"
                     : "py-8 hover:bg-slate-50/50"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() =>
@@ -131,11 +130,10 @@ export default function FAQSection({
                   className="w-full flex items-start justify-between text-left gap-8"
                 >
                   <span
-                    className={`text-xl md:text-2xl font-bold transition-all duration-500 tracking-tight ${
-                      activeId === faq.id
+                    className={`text-xl md:text-2xl font-bold transition-all duration-500 tracking-tight ${activeId === faq.id
                         ? "text-brand-dark"
                         : "text-slate-600 group-hover:text-brand-dark"
-                    }`}
+                      }`}
                   >
                     {faq.question}
                   </span>

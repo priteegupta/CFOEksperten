@@ -6,20 +6,22 @@ import { ScrollToTop } from '@/components/scroll-to-top';
 import { i18n, type Locale } from '@/i18n-config';
 import { getDictionary } from '@/get-dictionary';
 
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export const metadata = {
+  metadataBase: new URL("https://cfoeksperten.no"),
   title: "CFO Eksperten | Strategic CFO Services",
   description:
     "Expert CFO services tailored to scale your modern enterprise. Offering operating budgets, liquidity management, and virtual CFO solutions.",
   openGraph: {
     title: "CFO Eksperten | Strategic CFO Services",
-    description: "Expert CFO services tailored to scale your modern enterprise.",
+    description:
+      "Expert CFO services tailored to scale your modern enterprise.",
     url: "https://cfoeksperten.no",
     siteName: "CFO Eksperten",
     images: [
@@ -35,7 +37,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CFO Eksperten | Strategic CFO Services",
-    description: "Expert CFO services tailored to scale your modern enterprise.",
+    description:
+      "Expert CFO services tailored to scale your modern enterprise.",
     images: ["/logo_provided.png"],
   },
   icons: {

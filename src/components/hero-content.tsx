@@ -38,7 +38,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0F172A]/40 z-10" />
       </div>
 
-      <div className="container relative z-20 mx-auto px-6 lg:px-12">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           {/* BADGE: Light Blue Accent */}
           <motion.div

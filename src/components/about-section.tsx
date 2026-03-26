@@ -10,7 +10,7 @@ export default function AboutSection({
   dictionary: Dictionary;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
 
   // These icons match the 3 partners in  JSON: Adiam, Raman, and Amit
   const icons = [
@@ -52,7 +52,7 @@ export default function AboutSection({
       id="about"
       className="pt-24 md:pt-40 pb-12 bg-white overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         {/* 1. HEADER - Pulls "A team you can trust" and Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-32">
           <motion.div

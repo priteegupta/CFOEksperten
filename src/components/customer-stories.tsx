@@ -30,7 +30,7 @@ export default function CustomerStories({
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
@@ -48,7 +48,7 @@ export default function CustomerStories({
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-5 lg:pb-2"
           >
@@ -65,7 +65,7 @@ export default function CustomerStories({
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8, delay: i * 0.2 }}
               whileHover={{ y: -12 }}
               className="group relative flex flex-col h-full bg-white/[0.04] border border-white/10 rounded-[40px] p-10 backdrop-blur-md transition-all duration-700 hover:bg-white/[0.08] hover:border-brand-accent/40"

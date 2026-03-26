@@ -11,7 +11,7 @@ export default function ServicesSection({
   dictionary: Dictionary;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
 
   const serviceKeys = [
     "budget",
@@ -37,7 +37,7 @@ export default function ServicesSection({
       id="services"
       className="py-24 md:py-40 bg-brand-light overflow-hidden" // Updated to Nordic Light theme color
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

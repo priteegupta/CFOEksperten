@@ -17,7 +17,7 @@ function AnimatedCounter({
   delay: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const inView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
@@ -35,6 +35,10 @@ function AnimatedCounter({
         onComplete: () => setIsDone(true),
       });
       return controls.stop;
+    } else {
+      // Defer state update to avoid cascading renders warning
+      const timeoutId = setTimeout(() => setIsDone(false), 0);
+      return () => clearTimeout(timeoutId);
     }
   }, [inView, to, delay, suffix, prefix]);
 
@@ -45,18 +49,17 @@ function AnimatedCounter({
       animate={
         isDone
           ? {
-              scale: [1, 1.15, 1], // The physical pop
-              textShadow: "0px 0px 30px rgba(96, 165, 250, 0.5)", // The glow
-            }
+            scale: [1, 1.15, 1], // The physical pop
+            textShadow: "0px 0px 30px rgba(96, 165, 250, 0.5)", // The glow
+          }
           : {}
       }
       transition={{
         duration: 0.5,
         ease: [0.16, 1, 0.3, 1], // Snappier "Senior Dev" easing
       }}
-      className={`inline-block font-serif tracking-tighter transition-colors duration-1000 ${
-        isDone ? "text-brand-gradient" : "text-brand-dark"
-      }`}
+      className={`inline-block font-serif tracking-tighter transition-colors duration-1000 ${isDone ? "text-brand-gradient" : "text-brand-dark"
+        }`}
     >
       0{suffix}
     </motion.span>
@@ -86,7 +89,7 @@ export default function PartnerStats({
     { src: "/company15.jpeg", size: "large" },
     { src: "/company16.png", size: "xl" },
     { src: "/company17.png" },
-    { src: "/company18.png", size:"large" },
+    { src: "/company18.png", size: "large" },
     { src: "/company19.png" },
     { src: "/company20.png" },
     { src: "/company21.png" },
@@ -127,8 +130,8 @@ export default function PartnerStats({
           }
         `}</style>
 
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent z-20 pointer-events-none" />
 
         <div className="custom-marquee flex items-center gap-12 py-4">
           {[...partnerLogos, ...partnerLogos].map((logo, index) => {
@@ -145,14 +148,12 @@ export default function PartnerStats({
                   src={logo.src}
                   alt={`Partner ${index}`}
                   fill
-                  className={`object-contain object-center ${
-                    isXL ? "p-1" : isLarge ? "p-2" : "p-4"
-                  }`}
-                  // ADIAM: This prop tells the browser the maximum width these images
-                  // will actually take up, preventing the download of huge files.
+                  className={`object-contain object-center ${isXL ? "p-1" : isLarge ? "p-2" : "p-4"
+                    }`}
                   sizes={isXL ? "384px" : isLarge ? "256px" : "224px"}
                   // Performance tip: only prioritize the first few visible logos
-                  priority={index < 6}
+                  priority={index < 4}
+                  loading={index < 4 ? undefined : "lazy"}
                 />
               </div>
             );
@@ -176,6 +177,7 @@ export default function PartnerStats({
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
                 transition={{ delay: stat.delay / 1000 + 0.5 }}
                 className="text-[11px] md:text-[12px] font-black text-slate-400 uppercase tracking-[0.3em] text-center"
               >
@@ -186,6 +188,7 @@ export default function PartnerStats({
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: "40px" }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.8, delay: stat.delay / 1000 + 0.8 }}
                 className="h-[3px] bg-brand-gradient mt-6 rounded-full"
               />

@@ -13,39 +13,39 @@ import CustomerStories from "@/components/customer-stories";
 import { HeroContent } from '@/components/hero-content';
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-    const resolvedParams = await params;
-    const dictionary = await getDictionary(resolvedParams.lang as Locale);
+  const resolvedParams = await params;
+  const dictionary = await getDictionary(resolvedParams.lang as Locale);
 
-    return (
-      <div className="flex flex-col bg-brand-light">
-        <HeroContent dictionary={dictionary} lang={resolvedParams.lang} />
+  return (
+    <div className="flex flex-col bg-brand-light">
+      <HeroContent dictionary={dictionary} lang={resolvedParams.lang} />
 
-        {/* Partner Logos & Stats */}
-        <PartnerStats dictionary={dictionary} />
+      {/* Partner Logos & Stats */}
+      <PartnerStats dictionary={dictionary} />
 
-        {/* The Challenge Section */}
-        <ChallengeSection dictionary={dictionary} />
+      {/* The Challenge Section */}
+      <ChallengeSection dictionary={dictionary} />
 
-        {/* For Whom / Audience Section */}
-        <AudienceSection dictionary={dictionary} />
+      {/* For Whom / Audience Section */}
+      <AudienceSection dictionary={dictionary} />
 
-        {/* Services Section (Moved Above Team per request) */}
-        <ServicesSection dictionary={dictionary} />
+      {/* Services Section (Moved Above Team per request) */}
+      <ServicesSection dictionary={dictionary} />
 
-        {/* About Section  */}
-        <AboutSection dictionary={dictionary} />
+      {/* About Section  */}
+      <AboutSection dictionary={dictionary} />
 
-        {/* Customer Stories Section */}
-        <CustomerStories dictionary={dictionary} />
+      {/* Customer Stories Section */}
+      <CustomerStories dictionary={dictionary} />
 
-        {/* PACKAGES SECTION  */}
-        <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} />
+      {/* PACKAGES SECTION  */}
+      <PackagesSection dictionary={dictionary} lang={resolvedParams.lang} />
 
-        {/* Booking Section */}
-        <BookingSection dictionary={dictionary} />
+      {/* Booking Section */}
+      <BookingSection dictionary={dictionary} />
 
-        {/* ADD THE FAQ HERE */}
-        <FAQSection dictionary={dictionary} lang={resolvedParams.lang} />
-      </div>
-    );
+      {/* ADD THE FAQ HERE */}
+      <FAQSection dictionary={dictionary} lang={resolvedParams.lang} />
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
 type Currency = "NOK" | "USD" | "EUR" | "GBP";
@@ -31,18 +31,18 @@ export default function PackagesSection({
       id="packages"
       className="pt-12 pb-24 md:pt-20 md:pb-40 bg-white overflow-hidden scroll-mt-20"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         {/* HEADER AREA */}
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-8">
-              <span className="w-10 h-[2px] bg-brand-accent rounded-full"></span>
+              <span className="w-10 h-0.5 bg-brand-accent rounded-full"></span>
               <span className="text-brand-accent text-[12px] font-black uppercase tracking-[0.5em] leading-none">
                 {dictionary.packages.title_badge}
               </span>
@@ -104,7 +104,7 @@ export default function PackagesSection({
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="bg-brand-gradient-dark rounded-[48px] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-brand-dark/20"
         >
           {/* Subtle background glow */}
@@ -112,13 +112,31 @@ export default function PackagesSection({
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
-              <span className="text-brand-accent text-[11px] font-black uppercase tracking-[0.4em] block mb-6">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6 }}
+                className="text-brand-accent text-[11px] font-black uppercase tracking-[0.4em] block mb-6"
+              >
                 {lang === "no" ? "Neste steg" : "Next Step"}
-              </span>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold italic leading-tight mb-8">
+              </motion.span>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl md:text-5xl font-serif font-bold italic leading-tight mb-8"
+              >
                 {dictionary.packages.post_click.title}
-              </h3>
-              <div className="w-16 h-[1.5px] bg-white/10"></div>
+              </motion.h3>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "64px" }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1.5px] bg-white/10"
+              ></motion.div>
             </div>
 
             <div className="lg:col-span-7 space-y-12">
@@ -179,7 +197,7 @@ function PricingCard({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -12 }}
       className={`p-10 lg:p-12 rounded-[40px] flex flex-col transition-all duration-700 ${
@@ -264,8 +282,18 @@ interface ProcessStepProps {
 
 function ProcessStep({ number, title, desc, primary }: ProcessStepProps) {
   return (
-    <div className="flex gap-10 group">
-      {/* ADIAM: Big numbers now use opacity for depth */}
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false }}
+      transition={{
+        duration: 0.8,
+        delay: parseInt(number) * 0.2,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="flex gap-10 group"
+    >
+      
       <span
         className={`text-4xl font-serif font-bold italic leading-none ${primary ? "text-brand-accent" : "text-white/20"}`}
       >
@@ -281,6 +309,6 @@ function ProcessStep({ number, title, desc, primary }: ProcessStepProps) {
           {desc}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

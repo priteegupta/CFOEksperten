@@ -28,7 +28,7 @@ export default function ChallengeSection({
       key={index}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: false, margin: "-100px" }}
       transition={{
         duration: 0.7,
         delay: delay,
@@ -79,7 +79,7 @@ export default function ChallengeSection({
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="flex items-center gap-3 mb-6">

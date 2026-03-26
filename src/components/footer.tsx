@@ -32,7 +32,7 @@ export default function Footer({
 
   return (
     <footer className="bg-brand-gradient-dark text-white pt-16 pb-10 md:pt-24 md:pb-12 border-t border-white/5">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
           {/* Column 1 */}
           <div className="flex flex-col space-y-6 md:space-y-8">
