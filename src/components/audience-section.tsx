@@ -45,7 +45,7 @@ export default function AudienceSection({
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative"
           >
-            <div className="relative aspect-[4/5] rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.15)] border border-slate-100 bg-slate-50">
+            <div className="relative aspect-4/5 rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.15)] border border-slate-100 bg-slate-50">
               <Image
                 src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2070&auto=format&fit=crop"
                 alt="Financial Analysis Dashboard"
@@ -53,14 +53,14 @@ export default function AudienceSection({
                 className="object-cover"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-brand-dark/20 to-transparent pointer-events-none" />
             </div>
 
             {/* FLOATING QUOTE CARD */}
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -right-6 md:-right-10 bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-[32px] shadow-2xl hidden sm:block border border-white/40 max-w-[320px]"
+              className="absolute -bottom-10 -right-6 md:-right-10 bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-4xl shadow-2xl hidden sm:block border border-white/40 max-w-[320px]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
@@ -83,7 +83,7 @@ export default function AudienceSection({
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-4 mb-8">
-                <span className="w-12 h-[2px] bg-brand-accent"></span>
+                <span className="w-12 h-0.5 bg-brand-accent"></span>
                 <span className="text-brand-accent text-[13px] md:text-[14px] font-black uppercase tracking-[0.6em] leading-none">
                   {title}
                 </span>

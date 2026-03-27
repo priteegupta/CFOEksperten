@@ -36,7 +36,10 @@ export default function BookingSection({
   if (!isClient) return null;
 
   return (
-    <section id="book-meeting" className="py-8 md:py-16 bg-white scroll-mt-20">
+    <section
+      id="book-meeting"
+      className="pt-4 pb-8 md:pt-6 md:pb-10 bg-white scroll-mt-20"
+    >
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
@@ -53,7 +56,7 @@ export default function BookingSection({
           <div className="p-8 md:p-20 flex-1 bg-white relative z-10 order-2 md:order-1">
             <div className="flex items-center gap-4 mb-8 md:mb-12">
               {/*  Blue Accent Line */}
-              <span className="w-8 md:w-12 h-[1px] bg-brand-accent"></span>
+              <span className="w-8 md:w-12 h-px bg-brand-accent"></span>
               <span className="text-brand-dark text-[10px] font-black uppercase tracking-[0.4em]">
                 {dictionary.booking.notice}
               </span>
@@ -80,7 +83,7 @@ export default function BookingSection({
           </div>
 
           {/* Right Panel: Blue Constellations */}
-          <div className="h-[300px] md:h-auto md:w-[42%] bg-brand-gradient-dark relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2 border-l border-white/5">
+          <div className="h-75 md:h-auto md:w-[42%] bg-brand-gradient-dark relative flex items-center justify-center p-8 overflow-hidden order-1 md:order-2 border-l border-white/5">
             <div className="absolute inset-0 opacity-80 pointer-events-none">
               <svg
                 className="w-full h-full"

@@ -61,7 +61,7 @@ export default function FAQSection({
             <div className="sticky top-32">
               <div className="flex items-center gap-3 mb-8">
                 {/* Light Blue Accent Line */}
-                <span className="w-12 h-[2px] bg-brand-accent rounded-full"></span>
+                <span className="w-12 h-0.5 bg-brand-accent rounded-full"></span>
                 <span className="text-brand-dark/60 text-[14px] font-black uppercase tracking-[0.6em]">
                   {faqData.notice || "FAQ"}
                 </span>
@@ -85,7 +85,7 @@ export default function FAQSection({
                   <div className="flex gap-2 h-16 items-end">
                     <div className="w-2 h-6 bg-slate-100 rounded-full"></div>
                     <div className="w-2 h-10 bg-slate-100 rounded-full"></div>
-                    <div className="w-2.5 h-16 bg-gradient-to-t from-brand-accent to-[#93C5FD] rounded-full shadow-[0_10px_20px_-5px_rgba(96,165,250,0.3)]"></div>
+                    <div className="w-2.5 h-16 bg-linear-to-t from-brand-accent to-[#93C5FD] rounded-full shadow-[0_10px_20px_-5px_rgba(96,165,250,0.3)]"></div>
                   </div>
 
                   <div className="flex flex-col">
@@ -94,7 +94,7 @@ export default function FAQSection({
                         ? "Strategisk Analyse"
                         : "Strategic Analysis"}
                     </span>
-                    <p className="text-[11px] text-slate-400 font-medium leading-relaxed max-w-[200px] italic">
+                    <p className="text-[11px] text-slate-400 font-medium leading-relaxed max-w-50 italic">
                       {lang === "no"
                         ? "Sikrer din økonomiske fremtid gjennom presisjon og innsikt."
                         : "Securing your financial future through precision and insight."}
@@ -119,7 +119,7 @@ export default function FAQSection({
               <div
                 key={faq.id}
                 className={`group transition-all duration-700 ease-in-out border-b border-slate-100 ${activeId === faq.id
-                    ? "bg-brand-light/50 p-8 md:p-10 rounded-[32px] border-transparent shadow-[0_30px_60px_-12px_rgba(15,23,42,0.05)]"
+                    ? "bg-brand-light/50 p-8 md:p-10 rounded-4xl border-transparent shadow-[0_30px_60px_-12px_rgba(15,23,42,0.05)]"
                     : "py-8 hover:bg-slate-50/50"
                   }`}
               >
@@ -139,12 +139,12 @@ export default function FAQSection({
                   </span>
 
                   <div
-                    className={`mt-2 relative w-6 h-6 flex-shrink-0 transition-transform duration-500 ${activeId === faq.id ? "rotate-180" : ""}`}
+                    className={`mt-2 relative w-6 h-6 shrink-0 transition-transform duration-500 ${activeId === faq.id ? "rotate-180" : ""}`}
                   >
                     {/*  Toggle bars now Blue */}
-                    <span className="absolute inset-0 m-auto h-[2px] w-5 bg-brand-accent rounded-full"></span>
+                    <span className="absolute inset-0 m-auto h-0.5 w-5 bg-brand-accent rounded-full"></span>
                     <span
-                      className={`absolute inset-0 m-auto h-5 w-[2px] bg-brand-accent rounded-full transition-all duration-500 ${activeId === faq.id ? "rotate-90 opacity-0" : ""}`}
+                      className={`absolute inset-0 m-auto h-5 w-0.5 bg-brand-accent rounded-full transition-all duration-500 ${activeId === faq.id ? "rotate-90 opacity-0" : ""}`}
                     ></span>
                   </div>
                 </button>

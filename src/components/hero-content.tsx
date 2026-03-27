@@ -24,7 +24,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden pt-24 pb-32">
       {/* BACKGROUND CONTAINER - REDUCED DARKNESS FOR VISIBILITY */}
-      <div className="absolute inset-0 z-0 bg-[#0F172A]">
+      <div className="absolute inset-0 z-0 bg-brand-dark">
         <Image
           src="https://brightadvisers.com/wp-content/uploads/2025/06/mastering-cfo-family-office-jobs-essential-steps-for-success.png"
           alt="CFO Eksperten Strategic Team"
@@ -34,8 +34,8 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
         />
 
         {/* LIGHTER GRADIENT: Shifted 'from' opacity to 70% and 'via' to 20% to let the image breathe */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/70 via-[#0F172A]/20 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0F172A]/40 z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-brand-dark/70 via-brand-dark/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-brand-dark/40 z-10" />
       </div>
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +106,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
       >
-        <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-px h-16 bg-linear-to-b from-white to-transparent" />
       </motion.div>
     </section>
   );

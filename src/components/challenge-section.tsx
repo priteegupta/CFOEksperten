@@ -40,7 +40,7 @@ export default function ChallengeSection({
       }}
       className="group bg-white rounded-2xl p-6 md:p-8 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.05)] border border-slate-100 hover:border-brand-accent/40 transition-all duration-500 flex items-start gap-5"
     >
-      <div className="flex-shrink-0 mt-1 relative">
+      <div className="shrink-0 mt-1 relative">
         {/*  Blue pulse background instead of green */}
         <div className="absolute inset-0 bg-brand-accent/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 opacity-0 group-hover:opacity-100"></div>
 
@@ -84,7 +84,7 @@ export default function ChallengeSection({
             >
               <div className="flex items-center gap-3 mb-6">
                 {/* Light Blue accent line */}
-                <span className="w-8 h-[2px] bg-brand-accent rounded-full"></span>
+                <span className="w-8 h-0.5 bg-brand-accent rounded-full"></span>
                 <span className="text-brand-accent text-[13px] font-black uppercase tracking-[0.6em] leading-none">
                   {dictionary.challenge.title}
                 </span>

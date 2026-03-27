@@ -129,14 +129,14 @@ export function Navbar({
               setIsMobileMenuOpen(false);
             }
           }}
-          className="flex flex-shrink-0 items-center group"
+          className="flex shrink-0 items-center group"
         >
           <div
             className={`relative transition-all duration-300 group-hover:scale-105 
   h-30 w-72 
   sm:h-26 sm:w-68 
   md:h-32 md:w-80 
-  lg:h-40 lg:w-98 lg:max-w-[260px]`}
+  lg:h-40 lg:w-98 lg:max-w-65`}
           >
             <Image
               src="/logo_provided.png"

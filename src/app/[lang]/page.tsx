@@ -1,6 +1,5 @@
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
-import Image from 'next/image';
 import PartnerStats from '@/components/partner-stats';
 import ChallengeSection from '@/components/challenge-section';
 import AudienceSection from '@/components/audience-section';

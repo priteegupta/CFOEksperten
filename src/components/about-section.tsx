@@ -62,7 +62,7 @@ export default function AboutSection({
             className="lg:col-span-7"
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="w-12 h-[2px] bg-brand-accent"></span>
+              <span className="w-12 h-0.5 bg-brand-accent"></span>
               <span className="text-brand-accent text-[13px] font-black uppercase tracking-[0.5em]">
                 {dictionary.navbar.about_us}
               </span>
@@ -120,7 +120,7 @@ export default function AboutSection({
                     {member.role}
                   </p>
 
-                  <div className="w-12 h-[2px] bg-slate-200 group-hover:w-24 group-hover:bg-brand-accent transition-all duration-500 mb-8" />
+                  <div className="w-12 h-0.5 bg-slate-200 group-hover:w-24 group-hover:bg-brand-accent transition-all duration-500 mb-8" />
 
                   <p className="text-slate-500 text-lg leading-relaxed font-light italic opacity-80 group-hover:opacity-100 transition-opacity">
                     &quot;{member.bio}&quot;

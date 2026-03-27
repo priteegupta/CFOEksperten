@@ -29,7 +29,7 @@ export default function PackagesSection({
   return (
     <section
       id="packages"
-      className="pt-12 pb-24 md:pt-20 md:pb-40 bg-white overflow-hidden scroll-mt-20"
+      className="pt-12 pb-12 md:pt-20 md:pb-20 bg-white overflow-hidden scroll-mt-20"
     >
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         {/* HEADER AREA */}

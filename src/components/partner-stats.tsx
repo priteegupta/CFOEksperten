@@ -141,8 +141,8 @@ export default function PartnerStats({
             return (
               <div
                 key={index}
-                className={`flex-shrink-0 relative flex items-center justify-center transition-all duration-500 hover:scale-105 cursor-pointer 
-        ${isXL ? "w-96 h-36" : isLarge ? "w-64 h-28" : "w-56 h-24"}`}
+                className={`shrink-0 relative flex items-center justify-center transition-all duration-500 hover:scale-105 cursor-pointer 
+        ${isXL ? "w-96 h-44" : isLarge ? "w-64 h-28" : "w-56 h-24"}`}
               >
                 <Image
                   src={logo.src}
@@ -190,7 +190,7 @@ export default function PartnerStats({
                 whileInView={{ width: "40px" }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.8, delay: stat.delay / 1000 + 0.8 }}
-                className="h-[3px] bg-brand-gradient mt-6 rounded-full"
+                className="h-0.75 bg-brand-gradient mt-6 rounded-full"
               />
             </div>
           ))}

@@ -35,7 +35,7 @@ export default function CustomerStories({
             className="lg:col-span-7"
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="w-12 h-[2px] bg-brand-accent"></span>
+              <span className="w-12 h-0.5 bg-brand-accent"></span>
               <span className="text-brand-accent text-[12px] font-black uppercase tracking-[0.5em]">
                 {title_badge || "CASE STUDIES"}
               </span>
@@ -68,7 +68,7 @@ export default function CustomerStories({
               viewport={{ once: false }}
               transition={{ duration: 0.8, delay: i * 0.2 }}
               whileHover={{ y: -12 }}
-              className="group relative flex flex-col h-full bg-white/[0.04] border border-white/10 rounded-[40px] p-10 backdrop-blur-md transition-all duration-700 hover:bg-white/[0.08] hover:border-brand-accent/40"
+              className="group relative flex flex-col h-full bg-white/4 border border-white/10 rounded-[40px] p-10 backdrop-blur-md transition-all duration-700 hover:bg-white/8 hover:border-brand-accent/40"
             >
               {/* INTERACTIVE GLOW: Card emits a gradient glow on hover */}
               <div className="absolute inset-0 rounded-[40px] bg-brand-gradient blur-2xl opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"></div>
@@ -89,7 +89,7 @@ export default function CustomerStories({
                   {story.company}
                 </h4>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-[1px] bg-brand-gradient group-hover:w-20 transition-all duration-700"></div>
+                  <div className="w-8 h-px bg-brand-gradient group-hover:w-20 transition-all duration-700"></div>
                   <span className="text-[9px] font-black text-brand-accent uppercase tracking-widest opacity-60">
                     Verified
                   </span>

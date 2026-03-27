@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
@@ -12,12 +12,12 @@ export default function Footer({
   dictionary: Dictionary;
   lang: string;
 }) {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  // const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
+  // useEffect(() => {
+  //   setCurrentYear(new Date().getFullYear());
+  // }, []);
+  const currentYear = new Date().getFullYear();
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -40,14 +40,14 @@ export default function Footer({
               <Image
                 src="/CFOFooter.png"
                 alt="CFO Eksperten"
-                width={400} 
+                width={400}
                 height={90}
-               
-                className="h-[90px] w-auto object-contain object-left transition-transform duration-500 hover:scale-105"
+                className="h-22.5 w-auto object-contain object-left transition-transform duration-500 hover:scale-105 cursor-pointer"
                 priority
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               />
             </div>
-            <div className="w-12 h-[2px] bg-brand-accent"></div>
+            <div className="w-12 h-0.5 bg-brand-accent"></div>
             <p className="text-slate-400 text-[14px] leading-relaxed max-w-xs font-light tracking-wide italic">
               {dictionary.footer.description}
             </p>

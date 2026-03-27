@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
@@ -46,7 +46,7 @@ export default function ServicesSection({
           className="max-w-3xl mb-16 md:mb-24"
         >
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-10 h-[2px] bg-brand-accent"></span>
+            <span className="w-10 h-0.5 bg-brand-accent"></span>
             <span className="text-brand-accent text-[12px] font-black uppercase tracking-[0.5em]">
               Expertise
             </span>
@@ -82,7 +82,7 @@ export default function ServicesSection({
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
                     {/* Subtle Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark/20 to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-linear-to-tr from-brand-dark/20 to-transparent opacity-60"></div>
                   </div>
 
                   {/* Service Content */}
@@ -102,7 +102,7 @@ export default function ServicesSection({
                             key={idx}
                             className="flex items-center gap-3 text-[13px] text-slate-600 font-medium"
                           >
-                            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+                            <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
                             {point}
                           </li>
                         ))}
