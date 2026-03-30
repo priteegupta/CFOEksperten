@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
 type Currency = "NOK" | "USD" | "EUR" | "GBP";
 const rates = { NOK: 1, USD: 0.094, EUR: 0.087, GBP: 0.074 };
+const FALLBACK_RATES: Record<Currency, number> = rates;
 
 export default function PackagesSection({
   dictionary,
@@ -18,9 +19,39 @@ export default function PackagesSection({
     lang === "no" ? "NOK" : "EUR",
   );
 
+  // State management for live market data
+  const [liveRates, setLiveRates] = useState(FALLBACK_RATES);
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function fetchLiveRates() {
+      try {
+        const res = await fetch("/api/exchange-rates", {
+          signal: controller.signal,
+        });
+        const data = await res.json();
+
+        if (data.rates) {
+          setLiveRates(data.rates);
+          setIsLive(true); // Trigger the "Live" badge UI
+        }
+      } catch (e) {
+        if (e instanceof Error && e.name !== "AbortError") {
+          console.warn("Market rates unavailable, using fallbacks.");
+        }
+      }
+    }
+
+    fetchLiveRates();
+    return () => controller.abort();
+  }, []);
+
   const formatPrice = (baseNok: number, curr: Currency) => {
     const symbols = { NOK: "kr", USD: "$", EUR: "€", GBP: "£" };
-    const converted = Math.round(baseNok * rates[curr]);
+    const converted = Math.round(baseNok * liveRates[curr]);
+
     return curr === "NOK"
       ? `${baseNok.toLocaleString("no-NO")} kr`
       : `${symbols[curr]}${converted.toLocaleString("en-US")}`;
@@ -57,24 +88,42 @@ export default function PackagesSection({
             </div>
           </motion.div>
 
-          {/* CURRENCY SWITCHER */}
-          {lang === "en" && (
-            <div className="flex bg-slate-50 p-1.5 rounded-full border border-slate-100 backdrop-blur-sm shadow-inner">
-              {(["USD", "EUR", "GBP"] as Currency[]).map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setCurrency(c)}
-                  className={`px-8 py-2.5 rounded-full text-[10px] font-black tracking-[0.15em] transition-all duration-500 ${
-                    currency === c
-                      ? "bg-brand-dark text-white shadow-xl"
-                      : "text-slate-400 hover:text-brand-dark"
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          )}
+          {/* CURRENCY SWITCHER + LIVE BADGE */}
+          <div className="flex flex-col items-end gap-4">
+            {isLive && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full border border-green-100"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">
+                  Live Market Rates
+                </span>
+              </motion.div>
+            )}
+
+            {lang === "en" && (
+              <div className="flex bg-slate-50 p-1.5 rounded-full border border-slate-100 backdrop-blur-sm shadow-inner">
+                {(["USD", "EUR", "GBP"] as Currency[]).map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => setCurrency(c)}
+                    className={`px-8 py-2.5 rounded-full text-[10px] font-black tracking-[0.15em] transition-all duration-500 cursor-pointer ${
+                      currency === c
+                        ? "bg-brand-dark text-white shadow-xl"
+                        : "text-slate-400 hover:text-brand-dark"
+                    }`}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* PRICING GRID */}
@@ -99,7 +148,6 @@ export default function PackagesSection({
             delay={0.2}
           />
         </div>
-
         {/* PROCESS SECTION: Now using 'bg-brand-gradient-dark' */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -293,7 +341,6 @@ function ProcessStep({ number, title, desc, primary }: ProcessStepProps) {
       }}
       className="flex gap-10 group"
     >
-      
       <span
         className={`text-4xl font-serif font-bold italic leading-none ${primary ? "text-brand-accent" : "text-white/20"}`}
       >
