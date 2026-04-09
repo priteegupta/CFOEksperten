@@ -165,18 +165,35 @@
       }
     ]
   },
+
   "audience": {
-    "title": "For hvem",
-    "subtitle": "Vi hjelper startups i alle faser",
-    "groups": [
-      "Startups som vil lansere et nytt konsept",
-      "Selskaper som forbereder investeringsrunder",
-      "Selskaper som søker offentlig støtte",
-      "Gründere som skalerer fra oppstartsfasen",
-      "Selskaper uten interne CFO-ressurser"
-    ],
-    "bottom_text": "Vi spesialiserer oss på hva startups trenger for å løfte selskapet videre."
-  },
+  "title": "For hvem",
+  "subtitle": "Vi hjelper startups i alle faser",
+  "groups": [
+    {
+      "title": "Startups som vil lansere et nytt konsept",
+      "description": ""
+    },
+    {
+      "title": "Selskaper som forbereder investeringsrunder",
+      "description": ""
+    },
+    {
+      "title": "Selskaper som søker offentlig støtte",
+      "description": ""
+    },
+    {
+      "title": "Gründere som skalerer fra oppstartsfasen",
+      "description": ""
+    },
+    {
+      "title": "Selskaper uten interne CFO-ressurser",
+      "description": ""
+    }
+  ],
+  "bottom_text": "Vi spesialiserer oss på hva startups trenger for å løfte selskapet videre."
+},
+  
   "booking": {
     "title": "Klar for å skalere din bedrift?",
     "subtitle": "Bestill en 30-minutters uforpliktende samtale for å diskutere din finansielle strategi og hvordan vi kan hjelpe deg.",

@@ -106,10 +106,10 @@ export default function AudienceSection({
                 {subtitle}
               </h2>
 
-              {/* DECREASED SIZE: Subtitle (Startups in all phases) */}
+              {/* DECREASED SIZE: Subtitle (Startups in all phases)
               <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-16 max-w-lg ">
-                {subtitle}
-              </p>
+                {bottom_text}
+              </p> */}
 
               {/* AUDIENCE GROUPS LIST */}
               <div className="grid grid-cols-1 gap-5">

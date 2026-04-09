@@ -166,18 +166,33 @@
       }
     ]
   },
-  "audience": {
-    "title": "For Whom",
-    "subtitle": "We help startups in all phases",
-    "groups": [
-      "Startups that want to launch a new concept",
-      "Companies Preparing Investment Rounds",
-      "Companies seeking public support",
-      "Entrepreneurs scaling from the startup phase",
-      "Companies without internal CFO resources"
-    ],
-    "bottom_text": "We specialize in what startups need to lift the company further."
-  },
+ "audience": {
+  "title": "For Whom",
+  "subtitle": "We help startups in all phases",
+  "groups": [
+    {
+      "title": "Startups that want to launch a new concept",
+      "description": ""
+    },
+    {
+      "title": "Companies Preparing Investment Rounds",
+      "description": ""
+    },
+    {
+      "title": "Companies seeking public support",
+      "description": ""
+    },
+    {
+      "title": "Entrepreneurs scaling from the startup phase",
+      "description": ""
+    },
+    {
+      "title": "Companies without internal CFO resources",
+      "description": ""
+    }
+  ],
+  "bottom_text": "We specialize in what startups need to lift the company further."
+},
   "booking": {
     "title": "Ready to scale your business?",
     "subtitle": "Book a 30-minute discovery call to discuss your financial strategy and how we can help you reach your goals.",

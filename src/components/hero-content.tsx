@@ -8,7 +8,7 @@ type HeroType = {
   badge: string;
   title_main: string;
   title_highlight: string;
-  subtitle: string;
+  title_sub_highlight: string;
   subtitle_line1: string;
   subtitle_line2: string;
   cta: string;
@@ -73,7 +73,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             {hero.title_main} <br className="hidden md:block" />
             <span className="opacity-85">{hero.title_highlight} </span>
             <span className="text-brand-accent  font-light inline whitespace-nowrap ml-2">
-              {hero.title_highlight}
+              {hero.title_sub_highlight}
             </span>
           </motion.h1>
 
