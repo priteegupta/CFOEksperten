@@ -5,11 +5,28 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
 
+type AboutType = {
+  who_we_are_label: string;
+  title: string;
+  subtitle: string;
+  what_we_do_label: string;
+  description: string;
+  expertise_list: string[];
+  our_role_label: string;
+  team: {
+    name: string;
+    role: string;
+    bio: string;
+    years: number;
+  }[];
+};
+
 export default function AboutSection({
   dictionary,
 }: {
   dictionary: Dictionary;
 }) {
+  const about = dictionary.about as AboutType;
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
 
@@ -89,14 +106,14 @@ export default function AboutSection({
             <div className="flex items-center gap-4">
               <span className="w-12 h-1 bg-brand-accent"></span>
               <span className="text-brand-accent text-xs font-black uppercase tracking-[0.4em]">
-                {dictionary.about.who_we_are_label}
+                {about.who_we_are_label}
               </span>
             </div>
             <h2 className="text-6xl md:text-8xl font-serif font-bold text-brand-dark leading-[0.9] tracking-tighter">
-              {dictionary.about.title}
+              {about.title}
             </h2>
             <p className="text-2xl text-brand-dark font-medium leading-tight max-w-xl">
-              {dictionary.about.subtitle}
+              {about.subtitle}
             </p>
           </motion.div>
           <div className="lg:col-span-5 relative h-137.5 rounded-[40px] overflow-hidden shadow-2xl">
@@ -127,14 +144,14 @@ export default function AboutSection({
             <div className="flex items-center gap-4">
               <span className="w-12 h-1 bg-brand-accent"></span>
               <span className="text-brand-accent text-xs font-black uppercase tracking-[0.4em]">
-                {dictionary.about.what_we_do_label}
+                {about.what_we_do_label}
               </span>
             </div>
             <p className="text-lg text-slate-500 font-light leading-relaxed border-l-4 border-slate-100 pl-8">
-              {dictionary.about.description}
+              {about.description}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {dictionary.about.expertise_list.map((item, i) => (
+              {about.expertise_list.map((item, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-accent transition-all"
@@ -154,11 +171,11 @@ export default function AboutSection({
           <div className="flex items-center gap-4 mb-12">
             <span className="w-12 h-1 bg-brand-accent"></span>
             <span className="text-brand-accent text-xs font-black uppercase tracking-[0.4em]">
-              {dictionary.about.our_role_label}
+              {about.our_role_label}
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dictionary.about.team.map((member, index) => (
+            {about.team.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}

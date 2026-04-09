@@ -7,6 +7,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
 
+type NavbarType = {
+  logo: string;
+  services: string;
+  about_us: string;
+  customers: string;
+  our_packages: string;
+  faq: string;
+  book_a_meeting: string;
+};
+
 interface NavLink {
   id: string;
   label: string;
@@ -18,8 +28,11 @@ export function Navbar({
   dictionary,
 }: {
   lang: Locale;
-  dictionary: Dictionary["navbar"];
+  dictionary: Dictionary["navbar"] & NavbarType;
 }) {
+  const { services, about_us, customers, our_packages, faq, book_a_meeting } =
+    dictionary;
+
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -90,12 +103,11 @@ export function Navbar({
   };
 
   const navLinks: NavLink[] = [
-    { id: "services", label: dictionary.services, isAnchor: true },
-    { id: "about", label: dictionary.about_us, isAnchor: true },
-    { id: "customers", label: dictionary.customers, isAnchor: true },
-    { id: "packages", label: dictionary.our_packages, isAnchor: true },
-    { id: "faq", label: dictionary.faq, isAnchor: true },
-
+    { id: "services", label: services, isAnchor: true },
+    { id: "about", label: about_us, isAnchor: true },
+    { id: "customers", label: customers, isAnchor: true },
+    { id: "packages", label: our_packages, isAnchor: true },
+    { id: "faq", label: faq, isAnchor: true },
   ];
 
   const isLinkActive = (item: NavLink) => {
@@ -111,10 +123,11 @@ export function Navbar({
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen
-        ? "h-16 bg-white shadow-md"
-        : "h-24 bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled || isMobileMenuOpen
+          ? "h-16 bg-white shadow-md"
+          : "h-24 bg-transparent"
+      }`}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* LOGO */}
@@ -142,8 +155,9 @@ export function Navbar({
               src="/logo_provided.png"
               alt="CFO Logo"
               fill
-              className={`object-contain object-left transition-all duration-500 ${isOverHero ? "brightness-0 invert" : "brightness-100"
-                }`}
+              className={`object-contain object-left transition-all duration-500 ${
+                isOverHero ? "brightness-0 invert" : "brightness-100"
+              }`}
               priority
             />
           </div>
@@ -151,20 +165,22 @@ export function Navbar({
 
         {/* Desktop Links - Optimized Contrast */}
         <div
-          className={`hidden lg:flex items-center space-x-10 text-[13px] font-bold tracking-[0.15em] transition-colors duration-500 ${isOverHero ? "text-white drop-shadow-md" : "text-brand-dark/80"
-            }`}
+          className={`hidden lg:flex items-center space-x-10 text-[13px] font-bold tracking-[0.15em] transition-colors duration-500 ${
+            isOverHero ? "text-white drop-shadow-md" : "text-brand-dark/80"
+          }`}
         >
           {navLinks.map((item) => (
             <Link
               key={item.id}
               href={`/${lang}#${item.id}`}
               onClick={(e) => scrollToSection(e, item.id)}
-              className={`group relative py-2 transition-all duration-300 ${isLinkActive(item)
-                ? isOverHero
-                  ? "text-white"
-                  : "text-brand-accent"
-                : "hover:text-brand-accent"
-                }`}
+              className={`group relative py-2 transition-all duration-300 ${
+                isLinkActive(item)
+                  ? isOverHero
+                    ? "text-white"
+                    : "text-brand-accent"
+                  : "hover:text-brand-accent"
+              }`}
             >
               {item.label}
               <span
@@ -177,19 +193,21 @@ export function Navbar({
         {/* Language & CTA */}
         <div className="flex items-center space-x-4">
           <div
-            className={`hidden sm:flex items-center p-1 rounded-full transition-all duration-500 ${isOverHero ? "bg-white/10 backdrop-blur-sm" : "bg-slate-100"
-              }`}
+            className={`hidden sm:flex items-center p-1 rounded-full transition-all duration-500 ${
+              isOverHero ? "bg-white/10 backdrop-blur-sm" : "bg-slate-100"
+            }`}
           >
             {i18n.locales.map((locale) => (
               <Link
                 key={locale}
                 href={redirectedPathName(locale)}
-                className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest transition-all duration-300 ${lang === locale
-                  ? "bg-white text-brand-dark shadow-sm"
-                  : isOverHero
-                    ? "text-white/60 hover:text-white"
-                    : "text-slate-400 hover:text-brand-dark"
-                  }`}
+                className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest transition-all duration-300 ${
+                  lang === locale
+                    ? "bg-white text-brand-dark shadow-sm"
+                    : isOverHero
+                      ? "text-white/60 hover:text-white"
+                      : "text-slate-400 hover:text-brand-dark"
+                }`}
               >
                 {locale.toUpperCase()}
               </Link>
@@ -199,10 +217,11 @@ export function Navbar({
           <button
             onClick={(e) => scrollToSection(e, "book-meeting")}
             /* Added group/nav and overflow-hidden to contain the inner fade layer */
-            className={`group/nav relative hidden sm:block px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-700 cursor-pointer overflow-hidden shadow-lg ${isOverHero
-              ? "bg-white/10 text-white border border-white/30 hover:bg-white hover:text-brand-dark"
-              : "bg-brand-gradient text-white shadow-brand-accent/20"
-              }`}
+            className={`group/nav relative hidden sm:block px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-700 cursor-pointer overflow-hidden shadow-lg ${
+              isOverHero
+                ? "bg-white/10 text-white border border-white/30 hover:bg-white hover:text-brand-dark"
+                : "bg-brand-gradient text-white shadow-brand-accent/20"
+            }`}
           >
             {/* THE HOVER LAYER: This creates the smooth, slow transition to #60A5FA */}
             {!isOverHero && (
@@ -214,7 +233,7 @@ export function Navbar({
               {!isOverHero && (
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse group-hover/nav:bg-brand-dark transition-colors duration-700" />
               )}
-              <span>{dictionary.book_a_meeting}</span>
+              <span>{book_a_meeting}</span>
             </div>
           </button>
 
@@ -238,10 +257,11 @@ export function Navbar({
 
       {/* MOBILE MENU OVERLAY */}
       <div
-        className={`lg:hidden fixed inset-0 bg-white z-40 transition-all duration-500 flex flex-col ${isMobileMenuOpen
-          ? "translate-x-0 opacity-100"
-          : "translate-x-full opacity-0"
-          }`}
+        className={`lg:hidden fixed inset-0 bg-white z-40 transition-all duration-500 flex flex-col ${
+          isMobileMenuOpen
+            ? "translate-x-0 opacity-100"
+            : "translate-x-full opacity-0"
+        }`}
       >
         <div className="flex flex-col px-8 py-24 space-y-10">
           <div className="flex items-center justify-center p-1 bg-slate-100 rounded-xl">
@@ -274,7 +294,7 @@ export function Navbar({
               className="mt-6 w-full bg-brand-dark text-white py-5 rounded-xl text-xs font-black tracking-[0.3em] uppercase transition-all shadow-2xl flex items-center justify-center gap-3"
             >
               <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></div>
-              {dictionary.book_a_meeting}
+              {book_a_meeting}
             </button>
           </div>
         </div>

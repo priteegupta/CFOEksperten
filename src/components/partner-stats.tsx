@@ -5,6 +5,12 @@ import Image from "next/image";
 import { useInView, animate, motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
+type StatsType = {
+  startups: string;
+  countries: string;
+  capital: string;
+};
+
 function AnimatedCounter({
   to,
   suffix,
@@ -95,15 +101,16 @@ export default function PartnerStats({
     { src: "/company21.png" },
     { src: "/company22.png" },
   ];
+  const statsData = dictionary.stats as StatsType;
 
   const stats = [
-    { to: 120, suffix: "+", label: dictionary.stats.startups, delay: 100 },
-    { to: 3, suffix: "", label: dictionary.stats.countries, delay: 300 },
+    { to: 120, suffix: "+", label: statsData.startups, delay: 100 },
+    { to: 3, suffix: "", label: statsData.countries, delay: 300 },
     {
       to: 350,
       suffix: "M",
       prefix: "$",
-      label: dictionary.stats.capital,
+      label: statsData.capital,
       delay: 500,
     },
   ];
@@ -169,7 +176,7 @@ export default function PartnerStats({
                 <AnimatedCounter
                   to={stat.to}
                   suffix={stat.suffix}
-                  prefix={stat.prefix}
+                  prefix={stat.prefix || ""}
                   delay={stat.delay}
                 />
               </div>

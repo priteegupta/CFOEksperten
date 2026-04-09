@@ -4,13 +4,25 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
 
+
+type AudienceType = {
+  title: string;
+  subtitle: string;
+  groups: {
+    title: string;
+    description: string;
+  }[];
+  bottom_text: string;
+};
+
 export default function AudienceSection({
   dictionary,
 }: {
   dictionary: Dictionary;
 }) {
-  const { title, subtitle, groups, bottom_text } = dictionary.audience;
+ const audience = dictionary.audience as AudienceType;
 
+ const { title, subtitle, groups, bottom_text } = audience;
   //  SVG Icon Set
   const getIcon = (index: number) => (
     <svg
@@ -115,7 +127,7 @@ export default function AudienceSection({
                       {getIcon(index)}
                     </div>
                     <span className="text-xl font-bold text-brand-dark transition-colors duration-500">
-                      {group}
+                      {group.title}
                     </span>
                   </motion.div>
                 ))}

@@ -2,24 +2,33 @@
 
 import { motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
+type ChallengeType = {
+  points: string[];
+  stat_number: string;
+  stat_text: string;
+  title: string;
+  description: string;
+  context: string;
+};
 
 export default function ChallengeSection({
   dictionary,
 }: {
   dictionary: Dictionary;
 }) {
+  const challenge = dictionary.challenge as ChallengeType;
   // Data mapping from your structure
   const leftColPoints = [
-    dictionary.challenge.points[0],
-    `${dictionary.challenge.stat_number} ${dictionary.challenge.stat_text}`,
-    dictionary.challenge.points[3],
-    dictionary.challenge.points[5],
+    challenge.points[0],
+    `${challenge.stat_number} ${challenge.stat_text}`,
+    challenge.points[3],
+    challenge.points[5],
   ];
 
   const rightColPoints = [
-    dictionary.challenge.points[1],
-    dictionary.challenge.points[2],
-    dictionary.challenge.points[4],
+    challenge.points[1],
+    challenge.points[2],
+    challenge.points[4],
   ];
 
   // Updated RenderBox with New Theme Colors
@@ -86,16 +95,16 @@ export default function ChallengeSection({
                 {/* Light Blue accent line */}
                 <span className="w-8 h-0.5 bg-brand-accent rounded-full"></span>
                 <span className="text-brand-accent text-[13px] font-black uppercase tracking-[0.6em] leading-none">
-                  {dictionary.challenge.title}
+                  {challenge.title}
                 </span>
               </div>
 
               <h2 className="text-5xl md:text-7xl font-serif font-bold text-brand-dark leading-[1.1] mb-8 tracking-tighter">
-                {dictionary.challenge.description}
+                {challenge.description}
               </h2>
 
               <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed max-w-md">
-                {dictionary.challenge.context}
+                {challenge.context}
               </p>
             </motion.div>
           </div>

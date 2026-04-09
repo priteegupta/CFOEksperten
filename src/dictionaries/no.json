@@ -232,6 +232,15 @@
       "subtitle": "Velg pakken som passer din fase",
       "description": "Faste priser uten skjulte kostnader. CFO-støtte er valgfritt for Pakke 1 og 2 — og obligatorisk inkludert i Skaleringspakken."
     },
+    "currency": {
+      "default": "USD",
+      "options": ["USD", "EUR", "GBP"],
+      "symbols": {
+        "USD": "$",
+        "EUR": "€",
+        "GBP": "£"
+      }
+    },
 
     "plans": [
       {

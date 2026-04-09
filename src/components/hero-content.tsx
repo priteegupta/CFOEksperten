@@ -4,12 +4,24 @@ import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
 import { motion } from "framer-motion";
 
+type HeroType = {
+  badge: string;
+  title_main: string;
+  title_highlight: string;
+  subtitle: string;
+  subtitle_line1: string;
+  subtitle_line2: string;
+  cta: string;
+  cta_secondary: string;
+};
+
 interface HeroSectionProps {
   dictionary: Dictionary;
   lang: string;
 }
 
 export function HeroContent({ dictionary, lang }: HeroSectionProps) {
+  const hero = dictionary.hero as HeroType;
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -48,7 +60,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             className="inline-flex items-center gap-3 px-5 py-2 rounded-sm border-l-4 border-brand-accent bg-white/5 backdrop-blur-sm text-white text-[13px] md:text-[14px] font-extrabold tracking-[0.35em] uppercase mb-10"
           >
             <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-            {dictionary.hero.badge}
+            {hero.badge}
           </motion.div>
 
           {/* REFINED HEADING: Decreased from 8xl to 6xl for Desktop elegance */}
@@ -58,12 +70,10 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold leading-[1.1] mb-10 text-white tracking-tight"
           >
-            {dictionary.hero.title_main} <br className="hidden md:block" />
-            <span className="opacity-85">
-              {dictionary.hero.title_highlight}{" "}
-            </span>
+            {hero.title_main} <br className="hidden md:block" />
+            <span className="opacity-85">{hero.title_highlight} </span>
             <span className="text-brand-accent  font-light inline whitespace-nowrap ml-2">
-              {dictionary.hero.title_sub_highlight}
+              {hero.title_highlight}
             </span>
           </motion.h1>
 
@@ -75,7 +85,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
           >
             {/* MAIN STATEMENT */}
             <p className="text-lg md:text-xl text-white font-light leading-relaxed">
-              {dictionary.hero.subtitle_line1}
+              {hero.subtitle_line1}
             </p>
 
             {/* Divider */}
@@ -83,7 +93,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
 
             {/* SUPPORTING LINE */}
             <p className="text-sm md:text-base text-white/60 font-light leading-relaxed">
-              {dictionary.hero.subtitle_line2}
+              {hero.subtitle_line2}
             </p>
           </motion.div>
 
@@ -98,13 +108,13 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
               onClick={() => scrollToSection("book-meeting")}
               className="w-full sm:w-auto bg-brand-accent text-white px-10 py-4 cursor-pointer rounded-sm font-black hover:bg-white hover:text-brand-dark transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] shadow-xl shadow-brand-accent/20"
             >
-              {dictionary.hero.cta}
+              {hero.cta}
             </button>
             <button
               onClick={() => scrollToSection("packages")}
               className="w-full sm:w-auto border border-white/25 text-white px-10 py-4 cursor-pointer rounded-sm font-bold hover:bg-white/10 hover:border-white transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] backdrop-blur-sm"
             >
-              {dictionary.hero.cta_secondary}
+              {hero.cta_secondary}
             </button>
           </motion.div>
         </div>

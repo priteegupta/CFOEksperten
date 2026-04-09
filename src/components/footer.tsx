@@ -5,6 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
 
+type FooterType = {
+  description: string;
+  quick_links: string;
+  services: string;
+  contact: string;
+  rights: string;
+  links: {
+    about: string;
+    customers: string;
+    faq: string;
+  };
+};
+
+type ServiceType =
+  | string
+  | {
+      title: string;
+    };
+
 export default function Footer({
   dictionary,
   lang,
@@ -13,7 +32,7 @@ export default function Footer({
   lang: string;
 }) {
   // const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  
+
   // useEffect(() => {
   //   setCurrentYear(new Date().getFullYear());
   // }, []);
@@ -29,6 +48,9 @@ export default function Footer({
       window.history.pushState(null, "", `/${lang}`);
     }
   };
+
+  const footer = dictionary.footer as FooterType;
+  const services = dictionary.services as Record<string, ServiceType>;
 
   return (
     <footer className="bg-brand-gradient-dark text-white pt-16 pb-10 md:pt-24 md:pb-12 border-t border-white/5">
@@ -49,14 +71,14 @@ export default function Footer({
             </div>
             <div className="w-12 h-0.5 bg-brand-accent"></div>
             <p className="text-slate-400 text-[14px] leading-relaxed max-w-xs font-light tracking-wide ">
-              {dictionary.footer.description}
+              {footer.description}
             </p>
           </div>
 
           {/* Column 2 */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
-              {dictionary.footer.quick_links}
+              {footer.quick_links}
             </h4>
             <ul className="space-y-3 md:space-y-5 text-[14px] lg:text-[16px] text-slate-300 font-medium">
               <li>
@@ -64,7 +86,7 @@ export default function Footer({
                   onClick={(e) => scrollToSection(e, "about")}
                   className="hover:text-brand-accent transition-all duration-300 text-left"
                 >
-                  {dictionary.footer.links.about}
+                  {footer.links.about}
                 </button>
               </li>
               <li>
@@ -72,7 +94,7 @@ export default function Footer({
                   onClick={(e) => scrollToSection(e, "customers")}
                   className="hover:text-brand-accent transition-all duration-300 text-left"
                 >
-                  {dictionary.footer.links.customers}
+                  {footer.links.customers}
                 </button>
               </li>
               <li>
@@ -80,7 +102,7 @@ export default function Footer({
                   onClick={(e) => scrollToSection(e, "faq")}
                   className="hover:text-brand-accent transition-all duration-300 text-left"
                 >
-                  {dictionary.footer.links.faq}
+                  {footer.links.faq}
                 </button>
               </li>
             </ul>
@@ -89,12 +111,11 @@ export default function Footer({
           {/* Column 3 (FIXED HERE) */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
-              {dictionary.footer.services}
+              {footer.services}
             </h4>
             <ul className="space-y-3 md:space-y-5 text-[14px] lg:text-[16px] text-slate-300 font-medium">
               {["budget", "liquidity", "forecast", "virtual_cfo"].map((key) => {
-                const service =
-                  dictionary.services[key as keyof typeof dictionary.services];
+                const service = services[key];
 
                 return (
                   <li key={key}>
@@ -118,7 +139,7 @@ export default function Footer({
           {/* Column 4 */}
           <div>
             <h4 className="text-brand-accent uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[11px] lg:text-[13px] font-black mb-6 md:mb-10 border-b border-white/5 pb-4">
-              {dictionary.footer.contact}
+              {footer.contact}
             </h4>
             <div className="text-[14px] lg:text-[16px] text-slate-300 space-y-4 md:space-y-6 font-light">
               <div className="space-y-1">
@@ -196,7 +217,7 @@ export default function Footer({
               <p className="text-[10px] text-slate-300 uppercase tracking-[0.2em] text-center md:text-left">
                 © {currentYear}{" "}
                 <span className="text-white font-bold">CFO EKSPERTEN</span>.{" "}
-                {dictionary.footer.rights}
+                {footer.rights}
               </p>
             </div>
 

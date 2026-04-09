@@ -4,6 +4,17 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
+type FAQType = {
+  notice?: string;
+  title?: string;
+  subtitle?: string;
+  q1?: { question: string; answer: string };
+  q2?: { question: string; answer: string };
+  q3?: { question: string; answer: string };
+  q4?: { question: string; answer: string };
+  q5?: { question: string; answer: string };
+};
+
 export default function FAQSection({
   dictionary,
   lang,
@@ -13,7 +24,7 @@ export default function FAQSection({
 }) {
   const [activeId, setActiveId] = useState<number | null>(null);
 
-  const faqData = dictionary?.faq || {};
+  const faqData = dictionary.faq as FAQType;
 
   const faqs = [
     {

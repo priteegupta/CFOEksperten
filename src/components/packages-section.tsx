@@ -3,7 +3,46 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+type Plan = {
+  id: string;
+  label?: string;
+  name: string;
+  tagline: string;
+  billingNote: string;
+  features: string[];
+  meta?: {
+    bestFor?: string;
+    delivery?: string;
+  };
+  cta: string;
+  highlight?: boolean;
+  category?: string;
+  note?: {
+    commitment?: string;
+    addon?: string;
+  };
+};
+
+type PricingType = {
+  header: {
+    title: string;
+    description: string;
+  };
+  plans: Plan[];
+  footer: {
+    note: string;
+    cta: string;
+  };
+};
+
 type Currency = "NOK" | "USD" | "EUR" | "GBP";
+
+type PackagesSectionProps = {
+  dictionary: {
+    pricing: PricingType;
+  };
+  lang: string;
+};
 
 const FALLBACK_RATES: Record<Currency, number> = {
   NOK: 1,
@@ -12,7 +51,7 @@ const FALLBACK_RATES: Record<Currency, number> = {
   GBP: 0.074,
 };
 
-export default function PackagesSection({ dictionary, lang }: any) {
+export default function PackagesSection({ dictionary, lang }: PackagesSectionProps) {
   const [currency, setCurrency] = useState<Currency>(
     lang === "no" ? "NOK" : "USD",
   );
@@ -37,8 +76,9 @@ export default function PackagesSection({ dictionary, lang }: any) {
     fetchRates();
   }, []);
 
-  const getPriceNumber = (plan: unknown): number => {
-    switch (plan.id) {
+  const getPriceNumber = (plan: Plan): number => {
+    const typedPlan = plan as Plan;
+    switch (typedPlan.id) {
       case "plan1":
         return 9900;
       case "plan2":
@@ -125,8 +165,8 @@ export default function PackagesSection({ dictionary, lang }: any) {
         {/* MAIN PLANS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 items-stretch">
           {pricing.plans
-            .filter((p: any) => !p.category)
-            .map((plan: any) => {
+            .filter((p: Plan) => !p.category)
+            .map((plan: Plan) => {
               const price = formatPrice(getPriceNumber(plan));
               return (
                 <motion.div
@@ -245,8 +285,8 @@ export default function PackagesSection({ dictionary, lang }: any) {
         {/* ADD-ONS SECTION */}
         <div className="grid md:grid-cols-2 gap-8">
           {pricing.plans
-            .filter((p: any) => p.category === "addon")
-            .map((plan: any) => {
+            .filter((p: Plan) => p.category === "addon")
+            .map((plan: Plan) => {
               const price = formatPrice(getPriceNumber(plan));
               return (
                 <div

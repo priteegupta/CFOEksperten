@@ -2,20 +2,34 @@
 
 import { motion } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
+import { ReactNode } from "react";
 
-interface Story {
-  text: string;
-  company: string;
-}
+type Story = {
+  text: ReactNode;
+  quote: string;
+  author: string;
+  role: string;
+  company?: string;
+};
+
+type CustomerStoriesType = {
+  title: string;
+  subtitle: string;
+  title_badge?: string;
+  stories: Story[];
+};
+
 
 export default function CustomerStories({
   dictionary,
 }: {
   dictionary: Dictionary;
 }) {
-  const stories = (dictionary.customer_stories?.stories as Story[]) || [];
-  const { title, subtitle, title_badge } = dictionary.customer_stories || {};
+  const customerStories = dictionary.customer_stories as CustomerStoriesType;
 
+  const stories = customerStories?.stories || [];
+
+  const { title, subtitle, title_badge } = customerStories;
   return (
     <section
       id="customers"

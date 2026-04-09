@@ -5,6 +5,29 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
+// TOP TYPES
+type ServiceType = {
+  title: string;
+  description: string;
+  points: string[];
+};
+
+type ServicesDataType = {
+  label: string;
+  title: string;
+  footer: string;
+  introTitle: string;
+  introDescription: string;
+  closing: string;
+  points: string[];
+  virtualCfoTitle: string;
+  virtualCfoPoints: string[];
+  budget: ServiceType;
+  liquidity: ServiceType;
+  forecast: ServiceType;
+  virtual_cfo: ServiceType;
+};
+
 export default function ServicesSection({
   dictionary,
 }: {
@@ -13,6 +36,7 @@ export default function ServicesSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
 
+  const services = dictionary.services as ServicesDataType;
   const serviceKeys = [
     "budget",
     "liquidity",
@@ -50,11 +74,11 @@ export default function ServicesSection({
             <div className="flex items-center gap-4 mb-8">
               <span className="w-12 h-0.5 bg-brand-accent"></span>
               <span className="text-brand-accent text-[11px] font-black uppercase tracking-[0.6em]">
-                {dictionary.services.label}
+                {services.label}
               </span>
             </div>
             <h2 className="text-6xl md:text-8xl font-serif font-bold text-brand-dark leading-[0.9] tracking-tighter">
-              {dictionary.services.title}
+              {services.title}
             </h2>
           </motion.div>
 
@@ -66,7 +90,7 @@ export default function ServicesSection({
             className="lg:col-span-4 lg:pb-4"
           >
             <p className="text-slate-400 text-sm font-medium uppercase tracking-widest text-right hidden lg:block italic">
-              {dictionary.services.footer}
+              {services.footer}
             </p>
           </motion.div>
         </div>
@@ -81,17 +105,17 @@ export default function ServicesSection({
             className="lg:col-span-7"
           >
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-8 leading-tight">
-              {dictionary.services.introTitle}
+              {services.introTitle}
             </h3>
             <p className="text-slate-600 leading-relaxed text-lg font-light max-w-2xl">
-              {dictionary.services.introDescription}
+              {services.introDescription}
             </p>
             <motion.div
               whileHover={{ x: 10 }}
               className="mt-10 flex items-center gap-4 text-brand-dark font-bold cursor-default group"
             >
               <span className="w-8 h-px bg-brand-dark group-hover:w-12 transition-all"></span>
-              {dictionary.services.closing}
+              {services.closing}
             </motion.div>
           </motion.div>
 
@@ -102,7 +126,7 @@ export default function ServicesSection({
             className="lg:col-span-5 bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-50"
           >
             <div className="space-y-6">
-              {dictionary.services.points.map((point: string, idx: number) => (
+              {services.points.map((point: string, idx: number) => (
                 <div key={idx} className="flex items-start gap-4 group">
                   <span className="mt-2 w-2 h-2 rounded-full bg-brand-accent group-hover:scale-150 transition-transform"></span>
                   <p className="text-slate-700 text-[15px] font-medium leading-snug">
@@ -114,10 +138,10 @@ export default function ServicesSection({
 
             <div className="mt-12 pt-10 border-t border-slate-100">
               <h4 className="text-[10px] font-black text-slate-400 mb-6 uppercase tracking-[0.4em]">
-                {dictionary.services.virtualCfoTitle}
+                {services.virtualCfoTitle}
               </h4>
               <div className="grid grid-cols-1 gap-4">
-                {dictionary.services.virtualCfoPoints.map(
+                {services.virtualCfoPoints.map(
                   (point: string, idx: number) => (
                     <div
                       key={idx}
@@ -136,7 +160,7 @@ export default function ServicesSection({
         {/* Dynamic Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {serviceKeys.map((key, index) => {
-            const service = dictionary.services[key];
+            const service = services[key];
             return (
               <motion.div
                 key={key}
