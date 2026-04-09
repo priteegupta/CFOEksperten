@@ -47,7 +47,7 @@ export default function AudienceSection({
           >
             <div className="relative aspect-4/5 rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.15)] border border-slate-100 bg-slate-50">
               <Image
-                src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.openai.com/static-rsc-4/cBvoRjqmyYjrU-eIvv_Xb9j5vIYOKDxXPPF8OrDGcN1B1e9Y2Z8Vcl366qKtb33GrkLq4Uh9lyCB5WNRkwxGV9G5WSjmyU4IEv2H-rppjkW6tyZVBRt1gOs6E94qQdiwLOVlIsZCTNdVA5yTovyRGnIVd3wNSkIT7W2ExsB7pqjzXbS3iz4zj7tOYDRKnztp?purpose=fullsize"
                 alt="Financial Analysis Dashboard"
                 fill
                 className="object-cover"
@@ -68,7 +68,7 @@ export default function AudienceSection({
                   Strategy First
                 </span>
               </div>
-              <p className="text-brand-dark font-serif italic text-xl md:text-2xl leading-tight">
+              <p className="text-brand-dark font-serif  text-xl md:text-2xl leading-tight">
                 {bottom_text}
               </p>
             </motion.div>
@@ -95,7 +95,7 @@ export default function AudienceSection({
               </h2>
 
               {/* DECREASED SIZE: Subtitle (Startups in all phases) */}
-              <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-16 max-w-lg italic">
+              <p className="text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-16 max-w-lg ">
                 {subtitle}
               </p>
 

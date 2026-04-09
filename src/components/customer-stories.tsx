@@ -52,7 +52,7 @@ export default function CustomerStories({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-5 lg:pb-2"
           >
-            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed italic border-l-2 border-white/10 pl-8">
+            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed  border-l-2 border-white/10 pl-8">
               {subtitle}
             </p>
           </motion.div>

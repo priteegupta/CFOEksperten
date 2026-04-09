@@ -94,7 +94,7 @@ export default function FAQSection({
                         ? "Strategisk Analyse"
                         : "Strategic Analysis"}
                     </span>
-                    <p className="text-[11px] text-slate-400 font-medium leading-relaxed max-w-50 italic">
+                    <p className="text-[11px] text-slate-400 font-medium leading-relaxed max-w-50 ">
                       {lang === "no"
                         ? "Sikrer din økonomiske fremtid gjennom presisjon og innsikt."
                         : "Securing your financial future through precision and insight."}
@@ -158,7 +158,7 @@ export default function FAQSection({
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <div className="pt-8">
-                        <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-2xl italic">
+                        <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed max-w-2xl ">
                           {faq.answer}
                         </p>
                       </div>

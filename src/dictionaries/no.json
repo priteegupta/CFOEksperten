@@ -12,38 +12,77 @@
     "badge": "Premium CFO-tjenester",
     "title_main": "CFO Eksperten hjelper startups",
     "title_highlight": "bygge solide finansielle modeller",
-    "title_sub_highlight": "til faste priser",
-    "subtitle": "Vi hjelper din bedrift med å levere budsjetter og økonomiske prognoser som investorer stoler på!",
-    "cta": "Utforsk Tjenester",
+    "title_sub_highlight": "til faste pakke priser ",
+    "subtitle_line1": "Få kontroll på økonomien – og bygg et selskap investorer vil finansiere ",
+    "subtitle_line2": "Vi hjelper deg med å ta riktige beslutninger før det blir dyrt å ta feil. ",
+    "cta": "Book gratis samtale ",
     "cta_secondary": "Velg pakke"
   },
   "about": {
+    "who_we_are_label": "Hvem vi er",
+    "what_we_do_label": "Hva vi gjør",
+    "our_role_label": "Vår rolle",
     "title": "Et team du kan stole på",
-    "subtitle": "Vi er et team av erfarne gründere, CFOer og revisorer med omfattende internasjonal erfaring og bred kompetanse som spesialiserer seg på å hjelpe oppstartsselskaper.",
-    "description": "Vi kombinerer internasjonal erfaring fra ledende finans- og teknologiselskaper med en dyp forståelse av det norske oppstartsmiljøet. Teamet har tatt selskaper fra idé til børsnotering.",
+    "subtitle": "Vår ambisjon er enkel: Å gjøre deg i stand til å ta bedre beslutninger – raskere og med større trygghet.",
+    "description": "Vi jobber med startups og vekstselskaper som ønsker mer enn bare kontroll på tallene – de ønsker å bygge selskaper som er klare for vekst, investering og langsiktig lønnsomhet. Gjennom arbeid med selskaper i ulike faser har vi sett de samme utfordringene gjenta seg: gründere som mangler oversikt over kontantstrøm, selskaper som vokser uten å forstå lønnsomheten, og investormøter hvor de finansielle svarene ikke er tydelige nok. Det er her vi kommer inn. Vi kombinerer operasjonell erfaring og strategisk finanskompetanse for å gi deg det du faktisk trenger som gründer – ikke bare rapporter, men beslutningsgrunnlag. Alt til faste priser – vi vet hvor dyrt det er å ansette en erfaren CFO.",
+    "expertise_list": [
+      "Bygging av finansielle modeller for investorer",
+      "Analyse av nøkkeltall (CAC, LTV, marginer)",
+      "Kontantstrømprognoser og runway-kontroll",
+      "Kapitalinnhenting og SAFE-avtaler",
+      "Etablering av robuste økonomiprosesser",
+      "Strategisk støtte for gründere"
+    ],
     "team": [
       {
         "name": "Adiam Negassie",
-        "role": "Partner",
+        "role": "Grunnlegger & Strategisk CFO",
         "years": "18",
-        "bio": "Adiam har hatt flere ledende stillinger i Olje og Gass, IT og Avfallsektoren. Hun har startet selskaper innen tech og energi selskaper og sittet i styret i børsnoterte selskaper. Hun er utdannet dataingeniør."
+        "bio": "Senior leder med 18+ års erfaring fra olje- og gass-, IT- og avfallsbransjen. Har etablert flere selskaper innen teknologi og energi, sittet i styrene til børsnoterte selskaper, og har solid kompetanse innen strategi, drift og vekst. Utdannet dataingeniør."
       },
       {
-        "name": "Raman Parwal",
-        "role": "Partner",
-        "years": "16",
-        "bio": "Raman er statsautorisert regnskapsfører og har over 15 års erfaring innen Finans og Strategi, spesialisert i M&A og konsernstrategi. Han har tidligere jobbet for Deloitte og EY."
+        "name": "Benjamin Bye",
+        "role": "Vekststrateg & Investor",
+        "years": "20",
+        "bio": "Tidligere investeringsdirektør i Pareto Wealth Management med 20+ års erfaring. Benjamin er ekspert på kapitalinnhenting og vekststrategi for startups."
       },
       {
         "name": "Amit Mantri",
         "role": "Partner",
         "years": "16",
-        "bio": "Amit har spesialisert seg innen vekststrategi og strukturering, han har over 15 års erfaring som strategikonsulent."
+        "bio": "Strategiekspert med over 15 års erfaring. Amit spesialiserer seg på analyse av CAC, LTV og vekstdrivere for selskaper i skaleringsfasen."
+      },
+      {
+        "name": "Raman Parwal",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Spesialist på M&A og konsernstrategi med bakgrunn fra Deloitte og EY. Raman fokuserer på robuste økonomiprosesser og kontantstrøm-kontroll."
       }
     ]
   },
   "services": {
+    "label": "Ekspertise",
     "title": "Våre Tjenester",
+    "introTitle": "Vi fungerer som din strategiske CFO",
+    "introDescription": "Vi hjelper deg med å få full kontroll på kapitalbeholdning, burn-rate og kapitalbehov — og bygge finansielle modeller som faktisk styrer beslutninger.",
+
+    "points": [
+      "Få full kontroll på kapitalbeholdning, burn-rate og kapitalbehov",
+      "Bygge finansielle modeller som faktisk styrer beslutninger",
+      "Forstå hva som driver lønnsomhet (CAC, LTV, marginer)",
+      "Forberede deg på investering – før du trenger kapital"
+    ],
+
+    "virtualCfoTitle": "Med vår virtuelle CFO tjeneste",
+    "virtualCfoPoints": [
+      "CFO-kompetanse fra dag én",
+      "Fleksibilitet til å skalere opp og ned",
+      "Erfaring fra flere startups og bransjer"
+    ],
+
+    "closing": "Du betaler for effekt – ikke stillingstittel.",
+    "footer": "Her er noen av våre tjenester, vi skreddersyr tjenester basert på ditt behov.",
+    
     "budget": {
       "title": "DRIFTSBUDSJETT",
       "description": "Et omfattende driftsbudsjett som gir deg full kontroll over inntekter, kostnader og strategiske milepæler.",
@@ -106,7 +145,7 @@
     "stat_number": "67%",
     "stat_text": "av norske startups mangler gode nok budsjetter som investorer stoler på."
   },
-   
+
   "customer_stories": {
     "title_badge": "Suksesshistorier",
     "title": "Betrodd av visjonære gründere",
@@ -186,62 +225,146 @@
     "address_label": "Kontor",
     "address_value": "Toppåsveien 22c, 1262 Oslo, Norge"
   },
-  "packages": {
-    "title_badge": "Gjennomsiktig og forutsigbart",
-    "title": "Investering i din vekst",
-    "subtitle": "Profesjonell finansiell styring skreddersydd for din startups nåværende fase.",
-    "delivery_notice": "Levering: 7–14 dager",
-    "trust_badge": "Investorklar Standard",
-    "investor": {
-      "title": "Startup-pakken",
-      "price_label": "Engangshonorar",
-      "cta": "Bestill Startup-pakken",
-      "features": [
-        "Driftsbudsjett (12 måneder)",
-        "Likviditetsprognose (18 måneder)",
-        "3-års finansielle modeller",
-        "Dokumenterte forutsetninger",
-        "60-minutters gjennomgang",
-        "Excel + PDF rapport"
-      ],
-      "footer": "Passer for: Maks 5 ansatte, 2 inntektsstrømmer, pre-revenue eller <2M omsetning."
+  
+  "pricing": {
+    "header": {
+      "title": "Gjennomsiktig og forutsigbart",
+      "subtitle": "Velg pakken som passer din fase",
+      "description": "Faste priser uten skjulte kostnader. CFO-støtte er valgfritt for Pakke 1 og 2 — og obligatorisk inkludert i Skaleringspakken."
     },
-    "support": {
-      "badge": "Anbefalt",
-      "title": "CFO-støtte",
-      "price_label": "Månedsabonnement (Min. 3 mnd)",
-      "cta": "Start CFO-støtte",
-      "features": [
-        "Månedlig budsjettoppdatering",
-        "Runway-monitorering & varsler",
-        "Månedsrapport til styre/eiere",
-        "Kvartalsvise investor-rapporter",
-        "Funding-bistand",
-        "Biweekly strategimøter"
-      ]
-    },
-    "scaling": {
-      "title": "Skaleringspakken",
-      "price_label": "Engangshonorar",
-      "cta": "Kontakt for Skalering",
-      "features": [
-        "Inkluderer komplett Pakke 1",
-        "Aktiv investor-pitch support",
-        "Finansiell due diligence støtte",
-        "Cap table modeling",
-        "SAFE/Convertible note struktur",
-        "Data room setup"
-      ],
-      "footer": "For selskaper i skaleringsfasen som trenger kontinuerlig oppfølging."
-    },
-    "post_click": {
-      "title": "Hva skjer nå?",
-      "step1_title": "1. Bekreftelse",
-      "step1_desc": "Velg en tid i kalenderen som passer for en introduksjon.",
-      "step2_title": "2. Data-innsamling",
-      "step2_desc": "Vi sender over en sikker mappe for deling av dine data.",
-      "step3_title": "3. Strategisk leveranse",
-      "step3_desc": "Din investorklare modell ferdigstilles innen 14 dager."
+
+    "plans": [
+      {
+        "id": "plan1",
+        "label": "Pakke 01",
+        "name": "Grunnpakken",
+        "tagline": "Et solid finansielt fundament for deg som er tidlig i oppstartsfasen.",
+        "price": "9 900 kr",
+        "type": "one-time",
+        "billingNote": "Engangshonorar · ingen binding",
+        "features": [
+          "Driftsbudsjett (12 måneder)",
+          "Likviditetsprognose (12 mnd) + burn rate",
+          "2-årig finansiell modell",
+          "Dokumenterte forutsetninger",
+          "45-min strategisk gjennomgang",
+          "Levering i Excel + PDF"
+        ],
+        "meta": {
+          "bestFor": "Pre-revenue eller <1M omsetning, maks 3 ansatte",
+          "delivery": "5–10 dager"
+        },
+        "cta": "Kom i gang",
+        "highlight": false
+      },
+
+      {
+        "id": "plan2",
+        "label": "Pakke 02",
+        "name": "Startuppakken",
+        "tagline": "Alt du trenger for å møte investorer med troverdighet og struktur.",
+        "badge": "Mest valgt",
+        "price": "18 500 kr",
+        "type": "one-time",
+        "billingNote": "Engangshonorar · ingen binding",
+        "features": [
+          "Alt i Grunnpakken",
+          "Likviditetsprognose utvidet til 18 måneder",
+          "3-årig finansiell modell med scenarioanalyser",
+          "Enhetøkonomi (CAC / LTV)",
+          "60-min strategisk gjennomgang",
+          "1 revisjon inkludert"
+        ],
+        "meta": {
+          "bestFor": "<5M omsetning, maks 10 ansatte, forbereder investeringsrunde",
+          "delivery": "7–14 dager"
+        },
+        "cta": "Bestill nå",
+        "highlight": true
+      },
+
+      {
+        "id": "plan3",
+        "label": "Pakke 03",
+        "name": "Skaleringspakken",
+        "tagline": "For selskaper som skal hente kapital eller skalere aktivt — med tett CFO-oppfølging.",
+        "price": {
+          "base": "35 000 kr",
+          "cfo": "7 900 kr/mnd × 3 mnd",
+          "total": "Totalt minimum: 58 700 kr",
+          "note": "Valgfri videreføring à 7 900 kr/mnd deretter"
+        },
+        "type": "hybrid",
+        "billingNote": "Engangshonorar ",
+        "features": [
+          "Alt i Startuppakken",
+          "Cap table modellering",
+          "SAFE / Convertible note-struktur",
+          "Data room setup",
+          "Due diligence støtte",
+          "Pitch deck finansiell review",
+          "3 mnd løpende CFO-støtte inkludert"
+        ],
+        "meta": {
+          "bestFor": "Selskaper i aktiv vekst- eller fundraising-fase",
+          "delivery": "10–14 dager"
+        },
+        "cta": "Ta kontakt",
+        "highlight": false
+      },
+
+      {
+        "id": "cfo_basic",
+        "category": "addon",
+        "name": "CFO-støtte",
+        "tagline": "Valgfritt tillegg",
+        "price": "6 900 kr / mnd",
+        "type": "subscription",
+        "billingNote": "Ingen minimumsbinding — avslutt når du vil",
+        "features": [
+          "Månedlig budsjettoppdatering",
+          "Runway-monitorering & varsler",
+          "Månedsrapport til styre/eiere",
+          "Biweekly strategimøter",
+          "Finansieringsbistand"
+        ],
+        "cta": "+ Legg til CFO-støtte",
+        "highlight": false,
+        "note": {
+          "commitment": "Ingen minimumsbinding — avslutt når du vil",
+          "addon": "Valgfritt tillegg"
+        }
+      },
+
+      {
+        "id": "cfo_pro",
+        "category": "addon",
+        "name": "CFO-støtte",
+        "tagline": "Valgfritt tillegg",
+        "price": "7 900 kr / mnd",
+        "type": "subscription",
+        "billingNote": "Ingen minimumsbinding — avslutt når du vil",
+        "features": [
+          "Månedlig budsjettoppdatering",
+          "Runway-monitorering & varsler",
+          "Månedsrapport til styre/eiere",
+          "Kvartalsvise investorrapporter",
+          "Biweekly strategimøter",
+          "Finansieringsbistand"
+        ],
+        "cta": "+ Legg til CFO-støtte",
+        "highlight": false,
+        "note": {
+          "commitment": "Ingen minimumsbinding — avslutt når du vil",
+          "addon": "Valgfritt tillegg"
+        }
+      }
+    ],
+
+    "footer": {
+      "note": "Alle priser er eks. mva. · Fast pris — ingen timepris-overraskelser.",
+      "cta": "Usikker? Book en uforpliktende prat →"
     }
   }
 }
+

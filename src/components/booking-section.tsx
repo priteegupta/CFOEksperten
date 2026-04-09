@@ -165,7 +165,7 @@ export default function BookingSection({
                 <p className="text-white text-[11px] md:text-[12px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em]">
                   Discovery Call
                 </p>
-                <p className="text-brand-accent/60 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] italic">
+                <p className="text-brand-accent/60 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] ">
                   Strategic Structure
                 </p>
               </div>

@@ -48,7 +48,7 @@ export default function Footer({
               />
             </div>
             <div className="w-12 h-0.5 bg-brand-accent"></div>
-            <p className="text-slate-400 text-[14px] leading-relaxed max-w-xs font-light tracking-wide italic">
+            <p className="text-slate-400 text-[14px] leading-relaxed max-w-xs font-light tracking-wide ">
               {dictionary.footer.description}
             </p>
           </div>

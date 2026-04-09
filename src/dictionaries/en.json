@@ -13,37 +13,78 @@
     "title_main": "CFO Eksperten helps startups",
     "title_highlight": "build solid financial models",
     "title_sub_highlight": "at fixed prices",
-    "subtitle": "We help your company deliver budgets and financial forecasts that investors trust!",
-    "cta": "Explore Services",
+    "subtitle_line1": "Get control of your finances – and build a company investors want to fund. ",
+    "subtitle_line2": "We help you make the right decisions before mistakes become expensive.",
+    "cta": "Book Free Consultation",
     "cta_secondary": "Select Package"
   },
+
   "about": {
+    "who_we_are_label": "Who We Are",
+    "what_we_do_label": "What We Do",
+    "our_role_label": "Our Role",
     "title": "A team you can trust",
-    "subtitle": "We are a team of experienced entrepreneurs, CFOs and accountants with extensive international experience and broad expertise who specialize in helping startups.",
-    "description": "We combine international experience from leading financial and technology companies with a deep understanding of the Norwegian startup ecosystem. Our team has taken companies from idea to IPO and is passionate about making startups succeed.",
+    "subtitle": "We enable you to make better decisions—faster and with greater confidence.",
+    "description": "We work with startups and growth companies that want more than just control over their numbers—they want to build companies ready for growth, investment, and long-term profitability. Through working with companies at different stages, we have seen the same challenges repeat themselves: founders who lack visibility over cash flow, companies that grow without understanding profitability, and investor meetings where the financial answers are not clear enough. That’s where we come in. We combine operational experience with strategic financial expertise to give you what you actually need as a founder—not just reports, but a solid basis for decision-making. All at fixed prices—we know how expensive it is to hire an experienced CFO.",
+    "expertise_list": [
+      "Building financial models for investors and boards",
+      "Analyzing key metrics (CAC, LTV, margins)",
+      "Cash flow forecasting and runway control",
+      "Structuring fundraising and SAFE agreements",
+      "Establishing robust financial processes",
+      "Strategic support for founder decisions"
+    ],
     "team": [
       {
         "name": "Adiam Negassie",
-        "role": "Partner",
+        "role": "Founder & Strategic CFO",
         "years": "18",
-        "bio": "Adiam has held several leadership positions in the Oil & Gas, IT, and Waste Management sectors. She has founded companies in tech and energy and served on boards of listed companies. She is a Computer Engineer."
+        "bio": "Senior leader with 18+ years of experience across Oil & Gas, IT, and Waste Management sectors. Has founded multiple companies in tech and energy, served on boards of listed companies, and brings strong expertise in strategy, operations, and business growth. Holds a degree in Computer Engineering."
       },
       {
-        "name": "Raman Parwal",
-        "role": "Partner",
-        "years": "16",
-        "bio": "Raman is a state-authorized accountant with over 15 years of experience in Finance and Strategy, specializing in M&A and group strategy. He has previously worked for Deloitte and EY."
+        "name": "Benjamin Bye",
+        "role": "Growth Strategist & Investor",
+        "years": "20",
+        "bio": "Former CIO at Pareto Wealth Management with 20+ years in finance. Benjamin has assisted countless startups in raising significant capital and driving growth."
       },
       {
         "name": "Amit Mantri",
         "role": "Partner",
         "years": "16",
-        "bio": "Amit specializes in growth strategy and structuring and has over 15 years of experience as a strategy consultant."
+        "bio": "Strategy expert with 15+ years of experience. Amit specializes in analyzing complex metrics like CAC and LTV to identify scaling drivers for growth companies."
+      },
+      {
+        "name": "Raman Parwal",
+        "role": "Partner",
+        "years": "16",
+        "bio": "Specialist in M&A and group strategy with a background from Deloitte and EY. Raman focuses on establishing robust processes and cash flow clarity."
       }
     ]
   },
+
   "services": {
+     "label": "EXPERTISE",
     "title": "Our Services",
+     "introTitle": "We act as your strategic CFO",
+    "introDescription": "We help you gain full control of cash position, burn rate, and capital needs—and build financial models that actually drive decision-making.",
+
+    "points": [
+      "Gain full control of cash position, burn rate, and capital needs",
+      "Build financial models that actually drive decisions",
+      "Understand what drives profitability (CAC, LTV, margins)",
+      "Prepare for investment—before you need capital"
+    ],
+
+    "virtualCfoTitle": "With our virtual CFO service",
+    "virtualCfoPoints": [
+      "CFO-level expertise from day one",
+      "Flexibility to scale up and down",
+      "Experience across multiple startups and industries"
+    ],
+
+    "closing": "You pay for impact—not a job title.",
+    "footer": "Here are some of our services—we tailor them based on your needs.",
+    
     "budget": {
       "title": "OPERATING BUDGET",
       "description": "A comprehensive operating budget that gives you full control of revenues, costs and strategic milestones.",
@@ -106,25 +147,25 @@
     "stat_number": "67%",
     "stat_text": "of Norwegian startups lack good enough budgets that investors trust."
   },
- "customer_stories": {
-  "title_badge": "Success Stories",
-  "title": "Trusted by visionary founders",
-  "subtitle": "How we've helped Norwegian and international startups secure funding and scale.",
-  "stories": [
-    {
-      "text": "CFO Eksperten transformed our messy spreadsheets into an investor-ready model that helped us close our Series A.",
-      "company": "TechScale AS"
-    },
-    {
-      "text": "The strategic foresight Raman provided was instrumental in our expansion. More than just accountants, they are partners.",
-      "company": "Nordic Green Energy"
-    },
-    {
-      "text": "Fixed pricing and fast delivery. They understood exactly what our board needed to see.",
-      "company": "Oslo Fintech Lab"
-    }
-  ]
-},
+  "customer_stories": {
+    "title_badge": "Success Stories",
+    "title": "Trusted by visionary founders",
+    "subtitle": "How we've helped Norwegian and international startups secure funding and scale.",
+    "stories": [
+      {
+        "text": "CFO Eksperten transformed our messy spreadsheets into an investor-ready model that helped us close our Series A.",
+        "company": "TechScale AS"
+      },
+      {
+        "text": "The strategic foresight Raman provided was instrumental in our expansion. More than just accountants, they are partners.",
+        "company": "Nordic Green Energy"
+      },
+      {
+        "text": "Fixed pricing and fast delivery. They understood exactly what our board needed to see.",
+        "company": "Oslo Fintech Lab"
+      }
+    ]
+  },
   "audience": {
     "title": "For Whom",
     "subtitle": "We help startups in all phases",
@@ -185,62 +226,187 @@
     "address_label": "Office",
     "address_value": "Toppåsveien 22c, 1262 Oslo, Norway"
   },
-  "packages": {
-    "title_badge": "Flexible Pricing",
-    "title": "Select your phase",
-    "subtitle": "All packages include professional financial modeling and full documentation.",
-    "delivery_notice": "7–14 day delivery",
-    "trust_badge": "Investor Ready",
-    "investor": {
-      "title": "Startup Package",
-      "price_label": "One-time payment",
-      "cta": "Book Startup Package",
-      "features": [
-        "Operating budget (12 months)",
-        "Cash flow budget (18 months)",
-        "3-year financial projections",
-        "Documented assumptions",
-        "60-minute review",
-        "Excel + PDF report"
-      ],
-      "footer": "Ideal for: Max 5 employees, <$200k revenue."
+ 
+  "pricing": {
+    "header": {
+      "title": "Transparent and predictable",
+      "subtitle": "Choose the package that fits your stage",
+      "description": "Fixed pricing with no hidden costs. CFO support is optional for Package 1 and 2—and mandatory, included in the Scaling Package."
     },
-    "support": {
-      "badge": "Recommended",
-      "title": "CFO Support",
-      "price_label": "Monthly (Min. 3 months)",
-      "cta": "Start CFO Support",
-      "features": [
-        "Monthly budget updates",
-        "Runway monitoring & alerts",
-        "Monthly board reports",
-        "Quarterly investor reports",
-        "Funding round assistance",
-        "Biweekly strategy meetings"
-      ]
+
+    "currency": {
+      "default": "USD",
+      "options": ["USD", "EUR", "GBP"],
+      "symbols": {
+        "USD": "$",
+        "EUR": "€",
+        "GBP": "£"
+      }
     },
-    "scaling": {
-      "title": "Scaling Package",
-      "price_label": "One-time payment",
-      "cta": "Contact for Scaling",
-      "features": [
-        "Includes: Complete Package 1",
-        "Active pitch & DD support",
-        "Financial due diligence",
-        "Cap table modeling",
-        "SAFE/Convertible note structure",
-        "Data room setup"
-      ],
-      "footer": "For companies in the scaling phase needing continuous oversight."
-    },
-    "post_click": {
-      "title": "What happens next?",
-      "step1_title": "1. Confirmation",
-      "step1_desc": "Select a time in the calendar that works for a 15-minute introduction.",
-      "step2_title": "2. Data Collection",
-      "step2_desc": "We will provide a secure folder for sharing your financial data.",
-      "step3_title": "3. Delivery",
-      "step3_desc": "Your investor-ready model is finalized and presented within 14 days."
+
+    "plans": [
+      {
+        "id": "plan1",
+        "label": "Package 01",
+        "name": "Basic Package",
+        "tagline": "A solid financial foundation for those in the early startup phase.",
+        "price": {
+          "USD": "950",
+          "EUR": "890",
+          "GBP": "790"
+        },
+        "type": "one-time",
+        "billingNote": "One-time fee · no commitment",
+        "features": [
+          "Operating budget (12 months)",
+          "Cash flow forecast (12 months) + burn rate",
+          "2-year financial model",
+          "Documented assumptions",
+          "45-minute strategic review",
+          "Delivery in Excel + PDF"
+        ],
+        "meta": {
+          "bestFor": "Pre-revenue or < $1M revenue, up to 3 employees",
+          "delivery": "5–10 days"
+        },
+        "cta": "Get started",
+        "highlight": false
+      },
+
+      {
+        "id": "plan2",
+        "label": "Package 02",
+        "name": "Startup Package",
+        "tagline": "Everything you need to meet investors with credibility and structure.",
+        "badge": "Most Popular",
+        "price": {
+          "USD": "1750",
+          "EUR": "1650",
+          "GBP": "1450"
+        },
+        "type": "one-time",
+        "billingNote": "One-time fee · no commitment",
+        "features": [
+          "Everything in the Basic Package",
+          "Extended cash flow forecast (18 months)",
+          "3-year financial model with scenario analysis",
+          "Unit economics (CAC / LTV)",
+          "60-minute strategic review",
+          "1 revision included"
+        ],
+        "meta": {
+          "bestFor": "< $5M revenue, up to 10 employees, preparing for a funding round",
+          "delivery": "7–14 days"
+        },
+        "cta": "Order now",
+        "highlight": true
+      },
+
+      {
+        "id": "plan3",
+        "label": "Package 03",
+        "name": "Scaling Package",
+        "tagline": "For companies raising capital or scaling actively—with close CFO support.",
+        "price": {
+          "USD": {
+            "base": "3300",
+            "cfo": "750/month × 3 months",
+            "total": "Minimum total: $5550",
+            "note": "Optional continuation at $750/month thereafter"
+          },
+          "EUR": {
+            "base": "3100",
+            "cfo": "700/month × 3 months",
+            "total": "Minimum total: €5200",
+            "note": "Optional continuation at €700/month thereafter"
+          },
+          "GBP": {
+            "base": "2800",
+            "cfo": "650/month × 3 months",
+            "total": "Minimum total: £4750",
+            "note": "Optional continuation at £650/month thereafter"
+          }
+        },
+        "type": "hybrid",
+        "billingNote": "One-time fee ",
+        "features": [
+          "Everything in the Startup Package",
+          "Cap table modeling",
+          "SAFE / Convertible note structuring",
+          "Data room setup",
+          "Due diligence support",
+          "Financial review of pitch deck",
+          "3 months of ongoing CFO support included"
+        ],
+        "meta": {
+          "bestFor": "Companies in active growth or fundraising phase",
+          "delivery": "10–14 days"
+        },
+        "cta": "Contact us",
+        "highlight": false
+      },
+
+      {
+        "id": "cfo_basic",
+        "category": "addon",
+        "name": "CFO Support",
+        "tagline": "Optional Add-on",
+        "price": {
+          "USD": "650/month",
+          "EUR": "600/month",
+          "GBP": "550/month"
+        },
+        "type": "subscription",
+        "billingNote": "No minimum commitment — cancel anytime",
+        "features": [
+          "Monthly budget updates",
+          "Runway monitoring & alerts",
+          "Monthly reporting to board/owners",
+          "Biweekly strategy meetings",
+          "Fundraising support"
+        ],
+        "cta": "+ Add CFO Support",
+        "highlight": false,
+        "note": {
+          "commitment": "No minimum commitment — cancel anytime",
+          "addon": "Optional add-on"
+        }
+      },
+      
+
+      {
+        "id": "cfo_pro",
+        "category": "addon",
+        "name": "CFO Support",
+        "tagline": "Optional Add-on",
+        "price": {
+          "USD": "750/month",
+          "EUR": "700/month",
+          "GBP": "650/month"
+        },
+        "type": "subscription",
+        "billingNote": "No minimum commitment — cancel anytime",
+        "features": [
+          "Monthly budget updates",
+          "Runway monitoring & alerts",
+          "Monthly reporting to board/owners",
+          "Quarterly investor reports",
+          "Biweekly strategy meetings",
+          "Fundraising support"
+        ],
+        "cta": "+ Add CFO Support",
+        "highlight": false,
+        "note": {
+          "commitment": "No minimum commitment — cancel anytime",
+          "addon": "Optional add-on"
+        }
+      }
+    ],
+
+    "footer": {
+      "note": "All prices are excl. VAT · Fixed pricing—no hourly surprises.",
+      "cta": "Unsure? Book a non-binding consultation →"
     }
   }
+
 }

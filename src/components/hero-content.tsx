@@ -62,19 +62,30 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             <span className="opacity-85">
               {dictionary.hero.title_highlight}{" "}
             </span>
-            <span className="text-brand-accent italic font-light block sm:inline mt-2 sm:mt-0">
+            <span className="text-brand-accent  font-light inline whitespace-nowrap ml-2">
               {dictionary.hero.title_sub_highlight}
             </span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg lg:text-xl text-white/80 max-w-2xl leading-relaxed font-light mb-12"
+            className="max-w-xl mb-16"
           >
-            {dictionary.hero.subtitle}
-          </motion.p>
+            {/* MAIN STATEMENT */}
+            <p className="text-lg md:text-xl text-white font-light leading-relaxed">
+              {dictionary.hero.subtitle_line1}
+            </p>
+
+            {/* Divider */}
+            <div className="w-10 h-px bg-brand-accent my-6"></div>
+
+            {/* SUPPORTING LINE */}
+            <p className="text-sm md:text-base text-white/60 font-light leading-relaxed">
+              {dictionary.hero.subtitle_line2}
+            </p>
+          </motion.div>
 
           {/* CTA BUTTONS: Executive Light Blue */}
           <motion.div
@@ -84,14 +95,14 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             className="flex flex-col sm:flex-row items-center gap-6"
           >
             <button
-              onClick={() => scrollToSection("services")}
-              className="w-full sm:w-auto bg-brand-accent text-white px-10 py-4 rounded-sm font-black hover:bg-white hover:text-brand-dark transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] shadow-xl shadow-brand-accent/20"
+              onClick={() => scrollToSection("book-meeting")}
+              className="w-full sm:w-auto bg-brand-accent text-white px-10 py-4 cursor-pointer rounded-sm font-black hover:bg-white hover:text-brand-dark transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] shadow-xl shadow-brand-accent/20"
             >
               {dictionary.hero.cta}
             </button>
             <button
               onClick={() => scrollToSection("packages")}
-              className="w-full sm:w-auto border border-white/25 text-white px-10 py-4 rounded-sm font-bold hover:bg-white/10 hover:border-white transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] backdrop-blur-sm"
+              className="w-full sm:w-auto border border-white/25 text-white px-10 py-4 cursor-pointer rounded-sm font-bold hover:bg-white/10 hover:border-white transition-all duration-500 text-center uppercase text-[11px] tracking-[0.25em] backdrop-blur-sm"
             >
               {dictionary.hero.cta_secondary}
             </button>
