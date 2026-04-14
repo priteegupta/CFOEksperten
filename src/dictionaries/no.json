@@ -6,7 +6,7 @@
     "customers": "KUNDER",
     "our_packages": "VÅRE PAKKER",
     "faq": "FAQ",
-    "book_a_meeting": "Bestill møte"
+    "book_a_meeting": "BOOK EN PRAT"
   },
   "hero": {
     "badge": "Premium CFO-tjenester",
@@ -14,7 +14,7 @@
     "title_highlight": "bygge solide finansielle modeller",
     "title_sub_highlight": "til faste pakke priser ",
     "subtitle_line1": "Få kontroll på økonomien – og bygg et selskap investorer vil finansiere ",
-    "subtitle_line2": "Vi hjelper deg med å ta riktige beslutninger før det blir dyrt å ta feil. ",
+    "subtitle_line2": "Vi hjelper deg med å ta riktige beslutninger før det blir dyrt å ta feil– Til Faste Priser – Se våre priser ",
     "cta": "Book gratis samtale ",
     "cta_secondary": "Velg pakke"
   },
@@ -24,37 +24,37 @@
     "our_role_label": "Vår rolle",
     "title": "Et team du kan stole på",
     "subtitle": "Vår ambisjon er enkel: Å gjøre deg i stand til å ta bedre beslutninger – raskere og med større trygghet.",
-    "description": "Vi jobber med startups og vekstselskaper som ønsker mer enn bare kontroll på tallene – de ønsker å bygge selskaper som er klare for vekst, investering og langsiktig lønnsomhet. Gjennom arbeid med selskaper i ulike faser har vi sett de samme utfordringene gjenta seg: gründere som mangler oversikt over kontantstrøm, selskaper som vokser uten å forstå lønnsomheten, og investormøter hvor de finansielle svarene ikke er tydelige nok. Det er her vi kommer inn. Vi kombinerer operasjonell erfaring og strategisk finanskompetanse for å gi deg det du faktisk trenger som gründer – ikke bare rapporter, men beslutningsgrunnlag. Alt til faste priser – vi vet hvor dyrt det er å ansette en erfaren CFO.",
+    "description": "Vi jobber med startups og vekstselskaper som ønsker mer enn bare kontroll på tallene – de ønsker å bygge selskaper som er klare for vekst, investering og langsiktig lønnsomhet. Gjennom arbeid med selskaper i ulike faser har vi sett de samme utfordringene gå igjen: manglende oversikt over kontantstrøm, svak forståelse for lønnsomhet og usikkerhet i møter med investorer og offentlige aktører. Det er her vi kommer inn. Vi kombinerer operasjonell erfaring og strategisk finanskompetanse for å gi gründere det de faktisk trenger – ikke bare rapporter, men tydelige beslutningsgrunnlag. Vi bistår også selskaper med offentlig finansiering og støtteordninger fra blant annet Innovasjon Norge, SkatteFUNN, Enova, NOPEF og EU. Teamet har i tillegg erfaring med å lede kapitalinnhentingsprosesser for en rekke selskaper, og kan bidra med alt fra budsjetter, søknadsgrunnlag og investorpresentasjoner til dialog og gjennomføring. Alt til faste priser – fordi vi vet hvor kostbart det er å ansette en erfaren CFO. Teamet består av tidligere gründere, økonomer, regnskapsførere, finansanalytikere og M&A spesialister som er klare til å bistå selskaper i vekst.",
     "expertise_list": [
-      "Bygging av finansielle modeller for investorer",
-      "Analyse av nøkkeltall (CAC, LTV, marginer)",
-      "Kontantstrømprognoser og runway-kontroll",
-      "Kapitalinnhenting og SAFE-avtaler",
-      "Etablering av robuste økonomiprosesser",
-      "Strategisk støtte for gründere"
+      "Forretningsmodeller og Finansiell Strategi ",
+      "Selskapsstrukturering for vekst ",
+      "Budsjettering og Prognoser ",
+      "Kontantstrøm analyser ",
+      "Likvidetsprognoser ",
+      "Kapitalinnhenting ",
+      "Rapportering ",
+      "Risikostyring "
     ],
     "team": [
       {
         "name": "Adiam Negassie",
-        "role": "Grunnlegger & Strategisk CFO",
         "years": "18",
         "bio": "Senior leder med 18+ års erfaring fra olje- og gass-, IT- og avfallsbransjen. Har etablert flere selskaper innen teknologi og energi, sittet i styrene til børsnoterte selskaper, og har solid kompetanse innen strategi, drift og vekst. Utdannet dataingeniør."
       },
       {
         "name": "Benjamin Bye",
-        "role": "Vekststrateg & Investor",
         "years": "20",
         "bio": "Tidligere investeringsdirektør i Pareto Wealth Management med 20+ års erfaring. Benjamin er ekspert på kapitalinnhenting og vekststrategi for startups."
       },
       {
         "name": "Amit Mantri",
-        "role": "Partner",
+       
         "years": "16",
         "bio": "Strategiekspert med over 15 års erfaring. Amit spesialiserer seg på analyse av CAC, LTV og vekstdrivere for selskaper i skaleringsfasen."
       },
       {
         "name": "Raman Parwal",
-        "role": "Partner",
+       
         "years": "16",
         "bio": "Spesialist på M&A og konsernstrategi med bakgrunn fra Deloitte og EY. Raman fokuserer på robuste økonomiprosesser og kontantstrøm-kontroll."
       }
@@ -64,28 +64,49 @@
     "label": "Ekspertise",
     "title": "Våre Tjenester",
     "introTitle": "Vi fungerer som din strategiske CFO",
-    "introDescription": "Vi hjelper deg med å få full kontroll på kapitalbeholdning, burn-rate og kapitalbehov — og bygge finansielle modeller som faktisk styrer beslutninger.",
-
-    "points": [
-      "Få full kontroll på kapitalbeholdning, burn-rate og kapitalbehov",
-      "Bygge finansielle modeller som faktisk styrer beslutninger",
-      "Forstå hva som driver lønnsomhet (CAC, LTV, marginer)",
-      "Forberede deg på investering – før du trenger kapital"
-    ],
-
-    "virtualCfoTitle": "Med vår virtuelle CFO tjeneste",
-    "virtualCfoPoints": [
-      "CFO-kompetanse fra dag én",
-      "Fleksibilitet til å skalere opp og ned",
-      "Erfaring fra flere startups og bransjer"
-    ],
-
     "closing": "Du betaler for effekt – ikke stillingstittel.",
     "footer": "Her er noen av våre tjenester, vi skreddersyr tjenester basert på ditt behov.",
-    
+
+    "sections": [
+      {
+        "title": "Business controlling og rapportering",
+        "points": [
+          "Analyse av lønnsomhet, marginer og kostnadsdrivere",
+          "Budsjett, prognoser og likviditetsstyring",
+          "KPI-er, dashboards og styringsverktøy",
+          "Økonomisk beslutningsstøtte til salg og drift"
+        ]
+      },
+      {
+        "title": "Kapitalinnhenting og refinansiering",
+        "points": [
+          "Tilrettelegging til Kapitalinnhenting og refinansiering",
+          "Utarbeidelse av analyser, beslutningsgrunnlag og presentasjoner",
+          "Rådgivning ved transaksjoner og eierskapsendringer"
+        ]
+      },
+      {
+        "title": "Virtuell CFO / Interim CFO",
+        "points": [
+          "Finansiell strategi for vekst, lønnsomhet og kontroll",
+          "Helhetlig ansvar for finansiell styring og rapportering",
+          "Oppfølging av likviditet, kapitalstruktur og finansieringsbehov"
+        ]
+      },
+      {
+        "title": "Compliance og risikostyring",
+        "points": [
+          "Internkontroll og etterlevelse av lover og regler",
+          "Risikoanalyser og risikovurderinger",
+          "Oppfølging av finansielle og operative risikoforhold",
+          "Samarbeid med revisor og eksterne rådgivere"
+        ]
+      }
+    ],
+
     "budget": {
-      "title": "DRIFTSBUDSJETT",
-      "description": "Et omfattende driftsbudsjett som gir deg full kontroll over inntekter, kostnader og strategiske milepæler.",
+      "title": "SALG OG DRIFTBUDSJETTER",
+      "description": "Omfattende budsjetter som gir deg full kontroll over inntekter, kostnader og strategiske milepæler.",
       "points": [
         "Inntektsmodeller",
         "Kostnadsstruktur",
@@ -94,12 +115,12 @@
       ]
     },
     "liquidity": {
-      "title": "LIKVIDITETSBUDSJETT OG BALANSE",
-      "description": "Månedlig likviditetsbudsjett som viser deg runway, burn rate og når du må finansiere neste fase.",
+      "title": "LIKVIDITETS OG CASHFLOW-ANALYSER",
+      "description": "Månedlig likviditetsbudsjett som viser deg kontstrøm, burn rate og når du må finansiere neste fase.",
       "points": [
         "Månedlige kontantstrømprognoser",
-        "Burn rate og runway-analyse",
-        "Finansieringsdato",
+        "Burn rate og cashflow -analyse",
+        "Finansieringsbehov",
         "Scenarioanalyser",
         "Balanse"
       ]
@@ -119,9 +140,9 @@
       "description": "Den ultimate løsningen som gir deg komplett økonomisk ledelse og strategisk oversikt for dine premium behov.",
       "points": [
         "Løpende strategisk veiledning",
-        "Finansiell rapportering på ledernivå",
-        "Forberedelse til styremøter",
-        "Støtte til investorrelasjoner"
+        "Finansiell rapportering med profesjonelle presentasjoner",
+        "Forbredelse mot kapitalhenting – emisjoner og opsjon avtaler",
+        "Bistand til riktig selskapsstruktur"
       ]
     }
   },
@@ -135,15 +156,13 @@
     "description": "Mange startups sliter med økonomisk kontroll",
     "context": "For selskaper i en tidlig fase er det ofte kostnadskontroll og realistiske prognoser – ikke lønnsomhet – som avgjør overlevelse.",
     "points": [
-      "Svake eller mangelfulle budsjetter for videre vekst",
-      "Budsjett som ikke gjenspeiler faktiske kontantbevegelser",
+      
       "Økonomiske prognoser som mangler struktur og troverdighet",
       "Ingen tydelig eierskap til økonomistyring før og etter investering",
       "Svak selskapsstruktur som ikke er egnet for vekst",
       "Mangel på CFO-kompetanse i kritiske vekstfaser"
-    ],
-    "stat_number": "67%",
-    "stat_text": "av norske startups mangler gode nok budsjetter som investorer stoler på."
+    ]
+   
   },
 
   "customer_stories": {
@@ -169,6 +188,7 @@
   "audience": {
   "title": "For hvem",
   "subtitle": "Vi hjelper startups i alle faser",
+  "strategy_badge": "Strategi først",
   "groups": [
     {
       "title": "Startups som vil lansere et nytt konsept",
@@ -223,6 +243,10 @@
     "q5": {
       "question": "Kan CFO Eksperten hjelpe til med investorpresentasjoner?",
       "answer": "Ja – CFO Eksperten kan hjelpe til med analyser, modellering, prognoser, due diligence og investorkommunikasjon i forbindelse med kapitalinnhenting."
+    },
+    "q6": {
+      "question": " Kan CFO Eksperten hente kapital for selskaper?",
+      "answer": "Ja – vi har god erfaring med å hente kapital fra investorer i Norge, utlandet, samt offentlig støttemidler i Norge. Vi har ett bredt investor nettverk. Vilkår for dette må avtales nærmere. "
     }
   },
   "footer": {
@@ -240,14 +264,14 @@
     "phone": "+47 98 16 40 37",
     "email": "hei@cfoeksperten.no",
     "address_label": "Kontor",
-    "address_value": "Toppåsveien 22c, 1262 Oslo, Norge"
+    "address_value": "Grini Næringspark 4b, 1361 Stabekk"
   },
   
   "pricing": {
     "header": {
-      "title": "Gjennomsiktig og forutsigbart",
+      "title": "Transparant,forutsigbart og Rimelig.",
       "subtitle": "Velg pakken som passer din fase",
-      "description": "Faste priser uten skjulte kostnader. CFO-støtte er valgfritt for Pakke 1 og 2 — og obligatorisk inkludert i Skaleringspakken."
+      "description": "Vi har gjort det enkelt. Faste priser uten skjulte kostnader. CFO-støtte er valgfritt for Pakke 1 og 2 — og obligatorisk inkludert i Skaleringspakken."
     },
     "currency": {
       "default": "USD",
@@ -270,7 +294,7 @@
         "billingNote": "Engangshonorar · ingen binding",
         "features": [
           "Driftsbudsjett (12 måneder)",
-          "Likviditetsprognose (12 mnd) + burn rate",
+          "Likviditetsprognose (12 mnd) ",
           "2-årig finansiell modell",
           "Dokumenterte forutsetninger",
           "45-min strategisk gjennomgang",
@@ -278,9 +302,9 @@
         ],
         "meta": {
           "bestFor": "Pre-revenue eller <1M omsetning, maks 3 ansatte",
-          "delivery": "5–10 dager"
+          "delivery": "14 dager"
         },
-        "cta": "Kom i gang",
+        "cta": "Velg",
         "highlight": false
       },
 
@@ -339,28 +363,7 @@
         "highlight": false
       },
 
-      {
-        "id": "cfo_basic",
-        "category": "addon",
-        "name": "CFO-støtte",
-        "tagline": "Valgfritt tillegg",
-        "price": "6 900 kr / mnd",
-        "type": "subscription",
-        "billingNote": "Ingen minimumsbinding — avslutt når du vil",
-        "features": [
-          "Månedlig budsjettoppdatering",
-          "Runway-monitorering & varsler",
-          "Månedsrapport til styre/eiere",
-          "Biweekly strategimøter",
-          "Finansieringsbistand"
-        ],
-        "cta": "+ Legg til CFO-støtte",
-        "highlight": false,
-        "note": {
-          "commitment": "Ingen minimumsbinding — avslutt når du vil",
-          "addon": "Valgfritt tillegg"
-        }
-      },
+      
 
       {
         "id": "cfo_pro",

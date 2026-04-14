@@ -21,8 +21,8 @@ type FooterType = {
 type ServiceType =
   | string
   | {
-      title: string;
-    };
+    title: string;
+  };
 
 export default function Footer({
   dictionary,
@@ -58,7 +58,7 @@ export default function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
           {/* Column 1 */}
           <div className="flex flex-col space-y-6 md:space-y-8">
-            <div className="flex items-start justify-start">
+            <div className="flex items-start justify-start -ml-6 md:-ml-12">
               <Image
                 src="/CFOFooter.png"
                 alt="CFO Eksperten"
@@ -147,9 +147,9 @@ export default function Footer({
                   Address
                 </span>
                 <p className="text-slate-400 leading-relaxed">
-                  Toppåsveien 22c
+                  Grini Næringspark 4b,
                   <br />
-                  1262 Oslo, {lang === "no" ? "Norge" : "Norway"}
+                  1361 Stabekk, {lang === "no" ? "Norge" : "Norway"}
                 </p>
               </div>
 

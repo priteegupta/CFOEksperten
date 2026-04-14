@@ -38,7 +38,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
       {/* BACKGROUND CONTAINER - REDUCED DARKNESS FOR VISIBILITY */}
       <div className="absolute inset-0 z-0 bg-brand-dark">
         <Image
-          src="https://brightadvisers.com/wp-content/uploads/2025/06/mastering-cfo-family-office-jobs-essential-steps-for-success.png"
+          src="/herocontentimg.png"
           alt="CFO Eksperten Strategic Team"
           fill
           className="object-cover opacity-80 transition-transform duration-1000 scale-105"
@@ -91,10 +91,25 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
             {/* Divider */}
             <div className="w-10 h-px bg-brand-accent my-6"></div>
 
-            {/* SUPPORTING LINE */}
-            <p className="text-sm md:text-base text-white/60 font-light leading-relaxed">
-              {hero.subtitle_line2}
-            </p>
+            {/* SUPPORTING LINE - REFINED HIERARCHY */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="text-sm md:text-lg text-white/60 font-light leading-relaxed max-w-2xl"
+            >
+              {/* Primary Text */}
+              <span>{hero.subtitle_line2.split("–")[0]}</span>
+
+              {/* Accent Text: Til Faste Priser */}
+              <span className="inline-block ml-1 text-white font-bold border-l border-white/20 pl-3">
+                {/* This captures "Til Faste Priser – Se våre priser" */}
+                {hero.subtitle_line2.includes("–")
+                  ? `– ${hero.subtitle_line2.split("–").slice(1).join("–")}`
+                  : ""}
+              </span>
+            </motion.p>
           </motion.div>
 
           {/* CTA BUTTONS: Executive Light Blue */}

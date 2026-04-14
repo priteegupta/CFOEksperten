@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "www.scripps.org",
+      },
+      {
+        protocol: "https",
+        hostname: "chatgpt.com",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
       },
       {

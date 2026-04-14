@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Locale, i18n } from "@/i18n-config";
+import { Locale } from "@/i18n-config";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
@@ -95,17 +96,10 @@ export function Navbar({
     }
   };
 
-  const redirectedPathName = (locale: Locale) => {
-    if (!pathname) return "/";
-    const segments = pathname.split("/");
-    segments[1] = locale;
-    return segments.join("/");
-  };
-
   const navLinks: NavLink[] = [
     { id: "services", label: services, isAnchor: true },
     { id: "about", label: about_us, isAnchor: true },
-    { id: "customers", label: customers, isAnchor: true },
+    // { id: "customers", label: customers, isAnchor: true },
     { id: "packages", label: our_packages, isAnchor: true },
     { id: "faq", label: faq, isAnchor: true },
   ];
@@ -144,15 +138,9 @@ export function Navbar({
           }}
           className="flex shrink-0 items-center group"
         >
-          <div
-            className={`relative transition-all duration-300 group-hover:scale-105 
-  h-30 w-72 
-  sm:h-26 sm:w-68 
-  md:h-32 md:w-80 
-  lg:h-40 lg:w-98 lg:max-w-65`}
-          >
+          <div className="relative transition-all duration-300 group-hover:scale-105 h-24 w-72 sm:h-22 sm:w-64 md:h-32 md:w-80 lg:h-40 lg:w-92 lg:max-w-45">
             <Image
-              src="/logo_provided.png"
+              src="/logo_provided1.png"
               alt="CFO Logo"
               fill
               className={`object-contain object-left transition-all duration-500 ${
@@ -163,7 +151,7 @@ export function Navbar({
           </div>
         </Link>
 
-        {/* Desktop Links - Optimized Contrast */}
+        {/* Desktop Links */}
         <div
           className={`hidden lg:flex items-center space-x-10 text-[13px] font-bold tracking-[0.15em] transition-colors duration-500 ${
             isOverHero ? "text-white drop-shadow-md" : "text-brand-dark/80"
@@ -184,51 +172,30 @@ export function Navbar({
             >
               {item.label}
               <span
-                className={`absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent transform origin-left transition-transform duration-300 ${isLinkActive(item) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                className={`absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent transform origin-left transition-transform duration-300 ${
+                  isLinkActive(item)
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                }`}
               ></span>
             </Link>
           ))}
         </div>
 
-        {/* Language & CTA */}
+        {/* CTA Button Only (Language Switcher Removed) */}
         <div className="flex items-center space-x-4">
-          <div
-            className={`hidden sm:flex items-center p-1 rounded-full transition-all duration-500 ${
-              isOverHero ? "bg-white/10 backdrop-blur-sm" : "bg-slate-100"
-            }`}
-          >
-            {i18n.locales.map((locale) => (
-              <Link
-                key={locale}
-                href={redirectedPathName(locale)}
-                className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest transition-all duration-300 ${
-                  lang === locale
-                    ? "bg-white text-brand-dark shadow-sm"
-                    : isOverHero
-                      ? "text-white/60 hover:text-white"
-                      : "text-slate-400 hover:text-brand-dark"
-                }`}
-              >
-                {locale.toUpperCase()}
-              </Link>
-            ))}
-          </div>
-
           <button
             onClick={(e) => scrollToSection(e, "book-meeting")}
-            /* Added group/nav and overflow-hidden to contain the inner fade layer */
             className={`group/nav relative hidden sm:block px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-700 cursor-pointer overflow-hidden shadow-lg ${
               isOverHero
                 ? "bg-white/10 text-white border border-white/30 hover:bg-white hover:text-brand-dark"
                 : "bg-brand-gradient text-white shadow-brand-accent/20"
             }`}
           >
-            {/* THE HOVER LAYER: This creates the smooth, slow transition to #60A5FA */}
             {!isOverHero && (
               <div className="absolute inset-0 bg-brand-accent opacity-0 group-hover/nav:opacity-100 transition-opacity duration-700 pointer-events-none" />
             )}
 
-            {/* THE CONTENT: Wrapped in z-10 to stay visible above the fading layer */}
             <div className="relative z-10 flex items-center gap-2">
               {!isOverHero && (
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse group-hover/nav:bg-brand-dark transition-colors duration-700" />
@@ -243,19 +210,37 @@ export function Navbar({
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "bg-brand-dark rotate-45 translate-y-2" : isOverHero ? "bg-white shadow-sm" : "bg-brand-dark"}`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "bg-brand-dark rotate-45 translate-y-2"
+                  : isOverHero
+                    ? "bg-white shadow-sm"
+                    : "bg-brand-dark"
+              }`}
             ></span>
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : isOverHero ? "bg-white shadow-sm" : "bg-brand-dark"}`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "opacity-0"
+                  : isOverHero
+                    ? "bg-white shadow-sm"
+                    : "bg-brand-dark"
+              }`}
             ></span>
             <span
-              className={`block w-6 h-0.5 transition-all duration-300 ${isMobileMenuOpen ? "bg-brand-dark -rotate-45 -translate-y-2" : isOverHero ? "bg-white shadow-sm" : "bg-brand-dark"}`}
+              className={`block w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "bg-brand-dark -rotate-45 -translate-y-2"
+                  : isOverHero
+                    ? "bg-white shadow-sm"
+                    : "bg-brand-dark"
+              }`}
             ></span>
           </button>
         </div>
       </div>
 
-      {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU OVERLAY (Language Switcher Removed) */}
       <div
         className={`lg:hidden fixed inset-0 bg-white z-40 transition-all duration-500 flex flex-col ${
           isMobileMenuOpen
@@ -264,26 +249,15 @@ export function Navbar({
         }`}
       >
         <div className="flex flex-col px-8 py-24 space-y-10">
-          <div className="flex items-center justify-center p-1 bg-slate-100 rounded-xl">
-            {i18n.locales.map((locale) => (
-              <Link
-                key={locale}
-                href={redirectedPathName(locale)}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex-1 text-center py-4 rounded-lg text-sm font-black tracking-widest transition-all ${lang === locale ? "bg-white text-brand-accent shadow-md" : "text-slate-400"}`}
-              >
-                {locale === "en" ? "ENGLISH" : "NORSK"}
-              </Link>
-            ))}
-          </div>
-
           <div className="flex flex-col space-y-8">
             {navLinks.map((item) => (
               <Link
                 key={item.id}
                 href={`/${lang}#${item.id}`}
                 onClick={(e) => scrollToSection(e, item.id)}
-                className={`text-xl font-bold uppercase tracking-[0.2em] transition-colors ${isLinkActive(item) ? "text-brand-accent" : "text-brand-dark"}`}
+                className={`text-xl font-bold uppercase tracking-[0.2em] transition-colors ${
+                  isLinkActive(item) ? "text-brand-accent" : "text-brand-dark"
+                }`}
               >
                 {item.label}
               </Link>

@@ -59,10 +59,10 @@ export default function AudienceSection({
           >
             <div className="relative aspect-4/5 rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.15)] border border-slate-100 bg-slate-50">
               <Image
-                src="https://images.openai.com/static-rsc-4/cBvoRjqmyYjrU-eIvv_Xb9j5vIYOKDxXPPF8OrDGcN1B1e9Y2Z8Vcl366qKtb33GrkLq4Uh9lyCB5WNRkwxGV9G5WSjmyU4IEv2H-rppjkW6tyZVBRt1gOs6E94qQdiwLOVlIsZCTNdVA5yTovyRGnIVd3wNSkIT7W2ExsB7pqjzXbS3iz4zj7tOYDRKnztp?purpose=fullsize"
+                src="/forwhomm.png"
                 alt="Financial Analysis Dashboard"
                 fill
-                className="object-cover"
+                className="object-fit"
                 unoptimized
               />
               <div className="absolute inset-0 bg-linear-to-tr from-brand-dark/20 to-transparent pointer-events-none" />
@@ -120,7 +120,7 @@ export default function AudienceSection({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false }}
                     transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 12 }}
+                    whileHover={{ x: 6 }}
                     className="group flex items-center gap-6 p-7 rounded-3xl border border-slate-50 bg-slate-50/40 hover:bg-white hover:border-brand-accent/20 hover:shadow-xl transition-all duration-500"
                   >
                     <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shrink-0">

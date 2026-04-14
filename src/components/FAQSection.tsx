@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
 type FAQType = {
+
   notice?: string;
   title?: string;
   subtitle?: string;
@@ -13,6 +14,7 @@ type FAQType = {
   q3?: { question: string; answer: string };
   q4?: { question: string; answer: string };
   q5?: { question: string; answer: string };
+  q6?: { question: string; answer: string };
 };
 
 export default function FAQSection({
@@ -51,6 +53,11 @@ export default function FAQSection({
       id: 5,
       question: faqData.q5?.question || "",
       answer: faqData.q5?.answer || "",
+    },
+    {
+      id: 6,
+      question: faqData.q6?.question || "",
+      answer: faqData.q6?.answer || "",
     },
   ].filter((faq) => faq.question !== "");
 
