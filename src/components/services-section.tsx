@@ -126,7 +126,7 @@ export default function ServicesSection({
           </div>
 
           <div className="space-y-4">
-            {services.liquidity.points.slice(0, 4).map((point, idx) => (
+            {services.liquidity.points.map((point, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{
@@ -215,7 +215,7 @@ export default function ServicesSection({
                     {service.description}
                   </p>
                   <ul className="space-y-4 mt-auto">
-                    {service.points.slice(0, 4).map((point, pIdx) => (
+                    {service.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
                         <span className="text-[12px] font-medium text-slate-700 leading-tight">
