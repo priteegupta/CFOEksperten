@@ -129,7 +129,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
               {pricing.header.title}
             </h2>
-            <p className="text-slate-500 mt-6 text-lg font-light leading-relaxed max-w-xl border-l-2 border-slate-200 pl-6 italic">
+            <p className="text-slate-500 mt-6 text-lg font-light leading-relaxed max-w-xl border-l-2 border-slate-200 pl-6 ">
               {pricing.header.description}
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">
                       {plan.name}
                     </h3>
-                    <p className="text-slate-500 text-sm font-light min-h-10 italic">
+                    <p className="text-slate-500 text-sm font-light min-h-10 ">
                       {plan.tagline}
                     </p>
                   </div>
@@ -301,7 +301,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                       {lang === "no" ? "TILLEGG" : "ADD-ON"}
                     </div>
                   </div>
-                  <p className="text-sm text-slate-500 mb-6 italic">
+                  <p className="text-sm text-slate-500 mb-6 ">
                     {plan.tagline}
                   </p>
                   <div className="text-3xl font-serif font-bold text-slate-900 mb-4">
@@ -349,7 +349,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
 
         {/* FOOTER */}
         <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col items-center gap-4">
-          <p className="text-slate-400 text-[13px] font-light italic">
+          <p className="text-slate-400 text-[13px] font-light ">
             {pricing.footer.note}
           </p>
           <button
