@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion,  type Variants } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
 
 type ServiceDetail = {
@@ -99,7 +99,7 @@ export default function ServicesSection({
               {services.title}
             </h2>
           </div>
-          <p className="text-slate-400 text-[14px] max-w-[280px] md:text-right italic leading-relaxed">
+          <p className="text-slate-400 text-[14px] max-w-70 md:text-right  leading-relaxed">
             {services.footer}
           </p>
         </motion.div>
