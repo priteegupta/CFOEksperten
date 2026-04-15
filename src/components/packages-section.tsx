@@ -273,7 +273,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
 
                   <button
                     onClick={handleCTA}
-                    className={`w-full py-5 rounded-2xl font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer ${plan.highlight ? "bg-slate-900 text-white hover:bg-slate-800 shadow-md" : "border-2 border-slate-200 text-slate-900 hover:border-slate-900 hover:bg-slate-900 hover:text-white"}`}
+                    className={`w-full py-5 rounded-2xl font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer ${plan.highlight ? "bg-slate-600 text-white hover:bg-slate-800 shadow-md" : "border-2 border-slate-200 text-slate-900 hover:border-slate-600 hover:bg-slate-600 hover:text-white"}`}
                   >
                     {plan.cta}
                   </button>

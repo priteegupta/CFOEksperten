@@ -41,7 +41,7 @@ export function HeroContent({ dictionary, lang }: HeroSectionProps) {
           src="/herocontentimg.png"
           alt="CFO Eksperten Strategic Team"
           fill
-          className="object-cover opacity-80 transition-transform duration-1000 scale-105"
+          className="object-cover object-top opacity-80 transition-transform duration-1000 scale-105"
           priority
         />
 

@@ -138,7 +138,7 @@ export default function AboutSection({
 
         {/* SECTION 2: CAPABILITIES (Sticky Layout) */}
         <div className="grid lg:grid-cols-12 gap-16 mb-44 items-start">
-          <div className="lg:col-span-5 lg:sticky lg:top-32 h-137.5 rounded-[3rem] overflow-hidden shadow-2xl">
+          <div className="lg:col-span-5 lg:sticky relative lg:top-32 h-137.5 rounded-[3rem] overflow-hidden shadow-2xl">
             <Image
               src="https://images.openai.com/static-rsc-4/PCNKruk3C8pK_5QFfsfwGqTOOLoUJqhIt_d7QkDka_SLGagaachI7FT_iwlu-NgXFeR3mcVtJkpCK2L20dCXhZGlTlN8FKehfuJeo9W4rTKp08uPnMX8r3G1LE2sTp9CFIt5P2uWW_zdAOWrMQGXYBQAPMxo8MnpvOc5iNIFujqPJJipaNHnWJWXQ9nJvKfp?purpose=fullsize"
               alt="Expertise"
