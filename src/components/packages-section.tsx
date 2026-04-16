@@ -130,10 +130,11 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                 {lang === "no" ? "PRISMODELLER" : "PRICING"}
               </span>
             </motion.div>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-slate-900 tracking-tight leading-snug md:leading-tight">
               {pricing.header.title}
             </h2>
-            <p className="text-slate-500 mt-6 text-lg font-light leading-relaxed max-w-xl border-l-2 border-slate-200 pl-6 ">
+
+            <p className="text-slate-500 mt-4 md:mt-6 text-base sm:text-lg font-light leading-relaxed max-w-full md:max-w-xl border-l-0 md:border-l-2 border-slate-200 pl-0 md:pl-6">
               {pricing.header.description}
             </p>
           </div>
@@ -355,9 +356,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                       onClick={() => handleCTA(plan)}
                       className="w-full md:w-72 py-5 rounded-2xl border-2 border-brand-accent text-brand-accent font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-700 hover:bg-brand-accent hover:text-white hover:shadow-xl hover:shadow-brand-accent/20 cursor-pointer whitespace-nowrap active:scale-95"
                     >
-                      {lang === "no"
-                        ? " TA KONTAKT"
-                        : " ADD CFO SUPPORT"}
+                      {lang === "no" ? " TA KONTAKT" : " ADD CFO SUPPORT"}
                     </button>
                   </div>
                 </motion.div>
