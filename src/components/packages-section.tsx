@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { openCalendly } from "@/lib/calendly";
 
 type Plan = {
   id: string;
@@ -102,10 +103,13 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
     return `${symbols[currency]}${value.toLocaleString("en-US")}`;
   };
 
-  const handleCTA = () => {
-    const el = document.getElementById("book-meeting");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+ const handleCTA = (plan: Plan) => {
+   // Use the name from the dictionary so it's readable in the email
+   const planName = plan.name;
+   const isCfoAddon = plan.category === "addon";
+
+   openCalendly(planName, isCfoAddon);
+ };
 
   return (
     <section
@@ -272,7 +276,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                   )}
 
                   <button
-                    onClick={handleCTA}
+                    onClick={() => handleCTA(plan)}
                     className={`w-full py-5 rounded-2xl font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer ${plan.highlight ? "bg-slate-600 text-white hover:bg-slate-800 shadow-md" : "border-2 border-slate-200 text-slate-900 hover:border-slate-600 hover:bg-slate-600 hover:text-white"}`}
                   >
                     {plan.cta}
@@ -282,67 +286,81 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
             })}
         </div>
 
-        {/* ADD-ONS SECTION */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* REFINED ADD-ONS SECTION: CENTERED WIDE CARD WITH HOVER EFFECTS */}
+        <div className="max-w-5xl mx-auto space-y-8 mt-12">
           {pricing.plans
             .filter((p: Plan) => p.category === "addon")
             .map((plan: Plan) => {
               const price = formatPrice(getPriceNumber(plan));
               return (
-                <div
+                <motion.div
                   key={plan.id}
-                  className="group p-10 border-2 border-dashed border-slate-200 rounded-[40px] bg-white transition-all duration-300 hover:border-brand-accent/40 flex flex-col h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group relative p-8 md:p-12 border-2 border-dashed border-slate-200 rounded-[3rem] bg-white transition-all duration-700 ease-out hover:border-brand-accent/40 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.08)] flex flex-col lg:flex-row gap-10 items-center"
                 >
-                  <div className="flex justify-between items-start mb-6">
-                    <h4 className="text-xl font-bold text-slate-900">
-                      {plan.name}
-                    </h4>
-                    <div className="px-3 py-1 bg-brand-accent/10 rounded-lg text-brand-accent text-[9px] font-bold tracking-widest">
-                      {lang === "no" ? "TILLEGG" : "ADD-ON"}
+                  {/* LEFT SIDE: Identity & Pricing */}
+                  <div className="lg:w-2/5 space-y-5 text-center lg:text-left">
+                    <div className="inline-block px-4 py-1 bg-brand-accent/5 rounded-full text-brand-accent text-[9px] font-black tracking-[0.3em] uppercase">
+                      {lang === "no" ? " Tillegg" : "Add-on"}
                     </div>
-                  </div>
-                  <p className="text-sm text-slate-500 mb-6 ">
-                    {plan.tagline}
-                  </p>
-                  <div className="text-3xl font-serif font-bold text-slate-900 mb-4">
-                    {price}{" "}
-                    <span className="text-xs font-normal text-slate-400">
-                      / {lang === "no" ? "mnd" : "mo"}
-                    </span>
-                  </div>
 
-                  {/* ✅ PLAN NOTE INTEGRATION */}
-                  {plan.note && (
-                    <div className="text-[13px] text-slate-500 mb-8 pb-8 border-b border-slate-100 space-y-1">
-                      <p>{plan.note.commitment}</p>
-                      <p className="font-bold text-slate-800 uppercase tracking-tight">
-                        {plan.note.addon}
+                    <div className="space-y-1">
+                      <h4 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+                        {plan.name}
+                      </h4>
+                      {/* Added: Valgfritt tillegg subtitle */}
+                      <p className="text-slate-400 text-sm font-light italic">
+                        {lang === "no"
+                          ? "Valgfritt tillegg"
+                          : "Optional add-on"}
                       </p>
                     </div>
-                  )}
 
-                  <div className="grow mb-10">
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="pt-4">
+                      <div className="flex items-baseline justify-center lg:justify-start gap-2">
+                        <span className="text-4xl font-serif font-bold text-slate-900">
+                          {price}
+                        </span>
+                        <span className="text-slate-400 text-xs">
+                          / {lang === "no" ? "mnd" : "mo"}
+                        </span>
+                      </div>
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mt-3 opacity-70">
+                        {lang === "no"
+                          ? "Ingen minimumsbinding — avslutt når du vil"
+                          : "No commitment — cancel anytime"}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* RIGHT SIDE: Features & Centered CTA with Hover Effects */}
+                  <div className="lg:w-3/5 w-full flex flex-col items-center lg:items-end gap-10 lg:pl-10 lg:border-l border-slate-100">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 w-full">
                       {plan.features.map((f: string, i: number) => (
                         <li
                           key={i}
-                          className="flex items-center gap-3 text-sm text-slate-500 font-medium leading-tight"
+                          className="flex items-center gap-3 text-[12px] text-slate-600 font-medium transition-all duration-500 group-hover:translate-x-1"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-brand-accent transition-colors" />
-                          {f}
+                          <span className="w-1.5 h-1.5 rounded-full bg-slate-200 transition-all duration-500 group-hover:bg-brand-accent group-hover:scale-125" />
+                          <span className="group-hover:text-slate-900 transition-colors duration-500">
+                            {f}
+                          </span>
                         </li>
                       ))}
                     </ul>
+
+                    <button
+                      onClick={() => handleCTA(plan)}
+                      className="w-full md:w-72 py-5 rounded-2xl border-2 border-brand-accent text-brand-accent font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-700 hover:bg-brand-accent hover:text-white hover:shadow-xl hover:shadow-brand-accent/20 cursor-pointer whitespace-nowrap active:scale-95"
+                    >
+                      {lang === "no"
+                        ? "+ LEGG TIL CFO-STØTTE"
+                        : "+ ADD CFO SUPPORT"}
+                    </button>
                   </div>
-                  <button
-                    onClick={handleCTA}
-                    className="w-full py-4 rounded-xl border-2 border-brand-accent/20 text-brand-accent text-[11px] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-brand-accent hover:text-white transition-all shadow-sm"
-                  >
-                    {lang === "no"
-                      ? "+ LEGG TIL CFO-STØTTE"
-                      : "+ ADD CFO SUPPORT"}
-                  </button>
-                </div>
+                </motion.div>
               );
             })}
         </div>
@@ -353,7 +371,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
             {pricing.footer.note}
           </p>
           <button
-            onClick={handleCTA}
+            onClick={() => openCalendly("Pris_Footer_Kontakt")}
             className="flex items-center gap-3 text-slate-900 text-[11px] font-bold uppercase tracking-[0.4em] cursor-pointer hover:opacity-70 transition-opacity"
           >
             {pricing.footer.cta} <span></span>

@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
 import { type Dictionary } from "@/get-dictionary";
+import { openCalendly } from "@/lib/calendly";
 
 type AboutType = {
   who_we_are_label: string;
@@ -245,6 +246,47 @@ export default function AboutSection({
             ))}
           </div>
         </div>
+        {/* STRATEGIC CONVERSION: MID-DARK NAVY WITH FLOATING CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-24 p-8 md:p-16 rounded-[4rem] bg-linear-to-br from-[#1E293B] to-[#0F172A] relative overflow-hidden group shadow-[0_40px_100px_-20px_rgba(15,23,42,0.25)] border border-white/5"
+        >
+          {/* Sophisticated Ambient Glow */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/20 rounded-full blur-[100px] transition-all duration-1000 group-hover:bg-brand-accent/30 group-hover:scale-110" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-2xl text-center lg:text-left">
+              <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                Klar for en strategisk partner som forstår din vekstreise?
+              </h3>
+              <p className="text-slate-400 text-lg font-light leading-relaxed">
+                Vårt team står klare til å transformere dine finansielle
+                utfordringer til strategiske fordeler.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center gap-6">
+              <motion.button
+                // TRIGGER CALENDLY
+                onClick={() => openCalendly("Fra_Om_Oss_Seksjon")}
+                // FLOATING ANIMATION (Using your custom utility)
+                className="animate-float bg-brand-accent text-white px-12 py-5 rounded-xl cursor-pointer font-black uppercase tracking-[0.25em] text-[11px] shadow-2xl shadow-brand-accent/30 transition-all duration-500 whitespace-nowrap"
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "#ffffff",
+                  color: "#0F172A",
+                  boxShadow: "0 0 40px rgba(96, 165, 250, 0.6)",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                BOOK EN PRAT
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

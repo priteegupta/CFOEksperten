@@ -2,8 +2,9 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion,  type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { type Dictionary } from "@/get-dictionary";
+import { openCalendly } from "@/lib/calendly";
 
 type ServiceDetail = {
   title: string;
@@ -55,7 +56,7 @@ const staggerContainer: Variants = {
 export default function ServicesSection({
   dictionary,
 }: {
-  dictionary: Dictionary;
+  dictionary: Dictionary & { navbar: { book_a_meeting: string } };
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const services = dictionary.services as ServicesDataType;
@@ -179,7 +180,37 @@ export default function ServicesSection({
           ))}
         </div>
 
-        {/* CARD GRID (Screenshot 4) */}
+        {/* STRATEGIC CONVERSION ADDITION - DIRECT CALENDLY TRIGGER */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="bg-brand-gradient rounded-[2.5rem] p-8 md:p-14 mb-32 text-white shadow-2xl relative overflow-hidden group"
+        >
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-3 tracking-tight">
+                Klar for å optimalisere din økonomi?
+              </h3>
+              <p className="text-blue-100/80 font-light text-lg max-w-xl italic">
+                La oss ta en uforpliktende prat om hvordan vi kan styrke din
+                lønnsomhet.
+              </p>
+            </div>
+
+            <motion.button
+              className="animate-float bg-white text-brand-dark px-12 py-5 rounded-xl cursor-pointer font-black uppercase tracking-[0.2em] text-[11px] transition-all duration-500 hover:bg-brand-accent hover:text-white shadow-xl whitespace-nowrap"
+              onClick={() => openCalendly("Fra_Tjenester_Seksjon")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {dictionary.navbar.book_a_meeting}
+            </motion.button>
+          </div>
+        </motion.div>
+
+        {/* CARD GRID  */}
         <motion.div
           initial="hidden"
           whileInView="visible"
