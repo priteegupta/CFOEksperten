@@ -64,7 +64,7 @@ export default function Footer({
                 alt="CFO Eksperten"
                 width={400}
                 height={90}
-                className="h-22.5 w-auto object-contain object-left transition-transform duration-500 hover:scale-105 cursor-pointer"
+                className="h-22.5 w-auto object-contain object-left transition-transform duration-500 hover:scale-105 cursor-pointer md:ml-6"
                 priority
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               />
