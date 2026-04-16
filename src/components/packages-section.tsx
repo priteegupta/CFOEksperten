@@ -152,7 +152,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                 ))}
               </div>
             )}
-            {isLive && (
+            {/* {isLive && (
               <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full border border-green-100">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -162,7 +162,7 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                   Live Market Rates
                 </span>
               </div>
-            )}
+            )} */}
           </div>
         </div>
 
@@ -356,8 +356,8 @@ export default function PackagesSection({ dictionary, lang }: PackagesSectionPro
                       className="w-full md:w-72 py-5 rounded-2xl border-2 border-brand-accent text-brand-accent font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-700 hover:bg-brand-accent hover:text-white hover:shadow-xl hover:shadow-brand-accent/20 cursor-pointer whitespace-nowrap active:scale-95"
                     >
                       {lang === "no"
-                        ? "+ LEGG TIL CFO-STØTTE"
-                        : "+ ADD CFO SUPPORT"}
+                        ? " TA KONTAKT"
+                        : " ADD CFO SUPPORT"}
                     </button>
                   </div>
                 </motion.div>

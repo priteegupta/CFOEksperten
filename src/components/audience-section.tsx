@@ -75,10 +75,10 @@ export default function AudienceSection({
               className="absolute -bottom-10 -right-6 md:-right-10 bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-4xl shadow-2xl hidden sm:block border border-white/40 max-w-[320px]"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+                {/* <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
                 <span className="text-[10px] font-black text-brand-dark/40 uppercase tracking-[0.3em]">
                   Strategy First
-                </span>
+                </span> */}
               </div>
               <p className="text-brand-dark font-serif  text-xl md:text-2xl leading-tight">
                 {bottom_text}

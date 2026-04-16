@@ -21,7 +21,7 @@
   "about": {
     "who_we_are_label": "Hvem vi er",
     "what_we_do_label": "Hva vi gjør",
-    "our_role_label": "Vår rolle",
+    "our_role_label": "Ledelse",
     "title": "Et team du kan stole på",
     "subtitle": "Vår ambisjon er enkel: Å gjøre deg i stand til å ta bedre beslutninger – raskere og med større trygghet.",
     "description": "Vi jobber med startups og vekstselskaper som ønsker mer enn bare kontroll på tallene – de ønsker å bygge selskaper som er klare for vekst, investering og langsiktig lønnsomhet. Gjennom arbeid med selskaper i ulike faser har vi sett de samme utfordringene gå igjen: manglende oversikt over kontantstrøm, svak forståelse for lønnsomhet og usikkerhet i møter med investorer og offentlige aktører. Det er her vi kommer inn. Vi kombinerer operasjonell erfaring og strategisk finanskompetanse for å gi gründere det de faktisk trenger – ikke bare rapporter, men tydelige beslutningsgrunnlag. Vi bistår også selskaper med offentlig finansiering og støtteordninger fra blant annet Innovasjon Norge, SkatteFUNN, Enova, NOPEF og EU. Teamet har i tillegg erfaring med å lede kapitalinnhentingsprosesser for en rekke selskaper, og kan bidra med alt fra budsjetter, søknadsgrunnlag og investorpresentasjoner til dialog og gjennomføring. Alt til faste priser – fordi vi vet hvor kostbart det er å ansette en erfaren CFO. Teamet består av tidligere gründere, økonomer, regnskapsførere, finansanalytikere og M&A spesialister som er klare til å bistå selskaper i vekst.",
@@ -304,7 +304,7 @@
           "bestFor": "Pre-revenue eller <1M omsetning, maks 3 ansatte",
           "delivery": "14 dager"
         },
-        "cta": "Velg",
+        "cta": "TA KONTAKT",
         "highlight": false
       },
 
@@ -331,7 +331,7 @@
           "bestFor": "<5M omsetning, maks 10 ansatte, forbereder investeringsrunde",
           "delivery": "14 dager"
         },
-        "cta": "Bestill nå",
+        "cta": "TA KONTAKT",
         "highlight": true
       },
 
@@ -362,7 +362,7 @@
           "bestFor": "Selskaper i aktiv vekst- eller fundraising-fase",
           "delivery": "mnd"
         },
-        "cta": "Velg",
+        "cta": "TA KONTAKT",
         "highlight": false
       },
 
@@ -384,7 +384,7 @@
           "Biweekly strategimøter",
           "Finansieringsbistand"
         ],
-        "cta": "+ Legg til CFO-støtte",
+        "cta": "TA KONTAKT",
         "highlight": false,
         "note": {
           "commitment": "Ingen minimumsbinding — avslutt når du vil",
