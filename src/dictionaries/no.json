@@ -269,7 +269,7 @@
   
   "pricing": {
     "header": {
-      "title": "Transparant,forutsigbart og Rimelig.",
+      "title": "Transparant, forutsigbart og Rimelig.",
       "subtitle": "Velg pakken som passer din fase",
       "description": "Vi har gjort det enkelt. Faste priser uten skjulte kostnader. CFO-støtte er valgfritt for Pakke 1 og 2 — og obligatorisk inkludert i Skaleringspakken."
     },
@@ -322,10 +322,10 @@
           "Likviditetsprognose utvidet til 18 måneder",
           "3-årig finansiell modell med scenarioanalyser",
           "Enhetøkonomi (CAC / LTV)",
-          "60-min strategisk gjennomgang",
           "Kapitalstruktur og Selskapsstruktur for kapitalinnhenting",
           "Profesjonell presentasjon for investor / lånegiver eller offentlig aktør",
-          "1 revisjon/ oppdatering inkludert"
+          "1 revisjon/ oppdatering inkludert",
+           "60-min strategisk gjennomgang"
         ],
         "meta": {
           "bestFor": "<5M omsetning, maks 10 ansatte, forbereder investeringsrunde",
